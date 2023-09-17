@@ -1,9 +1,0 @@
-utils/DateProviders.class
-application/DoneTodoTest.class
-application/AddTodoTest.class
-utils/UserCtxProvider.class
-application/DeleteTodoTest.class
-utils/RequestProviders.class
-utils/TodoListProviders.class
-application/CreateTodoListTest.class
-utils/TodoProviders.class
