@@ -26,6 +26,10 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-mail</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -51,12 +55,7 @@
       <artifactId>mysql-connector-j</artifactId>
       <scope>runtime</scope>
     </dependency>
-    <dependency>
-          <groupId>org.example</groupId>
-          <artifactId>Core</artifactId>
-          <version>1.0-SNAPSHOT</version>
-          <scope>compile</scope>
-      </dependency>
+
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-api</artifactId>
@@ -76,6 +75,32 @@
       <version>0.11.5</version>
       <scope>runtime</scope>
     </dependency>
+
+
+    <dependency>
+      <groupId>org.example</groupId>
+      <artifactId>Core</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+      <dependency>
+          <groupId>org.example</groupId>
+          <artifactId>Todo</artifactId>
+          <version>1.0-SNAPSHOT</version>
+          <scope>compile</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.example</groupId>
+          <artifactId>Security</artifactId>
+          <version>1.0-SNAPSHOT</version>
+          <scope>compile</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.example</groupId>
+          <artifactId>Team</artifactId>
+          <version>1.0-SNAPSHOT</version>
+          <scope>compile</scope>
+      </dependency>
 
   </dependencies>
 

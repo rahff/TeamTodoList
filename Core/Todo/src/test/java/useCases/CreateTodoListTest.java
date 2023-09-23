@@ -3,7 +3,7 @@ package useCases;
 import org.mockito.Mockito;
 import org.todo.application.exceptions.TodoListAlreadyExistException;
 import org.todo.application.exceptions.TodoListCreationThresholdLimitReachedException;
-import org.todo.application.useCase.CreateTodoListCommand;
+import org.todo.application.commands.CreateTodoListCommand;
 import org.todo.port.dto.TodoListDto;
 import org.todo.port.spi.TodoListRepository;
 import org.junit.jupiter.api.BeforeEach;

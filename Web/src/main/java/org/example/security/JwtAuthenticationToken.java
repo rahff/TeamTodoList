@@ -52,6 +52,6 @@ public class JwtAuthenticationToken implements Authentication {
 
   @Override
   public String getName() {
-    return null;
+    return principal.getUsername();
   }
 }

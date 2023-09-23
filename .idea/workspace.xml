@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="79a0513d-e75c-473e-8348-93ff222d5633" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/application/commands/AddTeammatesOnTeam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/application/commands/CreateTeam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/application/commands/RemoveTeammateFromTeam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/entities/Team.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/api/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/dto/AddTeammatesOnTeamRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/dto/CreateTeamRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/dto/RemoveTeammateFromTeamRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/dto/TeamDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/spi/TeamRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/src/test/java/useCases/AddTeammateCommandTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/src/test/java/useCases/CreateTeamTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/src/test/java/useCases/RemoveTeammateFromTeamTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/target/classes/org/team/application/commands/AddTeammatesOnTeam.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/target/classes/org/team/application/commands/CreateTeam.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/target/classes/org/team/application/commands/RemoveTeammateFromTeam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/Team-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/endpoints/CreateTodoListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/endpoints/CreateTodoListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/test/java/adapters/JpaTodoListRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/test/java/adapters/JpaTodoListRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/config/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/config/security/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/config/services/ServiceConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/config/services/ServiceConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/config/services/ServiceConfigurationTesting.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/config/services/ServiceConfigurationTesting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/AddTodoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/AddTodoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/CreateTodoListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/CreateTodoListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/DeleteTodoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/DeleteTodoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/DeleteTodoListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/DeleteTodoListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/DoneTodoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/DoneTodoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/AddTodoRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/AddTodoRequestBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/CreateTodoRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/CreateTodoRequestBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/DeleteTodoRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/DeleteTodoRequestBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/DoneTodoRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/DoneTodoRequestBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/LoginUserRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/LoginUserRequestBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/SignupUserRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/SignupUserRequestBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/entities/AppUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/entities/Authority.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/entities/Todo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/entities/TodoList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/entities/UserPlan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/mappers/TodoListMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/mappers/TodoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/repositories/AppUserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/repositories/JpaTodoListRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/repositories/JpaTodoListRepositoryAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/repositories/TodoListInMemoryRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JpaUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JpaUserDetailsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtConfigurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtConfigurer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/UsernamePasswordAuthenticationProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/UsernamePasswordAuthenticationProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/AddTodoTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/AddTodoTransaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/CreateTodoListTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/CreateTodoListTransaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/DeleteTodoListTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/DeleteTodoListTransaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/DeleteTodoTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/DeleteTodoTransaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/DoneTodoTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/DoneTodoTransaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/adapters/JpaTodoListRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/test-classes/adapters/JpaTodoListRepositoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/utils/TodoListProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/test-classes/utils/TodoListProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/utils/TodoProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/test-classes/utils/TodoProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/exceptions/TodoListAlreadyExistException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/exceptions/TodoListCreationThresholdLimitReachedException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/mappers/TodoMappers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/useCase/AddTodoCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/useCase/CreateTodoListCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/useCase/DeleteTodoCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/useCase/DeleteTodoLIstCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/useCase/DoneTodoCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/entities/Todo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/entities/TodoList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/api/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/AddTodoRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/CreateTodoListRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/DeleteTodoListRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/DeleteTodoRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/DoneTodoRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/TodoDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/TodoListDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/UserContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/UserPlan$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/UserPlan$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/UserPlan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/spi/TodoListRepository.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Record" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2VXhbtgupS5p8aqnQVDuMieNWlv" />
+  <component name="ProjectViewState">
+    <option name="flattenModules" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showModules" value="false" />
+    <option name="showScratchesAndConsoles" value="false" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/home/rahff/Bureau/TodoListJavaExemple",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.team.ports.dto" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.team.ports.dto" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.team.ports.api" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.RemoveTeammateFromTeamTest.AManagerRemoveATeammateFromATeam">
+    <configuration name="AddTeammateCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Team" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="useCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="useCases" />
+      <option name="MAIN_CLASS_NAME" value="useCases.AddTeammateCommandTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoreTodoApplication" type="JUnit" factoryName="JUnit">
+      <module name="Todo" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="PACKAGE_NAME" value="useCases" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateTeamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Team" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="useCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="useCases" />
+      <option name="MAIN_CLASS_NAME" value="useCases.CreateTeamTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RemoveTeammateFromTeamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Team" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="useCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="useCases" />
+      <option name="MAIN_CLASS_NAME" value="useCases.RemoveTeammateFromTeamTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RemoveTeammateFromTeamTest.AManagerRemoveATeammateFromATeam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Team" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="useCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="useCases" />
+      <option name="MAIN_CLASS_NAME" value="useCases.RemoveTeammateFromTeamTest" />
+      <option name="METHOD_NAME" value="AManagerRemoveATeammateFromATeam" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TeamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Team" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="useCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="useCases" />
+      <option name="MAIN_CLASS_NAME" value="useCases.TeamTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Core" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Core" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.CoreTodoApplication" />
+      <item itemvalue="JUnit.AddTeammateCommandTest" />
+      <item itemvalue="JUnit.CreateTeamTest" />
+      <item itemvalue="JUnit.RemoveTeammateFromTeamTest" />
+      <item itemvalue="JUnit.RemoveTeammateFromTeamTest.AManagerRemoveATeammateFromATeam" />
+      <item itemvalue="JUnit.TeamTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.RemoveTeammateFromTeamTest.AManagerRemoveATeammateFromATeam" />
+        <item itemvalue="JUnit.RemoveTeammateFromTeamTest" />
+        <item itemvalue="JUnit.TeamTest" />
+        <item itemvalue="JUnit.AddTeammateCommandTest" />
+        <item itemvalue="JUnit.CreateTeamTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="79a0513d-e75c-473e-8348-93ff222d5633" name="Changes" comment="" />
+      <created>1694988408312</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694988408312</updated>
+    </task>
+    <servers />
+  </component>
+</project>

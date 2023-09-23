@@ -1,8 +1,8 @@
 package org.example.security;
 
-import org.example.persistance.entities.AppUser;
-import org.example.persistance.entities.Authority;
-import org.example.persistance.repositories.AppUserRepository;
+import org.example.persistance.entities.security.AppUser;
+import org.example.persistance.entities.security.Authority;
+import org.example.persistance.repositories.security.AppUserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -38,6 +38,6 @@ public class JpaUserDetailsService implements UserDetailsService {
   }
 
   private Collection<GrantedAuthority> getUserAuthority(Authority authority) {
-    return List.of(new SimpleGrantedAuthority(authority.getUserPlan()));
+    return List.of(new SimpleGrantedAuthority(authority.getUserRole()));
   }
 }

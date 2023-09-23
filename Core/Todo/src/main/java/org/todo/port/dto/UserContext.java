@@ -1,6 +1,6 @@
 package org.todo.port.dto;
 
-public record UserContext(String userId, UserPlan userPlan) {
+public record UserContext(String userId, UseRole userPlan) {
 }
 
 

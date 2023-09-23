@@ -11,6 +11,8 @@
     <modules>
         <module>Team</module>
         <module>Todo</module>
+        <module>Security</module>
+        <module>Shared</module>
     </modules>
   <properties>
     <java.version>17</java.version>

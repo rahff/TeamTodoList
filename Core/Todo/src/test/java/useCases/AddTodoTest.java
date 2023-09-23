@@ -1,6 +1,6 @@
 package useCases;
 
-import org.todo.application.useCase.AddTodoCommand;
+import org.todo.application.commands.AddTodoCommand;
 import org.todo.port.spi.TodoListRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

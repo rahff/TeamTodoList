@@ -1,6 +1,6 @@
 package utils;
 
-import org.example.persistance.entities.TodoList;
+import org.example.persistance.entities.todo.TodoList;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package useCases;
 
-import org.todo.application.useCase.DeleteTodoCommand;
+import org.todo.application.commands.DeleteTodoCommand;
 import org.todo.port.dto.DeleteTodoRequest;
 import org.todo.port.spi.TodoListRepository;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,6 +1,6 @@
 package utils;
 
-import org.example.persistance.entities.Todo;
+import org.example.persistance.entities.todo.Todo;
 
 public class TodoProvider {
 
