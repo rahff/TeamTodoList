@@ -30,7 +30,7 @@ public class TodoControllerTest extends BaseControllerTest {
   @Test
   @WithMockUser(username = "user", password = "12345", authorities = {"MANAGER"})
   void sendCreateTodoListHTTPRequestWithValidPayload() throws Exception {
-    var body = objectMapper.writeValueAsString(new CreateTodoRequestBody("sgf4fy5'e8j4io845z4gt", "My todo list"));
+    var body = objectMapper.writeValueAsString(new CreateTodoRequestBody("sgf4fy5'e8j4io845z4gt", "My todo list", "ownerRef"));
     mockMvc.perform(post("http://localhost:8080/create-todo-list")
         .contentType(MediaType.APPLICATION_JSON).content(body))
       .andExpect(status().isOk());

@@ -13,8 +13,6 @@ public class Team {
   @Id
   @Column(name = "id", nullable = false, length = 45)
   private String id;
-
-
   private String name;
   @Column(unique = true)
   private String accountId;

@@ -39,11 +39,6 @@ public class CreateTodoListController {
 
   private CreateTodoListRequest createRequest(UserDetails user, CreateTodoRequestBody body){
     var userRole = user.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.joining());
-    return new CreateTodoListRequest(new UserContext(user.getUsername(), UseRole.valueOf(userRole) ), body.id(), body.todoListName());
-  }
-
-  @GetMapping("/test")
-  public String tester(){
-    return "ok";
+    return new CreateTodoListRequest(new UserContext(user.getUsername(), UseRole.valueOf(userRole) ), body.id(), body.todoListName(), body.ref());
   }
 }

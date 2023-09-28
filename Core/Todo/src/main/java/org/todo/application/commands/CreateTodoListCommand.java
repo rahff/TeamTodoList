@@ -22,7 +22,7 @@ public class CreateTodoListCommand implements Command<CreateTodoListRequest> {
   public void execute(CreateTodoListRequest request) {
     verifyUniquenessOfTodoList(request);
     verifyTodoListCreationLimit(request.userCtx());
-    repository.saveTodoList(new TodoListDto(request.id(), request.userCtx().userId(), request.todoListName(), List.of()));
+    repository.saveTodoList(new TodoListDto(request.todoListId(), request.ref(), request.todoListName(), List.of()));
   }
 
   private void verifyTodoListCreationLimit(UserContext userContext){
@@ -33,7 +33,7 @@ public class CreateTodoListCommand implements Command<CreateTodoListRequest> {
   }
 
   private boolean isUserLimited(UserContext userContext){
-    return userContext.userPlan() == UseRole.TEAMMATE;
+    return userContext.userRole() == UseRole.TEAMMATE;
   }
 
   private void verifyUniquenessOfTodoList(CreateTodoListRequest request) {

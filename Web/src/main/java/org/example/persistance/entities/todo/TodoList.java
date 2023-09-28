@@ -20,14 +20,14 @@ public class TodoList {
   private List<Todo> todos;
 
   @Column(unique = true)
-  private String userId;
+  private String ref;
 
 
-  public TodoList(String id, String name, String userId, List<Todo> todos) {
+  public TodoList(String id, String name, String ref, List<Todo> todos) {
     this.id = id;
     this.name = name;
     this.todos = todos;
-    this.userId = userId;
+    this.ref = ref;
   }
   public TodoList(){}
 
@@ -43,12 +43,12 @@ public class TodoList {
     return todos;
   }
 
-  public String getUserId() {
-    return userId;
+  public String getRef() {
+    return ref;
   }
 
   public TodoListDto toDto() {
     var list = todos.stream().map(Todo::toDto).collect(Collectors.toList());
-    return new TodoListDto(id, userId, name, list);
+    return new TodoListDto(id, ref, name, list);
   }
 }
