@@ -9,8 +9,14 @@ import { TodoListsComponent } from './views/todo-list/todo-list.component';
 import { TeammatesComponent } from './views/teammates/teammates.component';
 import { AccountComponent } from './views/account/account.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ListTableComponent } from './components/list-table/list-table.component';
-import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.component';
+import { TeamListComponent } from './components/team-list/team-list.component';
+import { TeammateListComponent } from './components/teammate-list/teammate-list.component';
+import { TodoListListComponent } from './components/todo-list-list/todo-list-list.component';
+import { TodoListDropdownComponent } from './components/todo-list-dropdown/todo-list-dropdown.component';
+import { TeamListDropdownComponent } from './components/team-list-dropdown/team-list-dropdown.component';
+import { TeammateListDropdownComponent } from './components/teammate-list-dropdown/teammate-list-dropdown.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TeamDetailsComponent } from './views/team-details/team-details.component';
 
 
 
@@ -24,8 +30,14 @@ import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.
     TeammatesComponent,
     AccountComponent,
     FooterComponent,
-    ListTableComponent,
-    DropdownMenuComponent
+    TeamListComponent,
+    TeammateListComponent,
+    TodoListListComponent,
+    TodoListDropdownComponent,
+    TeamListDropdownComponent,
+    TeammateListDropdownComponent,
+    TodoListComponent,
+    TeamDetailsComponent
   ],
   imports: [
     DashboardRoutingModule, CommonModule

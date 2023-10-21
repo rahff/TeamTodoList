@@ -1,12 +1,14 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { createPopper } from '@popperjs/core';
 
+
+
 @Component({
   selector: 'app-dropdown-menu',
   templateUrl: './dropdown-menu.component.html',
   styleUrls: ['./dropdown-menu.component.css']
 })
-export class DropdownMenuComponent implements AfterViewInit {
+export abstract class DropdownMenuComponent implements AfterViewInit {
 
   public dropdownPopoverShow = false;
   @ViewChild("btnDropdownRef", { static: false }) btnDropdownRef!: ElementRef;
@@ -23,7 +25,7 @@ export class DropdownMenuComponent implements AfterViewInit {
     );
   }
 
-  public toggleDropdown(event: MouseEvent) {
+  public toggleDropdown(event: MouseEvent): void {
     event.preventDefault();
     if (this.dropdownPopoverShow) {
       this.dropdownPopoverShow = false;
