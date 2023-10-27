@@ -1,11 +1,11 @@
 import { PrepareAction, createAction } from "@reduxjs/toolkit"
 import { Todo } from "src/core/application/todo/dto/Todo";
 import { TodoList } from "src/core/application/todo/dto/TodoList";
-import { TodoListsView } from "./TodoListsState";
+import { TodoListsViewModel } from "./TodoListsState";
 
 
 
-const setPersonalTodoListsPrepareAction: PrepareAction<TodoListsView> = (payload: TodoListsView) =>({payload});
+const setPersonalTodoListsPrepareAction: PrepareAction<TodoListsViewModel> = (payload: TodoListsViewModel) =>({payload});
 export const todoListsReceivedEvent = createAction("todoLists/setTodoLists", setPersonalTodoListsPrepareAction);
 
 const deleteTodoListsPrepareAction: PrepareAction<string> = (payload:  string) =>({payload});

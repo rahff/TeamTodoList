@@ -1,0 +1,10 @@
+<div *ngIf="todoListDetails$ | async let details">
+    
+    <app-todo-list 
+    [todos]="details.todos"
+    (todoDonedEvent)="onTodoDonedEvent($event)"
+    (todoDeletedEvent)="onTodoDeletedEvent($event)"
+    (todoAddedEvent)="onTodoAddedEvent($event)">
+    </app-todo-list>
+</div>
+

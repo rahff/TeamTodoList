@@ -4,17 +4,17 @@ import { TeamQueryHandler } from "../spi/TeamQueryHandler";
 import { Teammate } from "../dto/Teammate";
 import { Query } from "../../shared/query/Query";
 import { Result } from "../../shared/dto/Result";
-import { TeammateListView } from "src/core/store/teammate-list/TeammateListState";
+import { TeammateListViewModel } from "src/core/store/teammate-list/TeammateListState";
 
 
 
-export class TeammateList extends Query<TeammateListView> {
+export class TeammateList extends Query<TeammateListViewModel> {
 
     public constructor(private queryHandler: TeamQueryHandler, 
                        private userContextHolder: UserContextHolder){super()}
 
 
-    public query(): Observable<Result<TeammateListView>> {
+    public query(): Observable<Result<TeammateListViewModel>> {
         const accountId =  this.userContextHolder.getAccountId()
         return this.queryHandler.getTeammateList(accountId)
         .pipe(map(this.onSuccess),

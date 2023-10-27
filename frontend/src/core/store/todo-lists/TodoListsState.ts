@@ -1,14 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { TodoList } from "src/core/application/todo/dto/TodoList"
-import { todoListsInitialState } from "./data/inMemory.store"
 import { addTodoList, deleteTodoList, setTodoLists } from "./TodoListsReducer"
+import { ViewModel } from "../shared/State"
 
 
-export interface TodoListsView {
-    lists: TodoList[]
+interface ListOfTodoList {lists: TodoList[]};
+export interface TodoListsViewModel extends ViewModel<ListOfTodoList> {}
+
+export const todoListsInitialState: TodoListsViewModel = {
+    viewModel: {
+        lists: []
+    }
 }
-
-
 
 export const todoLitsSlice = createSlice({
     name: "todoLists",

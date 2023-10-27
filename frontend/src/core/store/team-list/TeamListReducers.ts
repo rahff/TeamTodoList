@@ -1,26 +1,33 @@
 import { Team } from "src/core/application/team/dto/Team";
 import { EventWithPayload } from "../shared/Event";
-import { TeamListView } from "./TeamListState";
+import { TeamListViewModel } from "./TeamListState";
 import { addItemOnList, deleteById, filterList } from "../shared/functions";
 
 
 
-type TeamReducer<T> = (state: TeamListView, event: EventWithPayload<T>) => TeamListView;
+type TeamReducer<T> = (state: TeamListViewModel, event: EventWithPayload<T>) => TeamListViewModel;
 
-export const setTeamListView: TeamReducer<TeamListView> = (_, event) => {
+export const setTeamListView: TeamReducer<TeamListViewModel> = (_, event) => {
     return event.payload;
 }
 
 export const addTeam: TeamReducer<Team> = (state, event) => {
+    const list = state.viewModel.list;
     return {
-        ...state,
-        list: addItemOnList(state.list)(event.payload)
+        viewModel: {
+            ...state,
+            list: addItemOnList(list)(event.payload)
+        }
     };
 }
 
 export const deleteTeam: TeamReducer<string> = (state, event) => {
+    const list = state.viewModel.list;
     return {
-        ...state,
-        list: filterList(state.list, deleteById)(event.payload)
+        viewModel: {
+            ...state.viewModel,
+            list: filterList(list, deleteById)(event.payload)
+
+        }
     };
 }

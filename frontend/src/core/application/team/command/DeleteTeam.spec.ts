@@ -1,5 +1,5 @@
 import { Result } from "src/core/application/shared/dto/Result";
-import { InMemoryTeamCommandHandler } from "../in-memory/InMemoryTeamCommandHandler";
+import { InMemoryTeamCommandHandler } from "../../../../app/dashboard/services/inMemory/InMemoryTeamCommandHandler";
 import { DeleteTeam } from "./DeleteTeam";
 
 describe("DeleteTeam", () => {

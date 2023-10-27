@@ -14,7 +14,7 @@ describe("TodoListDetailsSlice", () => {
         const event = todoListDetailsReceivedEvent(todoListDetailsFakeState);
         storeApi.fireEvent(event);
         storeApi.getTodoListDetails().subscribe((details) => {
-            expect(details).toEqual(todoListDetailsFakeState.details);
+            expect(details).toEqual(todoListDetailsFakeState.viewModel);
         })
     });
 
@@ -24,7 +24,7 @@ describe("TodoListDetailsSlice", () => {
         const event = todoAddedEvent(task5);
         storeApi.fireEvent(event);
         storeApi.getTodoListDetails().subscribe((details) => {
-            expect(details.todos).toEqual([...todoListDetailsFakeState.details.todos, task5]);
+            expect(details.todos).toEqual([...todoListDetailsFakeState.viewModel.todos, task5]);
         })
     })
 
@@ -34,7 +34,7 @@ describe("TodoListDetailsSlice", () => {
         const event = todoDeletedEvent("todo2_of_todoList");
         storeApi.fireEvent(event);
         storeApi.getTodoListDetails().subscribe((details) => {
-            expect(details.todos).toEqual(todoListDetailsFakeStateAfterDeletingTask2.details.todos);
+            expect(details.todos).toEqual(todoListDetailsFakeStateAfterDeletingTask2.viewModel.todos);
         })
     })
 
@@ -44,7 +44,7 @@ describe("TodoListDetailsSlice", () => {
         const event = todoDonedEvent("todo2_of_todoList");
         storeApi.fireEvent(event);
         storeApi.getTodoListDetails().subscribe((details) => {
-            expect(details.todos).toEqual(todoListDetailsFakeStateAfterDoneTask2.details.todos);
+            expect(details.todos).toEqual(todoListDetailsFakeStateAfterDoneTask2.viewModel.todos);
         })
     })
 })

@@ -2,13 +2,13 @@
 
 export type CreateTodoFormData = {
     description: string,
-    deadline: Date,
-    ref: string
+    deadline: string,
+    todoListId: string
 }
 
 export type CreateTodoRequest = {
     description: string,
-    deadline: Date,
-    ref: string,
+    deadline: string,
+    todoListId: string,
     id: string
 }

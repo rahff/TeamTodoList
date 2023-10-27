@@ -1,12 +1,12 @@
 import { PrepareAction, createAction } from "@reduxjs/toolkit";
-import { TeammateListView } from "./TeammateListState";
+import { TeammateListViewModel } from "./TeammateListState";
 import { Teammate } from "src/core/application/team/dto/Teammate";
 
-const setTeammateListPrepareAction: PrepareAction<TeammateListView> = (payload: TeammateListView) =>({payload});
+const setTeammateListPrepareAction: PrepareAction<TeammateListViewModel> = (payload: TeammateListViewModel) =>({payload});
 export const teammateListReceivedEvent = createAction("teammateList/setTeammateList", setTeammateListPrepareAction);
 
 const addTeammatePrepareAction: PrepareAction<Teammate> = (payload:  Teammate) =>({payload});
-export const teammateAddedEvent = createAction("teammateList/addTeammate", addTeammatePrepareAction);
+export const teammateJoinedEvent = createAction("teammateList/addTeammate", addTeammatePrepareAction);
 
 const fireTeammatePrepareAction: PrepareAction<string> = (payload:  string) =>({payload});
 export const teammateFiredEvent = createAction("teammateList/fireTeammate", fireTeammatePrepareAction);

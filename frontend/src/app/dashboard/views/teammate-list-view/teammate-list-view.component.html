@@ -1,0 +1,11 @@
+<div class="flex flex-wrap mt-4">
+    <div class="w-full xl:w-12/12 mb-12 xl:mb-0 px-4"> 
+    <app-add-teammate-form
+    (teammateJoinedEvent)="onTeammateJoinedEvent($event)"
+    ></app-add-teammate-form>
+    <app-teammate-list 
+    (teammateFiredEvent)="onTeammateFired($event)"
+    
+    ></app-teammate-list>
+    </div> 
+</div>

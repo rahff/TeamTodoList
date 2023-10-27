@@ -1,5 +1,5 @@
 import { Result } from "src/core/application/shared/dto/Result";
-import { InMemoryTodoCommandHandler } from "../in-memory/InMemoryTodoCommandHandler";
+import { InMemoryTodoCommandHandler } from "../../../../app/dashboard/services/inMemory/InMemoryTodoCommandHandler";
 import { DeleteTodoList } from "./DeleteTodoList"
 
 

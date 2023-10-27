@@ -1,11 +1,5 @@
-import { TodoListDetailsView } from "../TodoListDetailsState";
+import { TodoListDetailsViewModel } from "../TodoListDetailsState";
 
-export const todoListDetailsInitialState: TodoListDetailsView = {
-    details: {
-        info: null,
-        todos: []
-    }
-}
 
 export const task5 = {
     id: 'todo5_of_todoList',
@@ -15,8 +9,8 @@ export const task5 = {
     done: false
 }
 
-export const todoListDetailsFakeState: TodoListDetailsView = {
-    details: {
+export const todoListDetailsFakeState: TodoListDetailsViewModel = {
+    viewModel: {
         info: {
             createdAt: new Date(2022, 27, 8).toISOString(),
             id: "todoList_details_id",
@@ -56,8 +50,8 @@ export const todoListDetailsFakeState: TodoListDetailsView = {
     }
 }
 
-export const todoListDetailsFakeStateAfterDoneTask2: TodoListDetailsView = {
-    details: {
+export const todoListDetailsFakeStateAfterDoneTask2: TodoListDetailsViewModel = {
+    viewModel: {
         info: {
             createdAt: new Date(2022, 27, 8).toISOString(),
             id: "todoList_details_id",
@@ -97,8 +91,8 @@ export const todoListDetailsFakeStateAfterDoneTask2: TodoListDetailsView = {
     }
 }
 
-export const todoListDetailsFakeStateAfterDeletingTask2: TodoListDetailsView = {
-    details: {
+export const todoListDetailsFakeStateAfterDeletingTask2: TodoListDetailsViewModel = {
+    viewModel: {
         info: {
             createdAt: new Date(2022, 27, 8).toISOString(),
             id: "todoList_details_id",

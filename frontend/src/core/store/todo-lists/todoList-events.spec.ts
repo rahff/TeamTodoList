@@ -16,7 +16,7 @@ describe("TodoListViewSlice", () => {
         const event = todoListsReceivedEvent(todoListsFakeState)
         storeApi.fireEvent(event);
         storeApi.getListOfTodoList().subscribe((list: TodoList[]) => {
-            expect(list).toEqual(todoListsFakeState.lists);
+            expect(list).toEqual(todoListsFakeState.viewModel.lists);
         })
     })
 
@@ -26,7 +26,7 @@ describe("TodoListViewSlice", () => {
         const event = todoListAddedEvent(newTodoList);
         storeApi.fireEvent(event);
         storeApi.getListOfTodoList().subscribe((list: TodoList[]) => {
-            expect(list).toEqual([...todoListsFakeState.lists, newTodoList]);
+            expect(list).toEqual([...todoListsFakeState.viewModel.lists, newTodoList]);
         })
     })
 
@@ -36,7 +36,7 @@ describe("TodoListViewSlice", () => {
         const event = todoListDeletedEvent("todoList2_of_user")
         storeApi.fireEvent(event);
         storeApi.getListOfTodoList().subscribe((list: TodoList[]) => {
-            expect(list).toEqual(todoListsFakeStateAfterDeleteSecond.lists)
+            expect(list).toEqual(todoListsFakeStateAfterDeleteSecond.viewModel.lists)
         })
     })
 })

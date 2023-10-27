@@ -2,7 +2,7 @@ import { IDProvider } from "src/core/application/shared/interfaces/IDProvider";
 import { Result } from "src/core/application/shared/dto/Result";
 import { JoinTeammate } from "./JoinTeammate";
 import { CreateTeammateFormData } from "../dto/CreateTeammateFormData";
-import { InMemoryTeamCommandHandler } from "../in-memory/InMemoryTeamCommandHandler";
+import { InMemoryTeamCommandHandler } from "../../../../app/dashboard/services/inMemory/InMemoryTeamCommandHandler";
 import { TestIDProvider } from "../../todo/in-memory/testIdProvider";
 import { Teammate } from "../dto/Teammate";
 

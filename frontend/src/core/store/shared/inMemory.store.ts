@@ -7,19 +7,28 @@ import { todoListDetailsFakeState } from "../todoList-details/data/inMemory.stor
 
 export const GLOBAL_INITIAL_STATE: GlobalState = {
     teamDetails: {
-        details: null
+        viewModel: {
+            details: null,
+            availableTeammates: []
+        }
     },
     todoLists: {
-        lists: []
+        viewModel: {
+            lists: []
+        }
     },
     teamList: {
-        list: []
+        viewModel: {
+            list: []
+        }
     },
     teammateList: {
-        list: []
+        viewModel: {
+            list: []
+        }
     },
     todoListDetails: {
-        details: {
+        viewModel: {
             info: null,
             todos: []
         }

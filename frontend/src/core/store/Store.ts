@@ -5,6 +5,7 @@ import { teamListSlice } from "./team-list/TeamListState";
 import { teamDetailsSlice } from "./team-details/TeamDetailsState";
 import { teammateListSlice } from "./teammate-list/TeammateListState";
 import { todoListDetailsSlice } from "./todoList-details/TodoListDetailsState";
+import { GLOBAL_INITIAL_STATE } from "./shared/inMemory.store";
 
 
 
@@ -14,11 +15,14 @@ const rootReducer = combineReducers({
     [teammateListSlice.name]: teammateListSlice.reducer,
     [todoLitsSlice.name]: todoLitsSlice.reducer,
     [teamListSlice.name]: teamListSlice.reducer
-})
+});
 
-export const createStore = (preLoadState?: GlobalState): ToolkitStore<GlobalState> => configureStore({
+export type Store = ToolkitStore<GlobalState>;
+
+export const createStore = (initialState: GlobalState): Store => configureStore({
     reducer: rootReducer,
-    preloadedState: preLoadState
+    preloadedState: initialState
 })
 
 export type GlobalState = ReturnType<typeof rootReducer>;
+export const store = createStore(GLOBAL_INITIAL_STATE);

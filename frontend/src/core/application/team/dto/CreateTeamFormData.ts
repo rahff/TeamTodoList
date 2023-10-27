@@ -1,10 +1,10 @@
 export type CreateTeamFormData = {
     name: string,
-    activity: string
+    teammates: string[]
 }
 
 export type  CreateTeamRequest = {
     name: string,
-    activity: string,
+    teammates: string[]
     id: string
 }

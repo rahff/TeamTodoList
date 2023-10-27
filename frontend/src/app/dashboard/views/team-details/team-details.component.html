@@ -1,9 +1,0 @@
-<div *ngIf="teamDetails$ | async let team">
-
-    <div *ngIf="teamTodoLists$ | async let todoLists">
-        <app-todo-list-list [todoLists]="todoLists" (todoListDeletedEvent)="onTodoListDeleted($event)"></app-todo-list-list> 
-    </div>
-    
-    <app-teammate-list [teammates]="team.teammates"></app-teammate-list>
-</div>
-

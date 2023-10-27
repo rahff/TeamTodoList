@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DasboardComponent } from './components/dasboard/dasboard.component';
-import { TeamComponent } from './views/team/team.component';
-import { AccountComponent } from './views/account/account.component';
-import { TeammatesComponent } from './views/teammates/teammates.component';
-import { TodoListsComponent } from './views/todo-list/todo-list.component';
-import { TeamDetailsComponent } from './views/team-details/team-details.component';
+import { DasboardComponent } from './root/views/dasboard/dasboard.component';
+
+
 
 const routes: Routes = [
   {
@@ -14,21 +11,23 @@ const routes: Routes = [
         path: "", redirectTo: "teams"
       },
       {
-        path: "teams", component: TeamComponent
+        path: "teams", loadChildren: () => import("./views/team-list-view/team-list-view.module").then(m => m.TeamListViewModule)
       },
       {
-        path: "team-details/:id", component: TeamDetailsComponent
+        path: "team-details", loadChildren: () => import("./views/team-details-view/team-details-view.module").then(m => m.TeamDetailsViewModule)
       },
       {
-        path: "todo-lists", component: TodoListsComponent
+        path: "todo-lists", loadChildren: () => import("./views/todo-lists-view/todo-lists-view.module").then(m => m.TodoListsViewModule)
       },
       {
-        path: "teammates", component: TeammatesComponent
+        path: "todo-list-details", loadChildren: () => import("./views/todo-list-details-view/todo-list-details-view.module").then(m => m.TodoListDetailsViewModule)
       },
       {
-        path: "account", component: AccountComponent
+        path: "teammates", loadChildren: () => import("./views/teammate-list-view/teammate-list-view.module").then(m => m.TeammateListViewModule)
+      },
+      {
+        path: "account", loadChildren: () => import("./views/account-view/account-view.module").then(m => m.AccountViewModule)
       }
-
     ]
   }
 ]

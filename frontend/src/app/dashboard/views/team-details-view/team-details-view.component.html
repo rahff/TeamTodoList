@@ -1,0 +1,23 @@
+<div *ngIf="teamDetails$ | async let team">
+
+   <app-add-teammate-on-team-select 
+    *ngIf="availableTeammate$ | async let teammates" 
+    [availableTeammates]="teammates"
+    [teamName]="team.name"
+    (teammatesAddedOnTeamEvent)="onAddTeammatesOnTeamSubmited($event)">
+    </app-add-teammate-on-team-select>
+    <app-teammate-list
+    [teamId]="team.id"
+    [teammates]="team.teammates"
+    (teammateRemovedFromTeamEvent)="removeTeammateFromTeam($event)"
+    (teammateFiredEvent)="removeTeammateFromTeam($event)">
+    </app-teammate-list>
+
+    <app-todo-list-list 
+     [todoLists]="team.todoLists"
+     (todoListDeletedEvent)="onTodoListDeleted($event)">
+    </app-todo-list-list> 
+    
+    
+</div>
+

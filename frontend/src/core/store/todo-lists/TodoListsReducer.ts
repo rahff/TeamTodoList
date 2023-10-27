@@ -1,26 +1,32 @@
 import { TodoList } from "src/core/application/todo/dto/TodoList";
 import { EventWithPayload } from "../shared/Event";
-import { TodoListsView } from "./TodoListsState";
+import { TodoListsViewModel } from "./TodoListsState";
 import { addItemOnList, deleteById, filterList } from "../shared/functions";
 
 
-type TodoListsListReducer<T> = (state: TodoListsView, event: EventWithPayload<T>) => TodoListsView;
+type TodoListsListReducer<T> = (state: TodoListsViewModel, event: EventWithPayload<T>) => TodoListsViewModel;
 
-export const setTodoLists: TodoListsListReducer<TodoListsView> = (state, event) => {
+export const setTodoLists: TodoListsListReducer<TodoListsViewModel> = (_, event) => {
     return event.payload;
 }
 
 export const deleteTodoList: TodoListsListReducer<string> = (state, event) => {
+    const lists = state.viewModel.lists;
     return {
-        ...state,
-        lists: filterList(state.lists, deleteById)(event.payload)
+        viewModel:{
+            ...state.viewModel,
+            lists: filterList(lists, deleteById)(event.payload)
+        },
     };
 }
 
 export const addTodoList: TodoListsListReducer<TodoList> = (state, event) => {
+    const lists = state.viewModel.lists
     return {
-        ...state,
-        lists: addItemOnList(state.lists)(event.payload)
+        viewModel: {
+            ...state.viewModel,
+            lists: addItemOnList(lists)(event.payload)
+        }
     }
 }
 

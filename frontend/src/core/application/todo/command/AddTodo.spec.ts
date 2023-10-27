@@ -1,6 +1,6 @@
 
 import { Result } from "src/core/application/shared/dto/Result";
-import { InMemoryTodoCommandHandler } from "../in-memory/InMemoryTodoCommandHandler";
+import { InMemoryTodoCommandHandler } from "../../../../app/dashboard/services/inMemory/InMemoryTodoCommandHandler";
 import { AddTodo } from "./AddTodo";
 import { CreateTodoFormData } from "../dto/CreateTodoFormData";
 import { IDProvider } from "src/core/application/shared/interfaces/IDProvider";
@@ -20,16 +20,16 @@ describe("AddTodo", () => {
     })
 
     it("A manager add todo in todo list", () => {
-        const formData: CreateTodoFormData = {description: "Do something", deadline: new Date(2022, 10, 12), ref: "teamId"};
+        const formData: CreateTodoFormData = {description: "Do something", deadline: new Date(2022, 10, 12).toISOString(), todoListId: "listId"};
         addTodo.execute(formData).subscribe((result: Result<Todo>) => {
             expect(result.isOk()).toBeTrue();
             expect(todoDataSource.hasBeenCalled("addTodo"))
-            .toEqual({description: "Do something", deadline: new Date(2022, 10, 12), ref: "teamId", id: "generatedId"})
+            .toEqual({description: "Do something", deadline: new Date(2022, 10, 12).toISOString(), todoListId: "listId", id: "generatedId"})
         })
     });
 
     it("A manager add todo in todo list but it fails", () => {
-        const formData: CreateTodoFormData = {description: "will fail", deadline: new Date(2022, 10, 12), ref: "teamId"};
+        const formData: CreateTodoFormData = {description: "will fail", deadline: new Date(2022, 10, 12).toISOString(), todoListId: "listId"};
         addTodo.execute(formData).subscribe((result: Result<Todo>) => {
             expect(result.isOk()).toBeFalsy();
             expect(result.getError().message).toBe("bad request");

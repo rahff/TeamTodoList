@@ -1,5 +1,5 @@
 
-import { TodoListDetailsView } from "src/core/store/todoList-details/TodoListDetailsState";
+import { TodoListDetailsViewModel } from "src/core/store/todoList-details/TodoListDetailsState";
 import { Todo } from "../../dto/Todo";
 import { TodoList } from "../../dto/TodoList";
 
@@ -299,8 +299,8 @@ export const todosFromTeammateTodoListAfterAddingOne: Todo[] = [
 
 ]
 
-export const teammateTodoListDetails: TodoListDetailsView = {
-    details: {
+export const teammateTodoListDetails: TodoListDetailsViewModel = {
+    viewModel: {
         info: {
             id: "rfjrjfkdkjdjdkmlzkj",
             createdAt: new Date(2022, 23, 8).toISOString(),
@@ -311,8 +311,8 @@ export const teammateTodoListDetails: TodoListDetailsView = {
     }
 }
 
-export const teammateTodoListDetailsAfterAddingOneTodo: TodoListDetailsView = {
-    details: {
+export const teammateTodoListDetailsAfterAddingOneTodo: TodoListDetailsViewModel = {
+    viewModel: {
         info: {
             id: "rfjrjfkdkjdjdkmlzkj",
         

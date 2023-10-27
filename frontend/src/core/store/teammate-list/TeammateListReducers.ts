@@ -1,26 +1,32 @@
 import { Teammate } from "src/core/application/team/dto/Teammate";
 import { EventWithPayload } from "../shared/Event";
-import { TeammateListView } from "./TeammateListState";
+import { TeammateListViewModel } from "./TeammateListState";
 import { addItemOnList, deleteById, filterList } from "../shared/functions";
 
 
-type TeammateListReducer<T> = (state: TeammateListView, event: EventWithPayload<T>) => TeammateListView;
+type TeammateListReducer<T> = (state: TeammateListViewModel, event: EventWithPayload<T>) => TeammateListViewModel;
 
-export const setTeammateList: TeammateListReducer<TeammateListView> = (_, event) => {
+export const setTeammateList: TeammateListReducer<TeammateListViewModel> = (_, event) => {
     return event.payload
 }
 
 export const addTeammate: TeammateListReducer<Teammate> = (state, event) => {
+    const list = state.viewModel.list
     return {
-        ...state,
-        list: addItemOnList(state.list)(event.payload)
+        viewModel: {
+            ...state.viewModel,
+            list: addItemOnList(list)(event.payload)
+        }
     }
 }
 
 export const fireTeammate: TeammateListReducer<string> = (state, event) => {
+    const list = state.viewModel.list
     return {
-        ...state,
-        list: filterList(state.list, deleteById)(event.payload)
+        viewModel: {
+            ...state.viewModel,
+            list: filterList(list, deleteById)(event.payload)
+        }
     }
 }
 

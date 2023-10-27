@@ -1,7 +1,7 @@
 import { Result } from "src/core/application/shared/dto/Result";
 import { RemoveTeammateFromTeamRequest } from "../dto/RemoveTeammateFromTeamRequest";
 import { RemoveTeammateFromTeam } from "./RemoveTeammateFromTeam";
-import { InMemoryTeamCommandHandler } from "../in-memory/InMemoryTeamCommandHandler";
+import { InMemoryTeamCommandHandler } from "../../../../app/dashboard/services/inMemory/InMemoryTeamCommandHandler";
 
 
 describe("RemoveTeammateFromTeam", () => {
@@ -15,15 +15,15 @@ describe("RemoveTeammateFromTeam", () => {
 
     it("A manager remove ateammate from a team", () => {
         const request: RemoveTeammateFromTeamRequest = {teamId: "teamId", teammateId: "teammateId"};
-        removeTeammateFromTeam.execute(request).subscribe((result: Result<{teammateId: string, teamId: string}>) => {
+        removeTeammateFromTeam.execute(request).subscribe((result: Result<string>) => {
             expect(result.isOk()).toBeTrue();
             expect(commandHandler.hasBeenCalled("removeTeammateFromTeam")).toEqual(request);
         })
     })
 
-    it("A manager remove ateammate from a team but it fails", () => {
+    it("A manager remove a teammate from a team but it fails", () => {
         const request: RemoveTeammateFromTeamRequest = {teamId: "failure", teammateId: "teammateId"};
-        removeTeammateFromTeam.execute(request).subscribe((result: Result<{teammateId: string, teamId: string}>) => {
+        removeTeammateFromTeam.execute(request).subscribe((result: Result<string>) => {
             expect(result.getError().message).toBe("bad request");
         })
     })

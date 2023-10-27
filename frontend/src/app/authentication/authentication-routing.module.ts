@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
+
+const routes: Routes = [
+  {
+    path: "login", loadChildren: () => import("./views/login-view/login-view.module").then(m => m.LoginViewModule)
+  },
+  {
+    path: "signup", loadChildren: () => import("./views/signup-view/signup-view.module").then(m => m.SignupViewModule)
+  }
+]
 
 
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forChild([])
+    RouterModule.forChild(routes)
   ],
   exports: [RouterModule]
 })

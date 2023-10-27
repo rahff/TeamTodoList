@@ -7,11 +7,11 @@ import { Result } from "src/core/application/shared/dto/Result";
 
 
 
-export class RemoveTeammateFromTeam extends Command<{teamId: string, teammateId: string}, RemoveTeammateFromTeamRequest> {
+export class RemoveTeammateFromTeam extends Command<string, RemoveTeammateFromTeamRequest> {
 
     public constructor(private commandHandler: TeamCommandHandler){super()}
 
-    public execute(request: RemoveTeammateFromTeamRequest): Observable<Result<{teamId: string, teammateId: string}>> {
+    public execute(request: RemoveTeammateFromTeamRequest): Observable<Result<string>> {
         return this.commandHandler.removeTeammateFromTeam(request)
         .pipe(map(this.onSuccess),
          catchError(this.onError))

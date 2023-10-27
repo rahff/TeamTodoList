@@ -2,7 +2,7 @@ import { CreateTodoList } from "./CreateTodoList"
 import { CreateTodoListFormData } from "../dto/CreateTodoListFormData";
 import { TestIDProvider } from "../in-memory/testIdProvider";
 import { TestDateProvider } from "../in-memory/TestDateProvider";
-import { InMemoryTodoCommandHandler } from "../in-memory/InMemoryTodoCommandHandler";
+import { InMemoryTodoCommandHandler } from "../../../../app/dashboard/services/inMemory/InMemoryTodoCommandHandler";
 import { IDProvider } from "../../shared/interfaces/IDProvider";
 import { DateProvider } from "../../shared/interfaces/DateProvider";
 import { TodoList } from "../dto/TodoList";
