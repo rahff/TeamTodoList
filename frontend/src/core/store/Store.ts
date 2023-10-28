@@ -6,6 +6,7 @@ import { teamDetailsSlice } from "./team-details/TeamDetailsState";
 import { teammateListSlice } from "./teammate-list/TeammateListState";
 import { todoListDetailsSlice } from "./todoList-details/TodoListDetailsState";
 import { GLOBAL_INITIAL_STATE } from "./shared/inMemory.store";
+import { accountDetailsSlice } from "./account-details/AccountDetailsState";
 
 
 
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
     [todoListDetailsSlice.name]: todoListDetailsSlice.reducer,
     [teammateListSlice.name]: teammateListSlice.reducer,
     [todoLitsSlice.name]: todoLitsSlice.reducer,
-    [teamListSlice.name]: teamListSlice.reducer
+    [teamListSlice.name]: teamListSlice.reducer,
+    [accountDetailsSlice.name]: accountDetailsSlice.reducer,
 });
 
 export type Store = ToolkitStore<GlobalState>;

@@ -1,1 +1,1 @@
-<p>account works!</p>
+<p *ngIf="userAccount$ | async let userAccount"> {{userAccount | json}} </p>
