@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { Teammate } from "src/core/application/team/dto/Teammate"
 import { addTeammate, fireTeammate, setTeammateList } from "./TeammateListReducers"
 import { ViewModel } from "../shared/State"
+import { Teammate } from "src/core/model/team/Teammate"
+
 
 interface TeammateList {list: Teammate[]};
 

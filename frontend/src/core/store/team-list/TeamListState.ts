@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Team } from "src/core/application/team/dto/Team";
 import { addTeam, deleteTeam, setTeamListView } from "./TeamListReducers";
 import { ViewModel } from "../shared/State";
+import { TeamCard } from "src/core/model/team/TeamCard";
 
 
-interface TeamList {list: Team[]}
+interface TeamList {list: TeamCard[]}
 export interface TeamListViewModel extends ViewModel<TeamList> {}
 
 

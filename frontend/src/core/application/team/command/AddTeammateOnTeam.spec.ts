@@ -2,7 +2,7 @@ import { Result } from "src/core/application/shared/dto/Result";
 import { InMemoryTeamCommandHandler } from "../../../../app/dashboard/services/inMemory/InMemoryTeamCommandHandler";
 import { AddTeammateOnTeam } from "./AddTeammateOnTeam";
 import { AddTeammateOnTeamRequest } from "../dto/AddTeammateOnTeamRequest";
-import { Teammate } from "../dto/Teammate";
+import { Teammate } from "../../../model/team/Teammate";
 
 
 

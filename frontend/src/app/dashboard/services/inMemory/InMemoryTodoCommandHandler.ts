@@ -1,11 +1,11 @@
 import { Observable, of, throwError } from "rxjs";
-import { CreateTodoListRequest } from "../../../../core/application/todo/dto/CreateTodoListFormData";
-import { TodoCommandHandler } from "../../../../core/application/todo/spi/TodoCommandHandler";
-import { TodoList } from "../../../../core/application/todo/dto/TodoList";
-import { CreateTodoRequest } from "../../../../core/application/todo/dto/CreateTodoFormData";
-import { Todo } from "../../../../core/application/todo/dto/Todo";
-import { newTeamTodoList, newTodo } from "../../../../core/application/todo/in-memory/data/data.todo";
 import { Injectable } from "@angular/core";
+import { CreateTodoRequest } from "src/core/application/todo/dto/CreateTodoFormData";
+import { CreateTodoListRequest } from "src/core/application/todo/dto/CreateTodoListFormData";
+import { newTeamTodoList, newTodo } from "src/core/application/todo/in-memory/data/data.todo";
+import { TodoCommandHandler } from "src/core/application/todo/spi/TodoCommandHandler";
+import { Todo } from "src/core/model/todo/Todo";
+import { TodoList } from "src/core/model/todo/TodoList";
 
 
 

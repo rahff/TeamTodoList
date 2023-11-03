@@ -3,13 +3,13 @@ import { TeammateListViewComponent } from './teammate-list-view.component';
 import { TeammateList } from 'src/core/application/team/query/TeammateList';
 import { createStore } from 'src/core/store/Store';
 import { fakeAsync } from '@angular/core/testing';
-import { Teammate } from 'src/core/application/team/dto/Teammate';
 import { newTeammate, teammateList, teammateListAfterFiredOne } from 'src/core/application/team/in-memory/data/team.data';
 import { ngOnInitPast500Ms } from '../../root/views/utils/tests.utils';
 import { GLOBAL_INITIAL_STATE } from 'src/core/store/shared/inMemory.store';
 import { TeammateListStoreApi } from 'src/core/store/teammate-list/TeammateListStoreApi';
 import { FakeUserContextHolder } from '../../services/inMemory/FakeUserContextHolder';
 import { InMemoryTeamQueryHandler } from '../../services/inMemory/InMemoryTeamQueryHandler';
+import { Teammate } from 'src/core/model/team/Teammate';
 
 
 

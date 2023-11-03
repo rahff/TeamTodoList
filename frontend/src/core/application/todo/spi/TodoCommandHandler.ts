@@ -1,8 +1,8 @@
 import { CreateTodoListRequest } from "../dto/CreateTodoListFormData";
 import { Observable } from "rxjs";
-import { TodoList } from "../dto/TodoList";
+import { TodoList } from "../../../model/todo/TodoList";
 import { CreateTodoRequest } from "../dto/CreateTodoFormData";
-import { Todo } from "../dto/Todo";
+import { Todo } from "../../../model/todo/Todo";
 
 
 

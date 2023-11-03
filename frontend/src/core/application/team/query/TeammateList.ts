@@ -1,7 +1,7 @@
 import { Observable, catchError, map } from "rxjs";
 import { UserContextHolder } from "../../shared/interfaces/UserContextHolder";
 import { TeamQueryHandler } from "../spi/TeamQueryHandler";
-import { Teammate } from "../dto/Teammate";
+import { Teammate } from "../../../model/team/Teammate";
 import { Query } from "../../shared/query/Query";
 import { Result } from "../../shared/dto/Result";
 import { TeammateListViewModel } from "src/core/store/teammate-list/TeammateListState";

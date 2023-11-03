@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Result } from 'src/core/application/shared/dto/Result';
-import { Teammate } from 'src/core/application/team/dto/Teammate';
 import { TeammateList } from 'src/core/application/team/query/TeammateList';
+import { Teammate } from 'src/core/model/team/Teammate';
 import { teammateFiredEvent, teammateJoinedEvent, teammateListReceivedEvent } from 'src/core/store/teammate-list/Events';
 import { TeammateListViewModel } from 'src/core/store/teammate-list/TeammateListState';
 import { TeammateListStoreApi } from 'src/core/store/teammate-list/TeammateListStoreApi';

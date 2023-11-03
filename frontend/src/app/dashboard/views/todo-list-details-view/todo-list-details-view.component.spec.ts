@@ -1,13 +1,13 @@
 import { TodoListDetailsStoreApi } from 'src/core/store/todoList-details/TodoListDetailsStoreApi';
 import { TodoListDetailsViewComponent } from './todo-list-details-view.component';
-import { TodoListById } from 'src/core/application/todo/query/TodoListById';
 import { createStore } from 'src/core/store/Store';
 import { GLOBAL_INITIAL_STATE } from 'src/core/store/shared/inMemory.store';
 import { fakeAsync } from '@angular/core/testing';
 import { FakeActivatedRoute, ngOnInitPast500Ms } from '../../root/views/utils/tests.utils';
 import { TodoListDetails } from 'src/core/store/todoList-details/TodoListDetailsState';
-import { newTodo, teammateTodoListDetails, todosFromTeammateTodoListAfterDeleteOne, todosFromTeammateTodoListAfterDoneTask2 } from 'src/core/application/todo/in-memory/data/data.todo';
 import { InMemoryTodoQueryHandler } from '../../services/inMemory/InMemoryTodoQueryHandler';
+import { TodoListById } from 'src/core/application/todo/query/TodoListById';
+import { teammateTodoListDetails, todosFromTeammateTodoListAfterDoneTask2, todosFromTeammateTodoListAfterDeleteOne, newTodo } from 'src/core/application/todo/in-memory/data/data.todo';
 
 
 

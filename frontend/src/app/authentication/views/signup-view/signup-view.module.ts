@@ -1,17 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SignupViewComponent } from './signup-view/signup-view.component';
-import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { SignupViewRoutingModule } from './signup-view-routing.module';
+import { SignupUser } from 'src/core/application/security/command/SignupUser';
+import { AuthenticationGateway } from 'src/core/application/security/spi/AuthenticationGateway';
+import { UserContextHolder } from 'src/core/application/shared/interfaces/UserContextHolder';
+import { InMemoryEmailPasswordAuthentication } from '../../services/in-memory-email-password-authentication.service';
+import { FakeUserContextHolder } from 'src/app/dashboard/services/inMemory/FakeUserContextHolder';
 
 
 
 @NgModule({
   declarations: [
-    SignupViewComponent,
-    SignupFormComponent
+    ...SignupViewRoutingModule.viewComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SignupViewRoutingModule
+  ],
+  providers: [
+    {
+      provide: SignupUser, 
+      useFactory: (a: AuthenticationGateway, u: UserContextHolder) => new SignupUser(a, u),
+      deps: [InMemoryEmailPasswordAuthentication, FakeUserContextHolder]
+    }
   ]
 })
 export class SignupViewModule { }

@@ -2,11 +2,13 @@ import { CreateTodoList } from "./CreateTodoList"
 import { CreateTodoListFormData } from "../dto/CreateTodoListFormData";
 import { TestIDProvider } from "../in-memory/testIdProvider";
 import { TestDateProvider } from "../in-memory/TestDateProvider";
-import { InMemoryTodoCommandHandler } from "../../../../app/dashboard/services/inMemory/InMemoryTodoCommandHandler";
-import { IDProvider } from "../../shared/interfaces/IDProvider";
+
+import { TodoList } from "../../../model/todo/TodoList";
 import { DateProvider } from "../../shared/interfaces/DateProvider";
-import { TodoList } from "../dto/TodoList";
+import { IDProvider } from "../../shared/interfaces/IDProvider";
+import { InMemoryTodoCommandHandler } from "src/app/dashboard/services/inMemory/InMemoryTodoCommandHandler";
 import { Result } from "../../shared/dto/Result";
+
 
 
 describe("CreateTodoList", () => {

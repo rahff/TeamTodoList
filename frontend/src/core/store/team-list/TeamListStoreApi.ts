@@ -1,8 +1,8 @@
 import { BehaviorSubject, Observable, map } from "rxjs";
 import { Store } from "../Store";
-import { Team } from "src/core/application/team/dto/Team";
 import { StoreApi } from "../shared/StoreApi";
 import { TeamListViewModel, teamListInitialState } from "./TeamListState";
+import { TeamCard } from "src/core/model/team/TeamCard";
 
 
 
@@ -18,7 +18,7 @@ export class TeamListStoreApi extends StoreApi {
         this.teamList.next(this.store.getState().teamList);
     }
 
-    public getTeamList(): Observable<Team[]> {
+    public getTeamList(): Observable<TeamCard[]> {
         return this.teamList.asObservable()
         .pipe(map((view) => view.viewModel.list));
     }

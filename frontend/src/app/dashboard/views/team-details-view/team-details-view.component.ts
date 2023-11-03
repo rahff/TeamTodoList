@@ -2,9 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { Result } from 'src/core/application/shared/dto/Result';
-import { Team } from 'src/core/application/team/dto/Team';
-import { Teammate } from 'src/core/application/team/dto/Teammate';
 import { TeamById } from 'src/core/application/team/query/TeamById';
+import { Team } from 'src/core/model/team/Team';
+import { Teammate } from 'src/core/model/team/Teammate';
 
 import { teamDetailsReceivedEvent, teamTodoListDeletedEvent, teammateRemovedFromTeamEvent, teammatesOnTeamAddedEvent } from 'src/core/store/team-details/Events';
 import { TeamDetailsViewModel } from 'src/core/store/team-details/TeamDetailsState';
@@ -30,7 +30,7 @@ export class TeamDetailsViewComponent implements OnInit, OnDestroy {
               private activatedRoute: ActivatedRoute) { }
 
   public ngOnInit(): void {
-    this.availableTeammate$ = this.storeApi.getAvailableTeammates()
+    this.availableTeammate$ = this.storeApi.getAvailableTeammates();
     this.teamDetails$ = this.storeApi.getTeamDetails();
     this.subscription = this.teamDetails.query(this.getTeamId()).subscribe({
       next: this.onQueryResult.bind(this)
@@ -62,5 +62,4 @@ export class TeamDetailsViewComponent implements OnInit, OnDestroy {
   public ngOnDestroy(): void {
       this.subscription.unsubscribe();
   }
-
 }

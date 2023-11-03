@@ -1,8 +1,8 @@
 import { BehaviorSubject, Observable, map } from "rxjs";
-import { Teammate } from "src/core/application/team/dto/Teammate";
 import { Store } from "../Store";
 import { StoreApi } from "../shared/StoreApi";
 import { TeammateListViewModel, teammateListInitialState } from "./TeammateListState";
+import { Teammate } from "src/core/model/team/Teammate";
 
 
 

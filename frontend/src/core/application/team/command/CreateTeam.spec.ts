@@ -3,8 +3,8 @@ import { CreateTeamFormData } from "../dto/CreateTeamFormData";
 import { CreateTeam } from "./CreateTeam";
 import { InMemoryTeamCommandHandler } from "../../../../app/dashboard/services/inMemory/InMemoryTeamCommandHandler";
 import { IDProvider } from "src/core/application/shared/interfaces/IDProvider";
+import { TeamCard } from "../../../model/team/TeamCard";
 import { TestIDProvider } from "../../todo/in-memory/testIdProvider";
-import { Team } from "../dto/Team";
 
 
 describe("CreateTeam", () => {
@@ -19,7 +19,7 @@ describe("CreateTeam", () => {
 
     it("A manager create a team", () => {
         const formData: CreateTeamFormData = {name: "Team1", teammates: []}
-        createTeam.execute(formData).subscribe((result: Result<Team, Error>) => {
+        createTeam.execute(formData).subscribe((result: Result<TeamCard, Error>) => {
             expect(result.isOk()).toBeTrue();
             expect(commandHandler.hasBeenCalled("createTeam"))
             .toEqual({name: "Team1", teammates: [], id: "generatedId"})
@@ -28,7 +28,7 @@ describe("CreateTeam", () => {
 
     it("A manager create a team but it fails", () => {
         const formData: CreateTeamFormData = {name: "will fail", teammates: []}
-        createTeam.execute(formData).subscribe((result: Result<Team, Error>) => {
+        createTeam.execute(formData).subscribe((result: Result<TeamCard, Error>) => {
             expect(result.isOk()).toBeFalsy();
             expect(result.getError().message).toBe("bad request");
         })

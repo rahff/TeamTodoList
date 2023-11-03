@@ -1,12 +1,13 @@
 
-import { Result } from "../../shared/dto/Result";
-import { DateProvider } from "../../shared/interfaces/DateProvider";
-import { IDProvider } from "../../shared/interfaces/IDProvider";
+
 import { CreateTodoListFormData, CreateTodoListRequest } from "../dto/CreateTodoListFormData";
 import { TodoCommandHandler } from "../spi/TodoCommandHandler";
 import { Observable, catchError, map, of } from "rxjs";
 import { Command } from "src/core/application/shared/command/Command";
-import { TodoList } from "../dto/TodoList";
+import { TodoList } from "../../../model/todo/TodoList";
+import { Result } from "../../shared/dto/Result";
+import { DateProvider } from "../../shared/interfaces/DateProvider";
+import { IDProvider } from "../../shared/interfaces/IDProvider";
 
 
 

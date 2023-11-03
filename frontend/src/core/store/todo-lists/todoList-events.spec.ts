@@ -2,9 +2,10 @@
 import { createStore } from "../Store";
 import {  todoListsReceivedEvent, todoListAddedEvent, todoListDeletedEvent } from "./Events";
 import { TodoListsStoreApi } from "./TodoListStoreApi";
-import { TodoList } from "src/core/application/todo/dto/TodoList";
 import { GLOBAL_FAKE_STATE, GLOBAL_INITIAL_STATE } from "../shared/inMemory.store";
 import { newTodoList, todoListsFakeState, todoListsFakeStateAfterDeleteSecond } from "./data/inMemory.store";
+import { TodoList } from "src/core/model/todo/TodoList";
+
 
 
 

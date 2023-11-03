@@ -1,4 +1,5 @@
-import { Teammate } from "src/core/application/team/dto/Teammate";
+
+import { Teammate } from "src/core/model/team/Teammate";
 import { TeammateListViewModel } from "../TeammateListState";
 
 export const recrue: Teammate = {

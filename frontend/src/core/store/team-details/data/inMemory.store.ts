@@ -1,4 +1,5 @@
-import { TodoList } from "src/core/application/todo/dto/TodoList";
+
+import { TodoList } from "src/core/model/todo/TodoList";
 import { TeamDetailsViewModel } from "../TeamDetailsState";
 import { newTeammate } from "src/core/application/team/in-memory/data/team.data";
 

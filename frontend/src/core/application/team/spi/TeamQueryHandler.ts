@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import { Teammate } from "../dto/Teammate";
+import { Teammate } from "../../../model/team/Teammate";
 import { TeamDetailsViewModel } from "src/core/store/team-details/TeamDetailsState";
 import { TeammateListViewModel } from "src/core/store/teammate-list/TeammateListState";
 import { TeamListViewModel } from "src/core/store/team-list/TeamListState";

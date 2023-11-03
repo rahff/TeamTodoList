@@ -1,17 +1,26 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LoginViewComponent } from './login-view/login-view.component';
-import { LoginFormComponent } from './login-view/components/login-form/login-form.component';
+import { LoginViewRoutingModule } from './login-view-routing.module';
+import { LoginUser } from 'src/core/application/security/command/LoginUser';
+import { AuthenticationGateway } from 'src/core/application/security/spi/AuthenticationGateway';
+import { UserContextHolder } from 'src/core/application/shared/interfaces/UserContextHolder';
+import { InMemoryEmailPasswordAuthentication } from '../../services/in-memory-email-password-authentication.service';
+import { FakeUserContextHolder } from 'src/app/dashboard/services/inMemory/FakeUserContextHolder';
 
 
 
 @NgModule({
   declarations: [
-    LoginViewComponent,
-    LoginFormComponent
+    ...LoginViewRoutingModule.viewComponents,
   ],
   imports: [
-    CommonModule
+    LoginViewRoutingModule
+  ],
+  providers: [
+    {
+      provide: LoginUser, 
+      useFactory: (a: AuthenticationGateway, u: UserContextHolder) => new LoginUser(a, u),
+      deps: [InMemoryEmailPasswordAuthentication, FakeUserContextHolder]
+    }
   ]
 })
 export class LoginViewModule { }

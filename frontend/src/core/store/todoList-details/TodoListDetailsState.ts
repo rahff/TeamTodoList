@@ -1,8 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { Todo } from "src/core/application/todo/dto/Todo"
 import { addTodo, deleteTodo, doneTodo, setTodoListDetails } from "./TodoLisDetailsReducer"
-import { TodoList } from "src/core/application/todo/dto/TodoList"
 import { ViewModel } from "../shared/State"
+import { Todo } from "src/core/model/todo/Todo"
+import { TodoList } from "src/core/model/todo/TodoList"
+
+
+
 
 export type TodoListDetails = {
     info: TodoList | null,

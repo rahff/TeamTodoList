@@ -1,8 +1,9 @@
 import { BehaviorSubject, Observable, map } from "rxjs";
-import { TodoList } from "src/core/application/todo/dto/TodoList";
 import { StoreApi } from "../shared/StoreApi";
 import { Store } from "../Store";
 import { TodoListsViewModel, todoListsInitialState } from "./TodoListsState";
+import { TodoList } from "src/core/model/todo/TodoList";
+
 
 
 

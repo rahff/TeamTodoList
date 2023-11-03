@@ -1,14 +1,14 @@
-import { TodoListsByUserId } from 'src/core/application/todo/query/TodoListsByUserId';
 import { TodoListsViewComponent } from './todo-lists-view.component';
 import { fakeAsync } from '@angular/core/testing';
-import { TodoList } from 'src/core/application/todo/dto/TodoList';
-import { todoListsForTeammateRef, todoListsForTeammateRefAfterDeletingOne } from 'src/core/application/todo/in-memory/data/data.todo';
 import { createStore } from 'src/core/store/Store';
 import { GLOBAL_INITIAL_STATE } from 'src/core/store/shared/inMemory.store';
 import { TodoListsStoreApi } from 'src/core/store/todo-lists/TodoListStoreApi';
 import { ngOnInitPast500Ms } from '../../root/views/utils/tests.utils';
 import { InMemoryTodoQueryHandler } from '../../services/inMemory/InMemoryTodoQueryHandler';
 import { FakeUserContextHolder } from '../../services/inMemory/FakeUserContextHolder';
+import { todoListsForTeammateRef, todoListsForTeammateRefAfterDeletingOne } from 'src/core/application/todo/in-memory/data/data.todo';
+import { TodoListsByUserId } from 'src/core/application/todo/query/TodoListsByUserId';
+import { TodoList } from 'src/core/model/todo/TodoList';
 
 
 

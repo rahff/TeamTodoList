@@ -1,8 +1,8 @@
 import { Observable, catchError, map } from "rxjs";
 import { TodoQueryHandler } from "../spi/TodoQueryHandler";
-import { Todo } from "../dto/Todo";
-import { Query } from "../../shared/query/Query";
-import { Result } from "../../shared/dto/Result";
+import { Todo } from "../../../model/todo/Todo";
+import { Query } from "../../../../application/shared/query/Query";
+import { Result } from "../../../../application/shared/dto/Result";
 
 
 

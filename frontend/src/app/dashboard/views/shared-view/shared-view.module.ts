@@ -3,8 +3,6 @@ import { TodoListListComponent } from './components/todo-list-list/todo-list-lis
 import { TeammateListDropdownComponent } from './components/teammate-list-dropdown/teammate-list-dropdown.component';
 import { TeammateListComponent } from './components/teammate-list/teammate-list.component';
 import { TodoListDropdownComponent } from './components/todo-list-dropdown/todo-list-dropdown.component';
-import { DeleteTodoList } from 'src/core/application/todo/command/DeleteTodoList';
-import { TodoCommandHandler } from 'src/core/application/todo/spi/TodoCommandHandler';
 import { InMemoryTodoCommandHandler } from 'src/app/dashboard/services/inMemory/InMemoryTodoCommandHandler';
 import { FireTeammate } from 'src/core/application/team/command/FireTeammate';
 import { TeamCommandHandler } from 'src/core/application/team/spi/TeamCommandHandler';
@@ -12,6 +10,8 @@ import { InMemoryTeamCommandHandler } from '../../services/inMemory/InMemoryTeam
 import { RemoveTeammateFromTeam } from 'src/core/application/team/command/RemoveTeammateFromTeam';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { DeleteTodoList } from 'src/core/application/todo/command/DeleteTodoList';
+import { TodoCommandHandler } from 'src/core/application/todo/spi/TodoCommandHandler';
 
 
 const components = [

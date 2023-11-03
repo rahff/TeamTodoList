@@ -5,7 +5,8 @@ import { Result } from 'src/core/application/shared/dto/Result';
 import { CreateTeam } from 'src/core/application/team/command/CreateTeam';
 import { DeleteTeam } from 'src/core/application/team/command/DeleteTeam';
 import { CreateTeamFormData } from 'src/core/application/team/dto/CreateTeamFormData';
-import { Team } from 'src/core/application/team/dto/Team';
+import { TeamCard } from 'src/core/model/team/TeamCard';
+
 
 @Component({
   selector: 'app-team-list',
@@ -14,9 +15,9 @@ import { Team } from 'src/core/application/team/dto/Team';
 })
 export class TeamListComponent implements OnDestroy {
 
-  @Input() public teamList!: Team[];
+  @Input() public teamList!: TeamCard[];
   @Output() private teamDeletedEvent = new EventEmitter<string>();
-  @Output() private teamCreatedEvent = new EventEmitter<Team>();
+  @Output() private teamCreatedEvent = new EventEmitter<TeamCard>();
   private subcription = new Subscription();
 
   constructor(private deleteTeam: DeleteTeam, 
@@ -44,7 +45,7 @@ export class TeamListComponent implements OnDestroy {
     })
   }
 
-  private onCreateTeamResult(result: Result<Team>): void {
+  private onCreateTeamResult(result: Result<TeamCard>): void {
     if(result.isOk()) this.teamCreatedEvent.emit(result.getValue());
   }
 

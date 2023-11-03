@@ -1,7 +1,8 @@
-import { TodoList } from "src/core/application/todo/dto/TodoList";
 import { EventWithPayload } from "../shared/Event";
 import { TodoListsViewModel } from "./TodoListsState";
 import { addItemOnList, deleteById, filterList } from "../shared/functions";
+import { TodoList } from "src/core/model/todo/TodoList";
+
 
 
 type TodoListsListReducer<T> = (state: TodoListsViewModel, event: EventWithPayload<T>) => TodoListsViewModel;

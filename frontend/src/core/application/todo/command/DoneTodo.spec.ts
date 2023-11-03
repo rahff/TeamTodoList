@@ -1,6 +1,6 @@
 import { Result } from "src/core/application/shared/dto/Result";
-import { InMemoryTodoCommandHandler } from "../../../../app/dashboard/services/inMemory/InMemoryTodoCommandHandler";
 import { DoneTodo } from "./DoneTodo";
+import { InMemoryTodoCommandHandler } from "src/app/dashboard/services/inMemory/InMemoryTodoCommandHandler";
 
 describe("DoneTodo", () => {
     let doneTodo: DoneTodo;

@@ -5,7 +5,7 @@ import { AddTodo } from 'src/core/application/todo/command/AddTodo';
 import { DeleteTodo } from 'src/core/application/todo/command/DeleteTodo';
 import { DoneTodo } from 'src/core/application/todo/command/DoneTodo';
 import { CreateTodoFormData } from 'src/core/application/todo/dto/CreateTodoFormData';
-import { Todo } from 'src/core/application/todo/dto/Todo';
+import { Todo } from 'src/core/model/todo/Todo';
 
 @Component({
   selector: 'app-todo-list',

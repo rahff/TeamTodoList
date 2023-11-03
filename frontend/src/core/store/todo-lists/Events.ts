@@ -1,7 +1,6 @@
 import { PrepareAction, createAction } from "@reduxjs/toolkit"
-import { Todo } from "src/core/application/todo/dto/Todo";
-import { TodoList } from "src/core/application/todo/dto/TodoList";
 import { TodoListsViewModel } from "./TodoListsState";
+import { TodoList } from "src/core/model/todo/TodoList";
 
 
 

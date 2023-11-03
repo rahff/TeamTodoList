@@ -1,8 +1,8 @@
 import { PrepareAction, createAction } from "@reduxjs/toolkit";
-
-import { TodoList } from "src/core/application/todo/dto/TodoList";
 import { TeamDetailsViewModel } from "./TeamDetailsState";
-import { Teammate } from "src/core/application/team/dto/Teammate";
+import { TodoList } from "src/core/model/todo/TodoList";
+import { Teammate } from "src/core/model/team/Teammate";
+
 
 
 

@@ -4,10 +4,11 @@ import { TeamCommandHandler } from "../../../../core/application/team/spi/TeamCo
 import { JoinTeammateRequest } from "../../../../core/application/team/dto/CreateTeammateFormData";
 import { AddTeammateOnTeamRequest } from "../../../../core/application/team/dto/AddTeammateOnTeamRequest";
 import { RemoveTeammateFromTeamRequest } from "../../../../core/application/team/dto/RemoveTeammateFromTeamRequest";
-import { Teammate } from "../../../../core/application/team/dto/Teammate";
-import { newTeam, newTeammate } from "../../../../core/application/team/in-memory/data/team.data";
-import { Team } from "../../../../core/application/team/dto/Team";
+import { Teammate } from "../../../../core/model/team/Teammate";
+import { newTeam, newTeamCard, newTeammate } from "../../../../core/application/team/in-memory/data/team.data";
+import { Team } from "../../../../core/model/team/Team";
 import { Injectable } from "@angular/core";
+import { TeamCard } from "src/core/model/team/TeamCard";
 
 
 
@@ -26,12 +27,12 @@ export class InMemoryTeamCommandHandler implements TeamCommandHandler {
         this.methodCalls = new Map<TeamDataSourceMethods, Object>();
     }
 
-    public createTeam(request: CreateTeamRequest): Observable<Team> {
+    public createTeam(request: CreateTeamRequest): Observable<TeamCard> {
         this.methodCalls.set("createTeam", request);
         if(request.name === "will fail"){
             return throwError(() => this.error);
         }
-        return of(newTeam);
+        return of(newTeamCard);
     }
     
     public joinTeammate(request: JoinTeammateRequest): Observable<Teammate> {

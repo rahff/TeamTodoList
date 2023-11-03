@@ -16,8 +16,7 @@ export class AuthenticationByToken extends Query<Authentication> {
     public authenticate(): Observable<Result<Authentication>> {
         const token = this.userContextHolder.getToken();
         return this.authenticationGateway.authenticateByToken(token)
-        .pipe(map(this.onSuccess),catchError(this.handleError.bind(this)))
-        
+        .pipe(map(this.onSuccess), catchError(this.handleError.bind(this)));
     }
 
     private handleError(error: Error): Observable<Result<Authentication>> {

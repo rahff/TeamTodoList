@@ -1,8 +1,9 @@
-import { Todo } from "src/core/application/todo/dto/Todo";
 import { EventWithPayload } from "../shared/Event"
 import { TodoListDetailsViewModel } from "./TodoListDetailsState"
 import { addItemOnList, deleteById, filterList, mapOnList, updateById } from "../shared/functions";
 import { toggleTodo } from "./functions";
+import { Todo } from "src/core/model/todo/Todo";
+
 
 
 

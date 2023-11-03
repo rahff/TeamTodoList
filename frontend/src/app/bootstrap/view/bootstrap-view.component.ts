@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Authentication } from 'src/core/application/security/dto/Authentication';
+import { AuthenticationByToken } from 'src/core/application/security/query/AuthenticationByToken';
+import { Result } from 'src/core/application/shared/dto/Result';
 
 @Component({
   selector: 'app-bootstrap',
@@ -8,12 +11,17 @@ import { Router } from '@angular/router';
 })
 export class BootstrapViewComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private authenticationByToken: AuthenticationByToken ,private router: Router) { }
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.router.navigateByUrl("/dashboard")
-    }, 500);
+  public ngOnInit(): void {
+    this.authenticationByToken.authenticate().subscribe({
+      next: this.onAuthenticationResult.bind(this)
+    })
+  }
+
+  private onAuthenticationResult(result: Result<Authentication>): void {
+    if(result.isOk()) this.router.navigateByUrl("/dashboard")
+    else this.router.navigateByUrl("/auth/login")
   }
 
 }

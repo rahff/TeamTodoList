@@ -1,14 +1,14 @@
-import { Team } from 'src/core/application/team/dto/Team';
 import { TeamDetailsViewComponent } from './team-details-view.component';
 import { TeamById } from 'src/core/application/team/query/TeamById';
 import { newTeammate, team2, team2AfterAddTeammate, team2AfterRemoveTeammate2 } from 'src/core/application/team/in-memory/data/team.data';
 import { createStore } from 'src/core/store/Store';
-import { todoListsForTeamRefAfterDeletingTheSecond } from 'src/core/application/todo/in-memory/data/data.todo';
 import { fakeAsync, tick } from '@angular/core/testing';
 import { FakeActivatedRoute, ngOnInitPast500Ms } from '../../root/views/utils/tests.utils';
 import { TeamDetailsStoreApi } from 'src/core/store/team-details/TeamDetailsStoreApi';
 import { GLOBAL_INITIAL_STATE } from 'src/core/store/shared/inMemory.store';
 import { InMemoryTeamQueryHandler } from '../../services/inMemory/InMemoryTeamQueryHandler';
+import { todoListsForTeamRefAfterDeletingTheSecond } from 'src/core/application/todo/in-memory/data/data.todo';
+import { Team } from 'src/core/model/team/Team';
 
 
 

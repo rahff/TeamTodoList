@@ -1,11 +1,11 @@
 import { Observable } from "rxjs";
-import { TodoList } from "../../../../core/application/todo/dto/TodoList";
-import { TodoQueryHandler } from "../../../../core/application/todo/spi/TodoQueryHandler";
-import { Todo } from "../../../../core/application/todo/dto/Todo";
-import { teammateTodoListDetails, todoListsForTeamRef, todoListsForTeammateRef, todosFromTeammateTodoList } from "../../../../core/application/todo/in-memory/data/data.todo";
 import { TodoListDetailsViewModel } from "src/core/store/todoList-details/TodoListDetailsState";
 import { TodoListsViewModel } from "src/core/store/todo-lists/TodoListsState";
 import { Injectable } from "@angular/core";
+import { TodoQueryHandler } from "src/core/application/todo/spi/TodoQueryHandler";
+import { Todo } from "src/core/model/todo/Todo";
+import { TodoList } from "src/core/model/todo/TodoList";
+import { todoListsForTeamRef, todoListsForTeammateRef, teammateTodoListDetails, todosFromTeammateTodoList } from "src/core/application/todo/in-memory/data/data.todo";
 
 
 

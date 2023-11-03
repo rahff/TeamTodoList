@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Result } from 'src/core/application/shared/dto/Result';
-import { Team } from 'src/core/application/team/dto/Team';
 import { TeamList } from 'src/core/application/team/query/TeamList';
+import { Team } from 'src/core/model/team/Team';
+import { TeamCard } from 'src/core/model/team/TeamCard';
 import { teamCreatedEvent, teamDeletedEvent, teamListReceivedEvent } from 'src/core/store/team-list/Events';
 import { TeamListViewModel } from 'src/core/store/team-list/TeamListState';
 import { TeamListStoreApi } from 'src/core/store/team-list/TeamListStoreApi';
@@ -14,7 +15,7 @@ import { TeamListStoreApi } from 'src/core/store/team-list/TeamListStoreApi';
 })
 export class TeamListViewComponent implements OnInit, OnDestroy {
 
-  public teamList$!: Observable<Team[]>;
+  public teamList$!: Observable<TeamCard[]>;
   private subscription!: Subscription;
 
   constructor(private storeApi: TeamListStoreApi, private teamList: TeamList) { }
@@ -34,7 +35,7 @@ export class TeamListViewComponent implements OnInit, OnDestroy {
     this.storeApi.fireEvent(teamDeletedEvent(id));
   }
 
-  public onTeamCreatedEvent(team: Team): void {
+  public onTeamCreatedEvent(team: TeamCard): void {
     this.storeApi.fireEvent(teamCreatedEvent(team));
   }
 

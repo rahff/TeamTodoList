@@ -1,4 +1,6 @@
-import { Todo } from "src/core/application/todo/dto/Todo"
+import { Todo } from "src/core/model/todo/Todo"
+
+
 
 
 

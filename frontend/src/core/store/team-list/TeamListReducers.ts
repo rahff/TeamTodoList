@@ -1,7 +1,9 @@
-import { Team } from "src/core/application/team/dto/Team";
+
 import { EventWithPayload } from "../shared/Event";
 import { TeamListViewModel } from "./TeamListState";
 import { addItemOnList, deleteById, filterList } from "../shared/functions";
+import { Team } from "src/core/model/team/Team";
+import { TeamCard } from "src/core/model/team/TeamCard";
 
 
 
@@ -11,7 +13,7 @@ export const setTeamListView: TeamReducer<TeamListViewModel> = (_, event) => {
     return event.payload;
 }
 
-export const addTeam: TeamReducer<Team> = (state, event) => {
+export const addTeam: TeamReducer<TeamCard> = (state, event) => {
     const list = state.viewModel.list;
     return {
         viewModel: {

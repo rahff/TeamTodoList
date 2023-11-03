@@ -4,7 +4,7 @@ import { Observable, catchError, map } from "rxjs";
 import { Result } from "src/core/application/shared/dto/Result";
 import { CreateTodoFormData, CreateTodoRequest } from "../dto/CreateTodoFormData";
 import { IDProvider } from "src/core/application/shared/interfaces/IDProvider";
-import { Todo } from "../dto/Todo";
+import { Todo } from "../../../model/todo/Todo";
 
 
 export class AddTodo extends Command<Todo, CreateTodoFormData> {

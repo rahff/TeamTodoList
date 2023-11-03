@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { TodoList } from "src/core/application/todo/dto/TodoList"
 import { addTodoList, deleteTodoList, setTodoLists } from "./TodoListsReducer"
 import { ViewModel } from "../shared/State"
+import { TodoList } from "src/core/model/todo/TodoList"
+
 
 
 interface ListOfTodoList {lists: TodoList[]};

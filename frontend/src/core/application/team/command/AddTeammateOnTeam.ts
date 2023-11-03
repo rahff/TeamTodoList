@@ -3,7 +3,7 @@ import { TeamCommandHandler } from "../spi/TeamCommandHandler";
 import { Observable, catchError, map } from "rxjs";
 import { Result } from "src/core/application/shared/dto/Result";
 import { AddTeammateOnTeamRequest } from "../dto/AddTeammateOnTeamRequest";
-import { Teammate } from "../dto/Teammate";
+import { Teammate } from "../../../model/team/Teammate";
 
 
 

@@ -3,7 +3,8 @@ import { Subscription } from 'rxjs';
 import { ConfirmActionService } from 'src/app/dashboard/services/confirm-action.service';
 import { Result } from 'src/core/application/shared/dto/Result';
 import { DeleteTodoList } from 'src/core/application/todo/command/DeleteTodoList';
-import { TodoList } from 'src/core/application/todo/dto/TodoList';
+import { TodoList } from 'src/core/model/todo/TodoList';
+
 
 
 

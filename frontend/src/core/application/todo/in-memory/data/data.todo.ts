@@ -1,7 +1,7 @@
 
 import { TodoListDetailsViewModel } from "src/core/store/todoList-details/TodoListDetailsState";
-import { Todo } from "../../dto/Todo";
-import { TodoList } from "../../dto/TodoList";
+import { Todo } from "../../../../model/todo/Todo";
+import { TodoList } from "../../../../model/todo/TodoList";
 
 
 

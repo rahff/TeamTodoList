@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
-import { Teammate } from "../../../../core/application/team/dto/Teammate";
+import { Teammate } from "../../../../core/model/team/Teammate";
 import { TeamQueryHandler } from "../../../../core/application/team/spi/TeamQueryHandler";
-import { availableTeammates, team2, teamList, teammateList } from "../../../../core/application/team/in-memory/data/team.data";
+import { availableTeammates, team2, teamCardList, teammateList } from "../../../../core/application/team/in-memory/data/team.data";
 import { TeamDetailsViewModel } from "src/core/store/team-details/TeamDetailsState";
 import { TeammateListViewModel } from "src/core/store/teammate-list/TeammateListState";
 import { TeamListViewModel } from "src/core/store/team-list/TeamListState";
@@ -27,7 +27,7 @@ export class InMemoryTeamQueryHandler implements TeamQueryHandler {
        
         return new Observable<TeamListViewModel>((observable) => {
             setTimeout(() => {
-                observable.next({viewModel: {list: teamList}});
+                observable.next({viewModel: {list: teamCardList}});
             }, 500);
         });
        

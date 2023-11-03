@@ -1,5 +1,5 @@
 import { Observable, catchError, map } from "rxjs";
-import { Team } from "../dto/Team";
+import { Team } from "../../../model/team/Team";
 import { TeamQueryHandler } from "../spi/TeamQueryHandler";
 import { UserContextHolder } from "src/core/application/shared/interfaces/UserContextHolder";
 import { Query } from "../../shared/query/Query";

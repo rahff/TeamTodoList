@@ -4,7 +4,7 @@ import { IDProvider } from "src/core/application/shared/interfaces/IDProvider";
 import { Observable, catchError, map } from "rxjs";
 import { Result } from "src/core/application/shared/dto/Result";
 import { CreateTeammateFormData, JoinTeammateRequest } from "../dto/CreateTeammateFormData";
-import { Teammate } from "../dto/Teammate";
+import { Teammate } from "../../../model/team/Teammate";
 
 
 

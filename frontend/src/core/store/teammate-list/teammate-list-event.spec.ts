@@ -1,9 +1,10 @@
-import { Teammate } from "src/core/application/team/dto/Teammate";
+
 import { createStore } from "../Store";
 import { teammateJoinedEvent, teammateFiredEvent, teammateListReceivedEvent } from "./Events";
 import { TeammateListStoreApi } from "./TeammateListStoreApi";
 import { GLOBAL_FAKE_STATE, GLOBAL_INITIAL_STATE } from "../shared/inMemory.store";
 import { recrue, teammateList, teammateListAfterMichelFired } from "./data/inMemory.store";
+import { Teammate } from "src/core/model/team/Teammate";
 
 describe("TeammateListViewSlice", () => {
 

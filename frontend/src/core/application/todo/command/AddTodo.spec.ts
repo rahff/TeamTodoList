@@ -1,11 +1,11 @@
 
 import { Result } from "src/core/application/shared/dto/Result";
-import { InMemoryTodoCommandHandler } from "../../../../app/dashboard/services/inMemory/InMemoryTodoCommandHandler";
 import { AddTodo } from "./AddTodo";
 import { CreateTodoFormData } from "../dto/CreateTodoFormData";
 import { IDProvider } from "src/core/application/shared/interfaces/IDProvider";
 import { TestIDProvider } from "../in-memory/testIdProvider";
-import { Todo } from "../dto/Todo";
+import { Todo } from "../../../model/todo/Todo";
+import { InMemoryTodoCommandHandler } from "src/app/dashboard/services/inMemory/InMemoryTodoCommandHandler";
 
 
 

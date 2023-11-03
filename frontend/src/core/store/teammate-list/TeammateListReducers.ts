@@ -1,7 +1,8 @@
-import { Teammate } from "src/core/application/team/dto/Teammate";
+
 import { EventWithPayload } from "../shared/Event";
 import { TeammateListViewModel } from "./TeammateListState";
 import { addItemOnList, deleteById, filterList } from "../shared/functions";
+import { Teammate } from "src/core/model/team/Teammate";
 
 
 type TeammateListReducer<T> = (state: TeammateListViewModel, event: EventWithPayload<T>) => TeammateListViewModel;

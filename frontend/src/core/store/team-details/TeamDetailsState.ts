@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Team } from "src/core/application/team/dto/Team";
 import { addTeammatesOnTeam, addTodoList, deleteTodoList, removeTeammateFromTeam, setTeamDetails } from "./TeamDetailsReducer";
-import { Teammate } from "src/core/application/team/dto/Teammate";
 import { ViewModel } from "../shared/State";
+import { Team } from "src/core/model/team/Team";
+import { Teammate } from "src/core/model/team/Teammate";
 
 interface TeamDetails {
     details: Team | null,

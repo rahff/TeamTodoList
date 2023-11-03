@@ -1,10 +1,10 @@
 import { Observable, catchError, map } from "rxjs";
-import { TodoList } from "../dto/TodoList";
+
+import { TodoListsViewModel } from "src/core/store/todo-lists/TodoListsState";
+import { Query } from "../../shared/query/Query";
 import { TodoQueryHandler } from "../spi/TodoQueryHandler";
 import { UserContextHolder } from "../../shared/interfaces/UserContextHolder";
-import { Query } from "../../shared/query/Query";
 import { Result } from "../../shared/dto/Result";
-import { TodoListsViewModel } from "src/core/store/todo-lists/TodoListsState";
 
 export class TodoListsByUserId extends Query<TodoListsViewModel>{
     

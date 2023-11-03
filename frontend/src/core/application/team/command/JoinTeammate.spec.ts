@@ -3,8 +3,8 @@ import { Result } from "src/core/application/shared/dto/Result";
 import { JoinTeammate } from "./JoinTeammate";
 import { CreateTeammateFormData } from "../dto/CreateTeammateFormData";
 import { InMemoryTeamCommandHandler } from "../../../../app/dashboard/services/inMemory/InMemoryTeamCommandHandler";
+import { Teammate } from "../../../model/team/Teammate";
 import { TestIDProvider } from "../../todo/in-memory/testIdProvider";
-import { Teammate } from "../dto/Teammate";
 
 
 

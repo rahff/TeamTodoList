@@ -1,5 +1,6 @@
-import { Team } from "../../dto/Team";
-import { Teammate } from "../../dto/Teammate";
+import { TeamCard } from "src/core/model/team/TeamCard";
+import { Team } from "../../../../model/team/Team";
+import { Teammate } from "../../../../model/team/Teammate";
 
 
 export const newTeammate: Teammate = {
@@ -50,6 +51,14 @@ export const team2 = {
         }
     ]
 }
+
+export const team2Card: TeamCard = {
+    id: "xcvbtghrtyui",
+    name: "Team2",
+    teammateCount: 2,
+    todoListCount: 4
+}
+
 
 export const team2AfterAddTeammate = {
     id: "xcvbtghrtyui",
@@ -173,47 +182,38 @@ export const teamList: Team[] = [
     },
 ]
 
-
-export const teamListAfterDeleteTeam2: Team[] = [
+export const teamCardList: TeamCard[] = [
     {
         id: "fghjklopiuyt",
         name: "Team1",
-        teammates: [
-            {
-                email: "rahff@gmail.com",
-                id: "azertyuiopp",
-                name: "Rahff",
-                teamId: "fghjklopiuyt"
-            },
-            {
-                email: "mikki@gmail.com",
-                id: "mlkjhgfdfghjk",
-                name: "Mikki",
-                teamId: "fghjklopiuyt"
-            },
-        ],
-        todoLists: []
+        teammateCount: 2,
+        todoListCount: 0
+    },
+    team2Card,
+    {
+        id: "iudfdshbbcvvdg",
+        name: "Team3",
+        teammateCount: 2,
+        todoListCount: 0
+    },
+]
+
+
+export const teamCardListAfterDeleteTeam2: TeamCard[] = [
+    {
+        id: "fghjklopiuyt",
+        name: "Team1",
+        teammateCount: 2,
+        todoListCount: 0
     },
     {
         id: "iudfdshbbcvvdg",
         name: "Team3",
-        teammates: [
-            {
-                email: "julie@gmail.com",
-                id: "mpnwsaezert",
-                name: "Julie",
-                teamId: "iudfdshbbcvvdg"
-            },
-            {
-                email: "michel@gmail.com",
-                id: "nhyioaqstr",
-                name: "Michel",
-                teamId: "iudfdshbbcvvdg"
-            },
-        ],
-        todoLists: []
+        teammateCount: 2,
+        todoListCount: 0
     },
 ]
+
 
 export const newTeam: Team = {
     
@@ -234,6 +234,13 @@ export const newTeam: Team = {
             },
         ],
         todoLists: []
+}
+
+export const newTeamCard: TeamCard = {
+    id: "jsupmsdhbbcuyieue",
+    name: "Team4",
+    teammateCount: 2,
+    todoListCount: 0
 }
 
 export const teammateList: Teammate[] = [

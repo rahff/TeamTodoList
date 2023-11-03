@@ -10,7 +10,6 @@ import { Authentication } from "src/core/application/security/dto/Authentication
 })
 export class FakeUserContextHolder implements UserContextHolder {
     
-
     private context!: Map<string, Authentication>
 
     public constructor(){

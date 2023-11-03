@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Result } from 'src/core/application/shared/dto/Result';
-import { Todo } from 'src/core/application/todo/dto/Todo';
-import { TodoList } from 'src/core/application/todo/dto/TodoList';
-import { TodoListsByUserId} from 'src/core/application/todo/query/TodoListsByUserId';
+import { TodoListsByUserId } from 'src/core/application/todo/query/TodoListsByUserId';
+import { TodoList } from 'src/core/model/todo/TodoList';
+
 import { todoListDeletedEvent, todoListsReceivedEvent } from 'src/core/store/todo-lists/Events';
 import { TodoListsStoreApi } from 'src/core/store/todo-lists/TodoListStoreApi';
 import { TodoListsViewModel } from 'src/core/store/todo-lists/TodoListsState';
