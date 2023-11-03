@@ -5,115 +5,272 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79a0513d-e75c-473e-8348-93ff222d5633" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/application/commands/AddTeammatesOnTeam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/application/commands/CreateTeam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/application/commands/RemoveTeammateFromTeam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/entities/Team.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/api/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/dto/AddTeammatesOnTeamRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/dto/CreateTeamRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/dto/RemoveTeammateFromTeamRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/dto/TeamDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/spi/TeamRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/src/test/java/useCases/AddTeammateCommandTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/src/test/java/useCases/CreateTeamTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/src/test/java/useCases/RemoveTeammateFromTeamTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/target/classes/org/team/application/commands/AddTeammatesOnTeam.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/target/classes/org/team/application/commands/CreateTeam.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Team/target/classes/org/team/application/commands/RemoveTeammateFromTeam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/utils/FakeData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/api/TeamDetailsViewQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/api/TeamListViewQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/dto/TeamDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/dto/TeammateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/dto/TodoListDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/model/TeamCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/model/TeamDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/model/TeamDetailsViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/model/TeamListViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/model/Teammate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/model/TodoList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/spi/TeamDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/spi/TodoListDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/spi/UserDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/spi/fakes/FakeTeamDetailsViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/spi/fakes/FakeTeamListViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/spi/fakes/InMemoryTeamDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/spi/fakes/InMemoryTodoListDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/main/java/org/queryTeam/spi/fakes/InMemoryUserDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/test/java/TeamDetailsViewQueryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/QueryTeam/src/test/java/TeamListViewQueryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/beans/team/TeamQueryBeanConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/query/TeamDetailsViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/query/TeamListViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/query/InMemoryUserDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/query/JpaUserDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/query/InMemoryTeamDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/query/JpaTeamDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/query/InMemoryTodoListDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/query/JpaTodoListDataAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Core.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Team/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Team/target/Team-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Team/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Team/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Team/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Team/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Team/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Todo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Todo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/application/CreateUserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/application/CreateUserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/dto/SignupUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/dto/SignupUserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/src/test/java/CreateTeammateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/test/java/CreateTeammateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/CreateManagerAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/CreateTeammate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/CreateUserManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/SetTeammatePassword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/UserSecurity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/UsernamePasswordAuthenticationProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/entities/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/exceptions/BadCredentialsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/api/CreateAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/api/Signup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/api/UsernamePasswordAuthentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/ChangePasswordRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/CreateAccountRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/CreateTeammateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/GeneratedCodePair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/JwtAuthenticationResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/LoginUserRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/SignupUserRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/TeammateJoiningRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/UserDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/spi/AccountRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/spi/AddTeammate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/spi/ChangePassword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/spi/CodeGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/spi/FakePasswordEncoder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/spi/JwtEncoder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/spi/PasswordSecurity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/spi/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/test-classes/CreateTeammateTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/test-classes/ManagerAccountTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/test-classes/SetTeammatePasswordTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Shared/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Shared/target/classes/org/shared/api/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/org/team/application/commands/AddTeammatesOnTeam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/org/team/application/commands/CreateTeam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/org/team/application/commands/DeleteTeam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/org/team/application/commands/RemoveTeammateFromTeam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/org/team/entities/Team.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/org/team/ports/dto/AddTeammatesOnTeamRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/org/team/ports/dto/CreateTeamRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/org/team/ports/dto/DeleteTeamRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/org/team/ports/dto/RemoveTeammateFromTeamRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/org/team/ports/dto/TeamDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/org/team/ports/spi/TeamRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/maven-status/maven-compiler-plugin/compile/default-cli/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/maven-status/maven-compiler-plugin/compile/default-cli/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/test-classes/commands/AddTeammateCommandTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/test-classes/commands/CreateTeamTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/test-classes/commands/DeleteTeamTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/test-classes/commands/RemoveTeammateFromTeamTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/test-classes/utils/RequestProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/test-classes/utils/TeamProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/application/commands/AddTodoCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/application/commands/CreateTodoListCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/application/commands/DeleteTodoCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/application/commands/DeleteTodoLIstCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/application/commands/DoneTodoCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/application/exceptions/TodoListAlreadyExistException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/application/exceptions/TodoListCreationThresholdLimitReachedException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/application/mappers/TodoMappers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/entities/Todo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/entities/TodoList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/port/dto/AddTodoRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/port/dto/CreateTodoListRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/port/dto/DeleteTodoListRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/port/dto/DeleteTodoRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/port/dto/DoneTodoRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/port/dto/TodoDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/port/dto/TodoListDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/port/dto/UseRole$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/port/dto/UseRole$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/port/dto/UseRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/port/dto/UserContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/org/todo/port/spi/TodoListRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/maven-status/maven-compiler-plugin/compile/default-cli/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/maven-status/maven-compiler-plugin/compile/default-cli/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/test-classes/useCases/AddTodoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/test-classes/useCases/CreateTodoListTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/test-classes/useCases/DeleteTodoLIstTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/test-classes/useCases/DeleteTodoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/test-classes/useCases/DoneTodoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/test-classes/utils/DateProviders.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/test-classes/utils/RequestProviders.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/test-classes/utils/TodoListProviders.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/test-classes/utils/TodoProviders.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/test-classes/utils/UserCtxProvider.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/endpoints/CreateTodoListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/endpoints/CreateTodoListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/config/beans/team/TeamModuleBeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/beans/team/TeamModuleBeanConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/query/PingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/entities/team/Teammate.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/entities/team/Teammate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/AppUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/command/AppUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/JpaManagerAccountRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/command/JpaManagerAccountRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/JpaUserRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/command/JpaUserRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/ManagerAccountInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/command/ManagerAccountInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/ManagerAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/command/ManagerAccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/UserInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/command/UserInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/JpaTeamRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/command/JpaTeamRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/JpaTeamRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/command/JpaTeamRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/TeamInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/command/TeamInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/JpaTodoListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/command/JpaTodoListRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/JpaTodoListRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/command/JpaTodoListRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/TodoListInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/command/TodoListInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/security/JpaUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/security/JpaUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/test/java/adapters/JpaTeamRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/test/java/adapters/JpaTeamRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/src/test/java/adapters/JpaTodoListRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/test/java/adapters/JpaTodoListRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/config/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/config/security/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/config/services/ServiceConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/config/services/ServiceConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/config/services/ServiceConfigurationTesting.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/config/services/ServiceConfigurationTesting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/AddTodoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/AddTodoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/AuthenticationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/CreateTodoListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/CreateTodoListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/DeleteTodoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/DeleteTodoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/DeleteTodoListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/DeleteTodoListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/DoneTodoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/endpoints/DoneTodoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/AddTodoRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/AddTodoRequestBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/CreateTodoRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/CreateTodoRequestBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/DeleteTodoRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/DeleteTodoRequestBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/DoneTodoRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/DoneTodoRequestBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/LoginUserRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/LoginUserRequestBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/SignupUserRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/httpRequestPayloads/SignupUserRequestBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/entities/AppUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/entities/Authority.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/entities/Todo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/entities/TodoList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/entities/UserPlan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/mappers/TodoListMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/mappers/TodoMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/repositories/AppUserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/repositories/JpaTodoListRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/repositories/JpaTodoListRepositoryAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/jpa/repositories/TodoListInMemoryRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JpaUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JpaUserDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtConfigurer.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtConfigurer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/UsernamePasswordAuthenticationProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/UsernamePasswordAuthenticationProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/AddTodoTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/AddTodoTransaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/CreateTodoListTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/CreateTodoListTransaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/DeleteTodoListTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/DeleteTodoListTransaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/DeleteTodoTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/DeleteTodoTransaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/DoneTodoTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/DoneTodoTransaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/adapters/JpaTodoListRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/test-classes/adapters/JpaTodoListRepositoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/utils/TodoListProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/test-classes/utils/TodoListProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/utils/TodoProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/test-classes/utils/TodoProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/module-info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/exceptions/TodoListAlreadyExistException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/exceptions/TodoListCreationThresholdLimitReachedException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/mappers/TodoMappers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/useCase/AddTodoCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/useCase/CreateTodoListCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/useCase/DeleteTodoCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/useCase/DeleteTodoLIstCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/application/useCase/DoneTodoCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/entities/Todo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/entities/TodoList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/api/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/AddTodoRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/CreateTodoListRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/DeleteTodoListRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/DeleteTodoRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/DoneTodoRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/TodoDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/TodoListDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/UserContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/UserPlan$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/UserPlan$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/dto/UserPlan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Core/org/todo/port/spi/TodoListRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/test/java/adapters/JpaUserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/test/java/adapters/JpaUserRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/login-view/login-view-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/authentication/views/login-view/login-view-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/login-view/login-view.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/authentication/views/login-view/login-view.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/login-view/login-view/components/login-form/login-form.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/login-view/login-view/components/login-form/login-form.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/login-view/login-view/components/login-form/login-form.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/login-view/login-view/components/login-form/login-form.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/login-view/login-view/login-view.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/login-view/login-view/login-view.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/login-view/login-view/login-view.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/login-view/login-view/login-view.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/signup-view/components/signup-form/signup-form.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/signup-view/components/signup-form/signup-form.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/signup-view/components/signup-form/signup-form.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/signup-view/components/signup-form/signup-form.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/signup-view/signup-view-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/authentication/views/signup-view/signup-view-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/signup-view/signup-view.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/authentication/views/signup-view/signup-view.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/signup-view/signup-view/signup-view.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/signup-view/signup-view/signup-view.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/signup-view/signup-view/signup-view.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/views/signup-view/signup-view/signup-view.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/bootstrap/bootstrap.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/bootstrap/bootstrap.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/bootstrap/view/bootstrap-view.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/bootstrap/view/bootstrap-view.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/bootstrap/view/bootstrap-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/bootstrap/view/bootstrap-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/root/views/dasboard/dasboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/root/views/dasboard/dasboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/services/inMemory/FakeUserContextHolder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/services/inMemory/FakeUserContextHolder.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/services/inMemory/InMemoryTeamCommandHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/services/inMemory/InMemoryTeamCommandHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/services/inMemory/InMemoryTeamQueryHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/services/inMemory/InMemoryTeamQueryHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/services/inMemory/InMemoryTodoCommandHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/services/inMemory/InMemoryTodoCommandHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/services/inMemory/InMemoryTodoQueryHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/services/inMemory/InMemoryTodoQueryHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/shared-view/components/todo-list-list/todo-list-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/shared-view/components/todo-list-list/todo-list-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/shared-view/shared-view.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/shared-view/shared-view.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/team-details-view/components/add-teammate-on-team-select/add-teammate-on-team-select.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/team-details-view/components/add-teammate-on-team-select/add-teammate-on-team-select.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/team-details-view/team-details-view.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/team-details-view/team-details-view.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/team-details-view/team-details-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/team-details-view/team-details-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/team-list-view/components/team-list/team-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/team-list-view/components/team-list/team-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/team-list-view/team-list-view.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/team-list-view/team-list-view.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/team-list-view/team-list-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/team-list-view/team-list-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/teammate-list-view/teammate-list-view.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/teammate-list-view/teammate-list-view.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/teammate-list-view/teammate-list-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/teammate-list-view/teammate-list-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/todo-list-details-view/components/todo-list/todo-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/todo-list-details-view/components/todo-list/todo-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/todo-list-details-view/todo-list-details-view.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/todo-list-details-view/todo-list-details-view.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/todo-list-details-view/todo-list-details-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/todo-list-details-view/todo-list-details-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/todo-list-details-view/todo-list-details-view.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/todo-list-details-view/todo-list-details-view.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/todo-lists-view/todo-lists-view.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/todo-lists-view/todo-lists-view.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/todo-lists-view/todo-lists-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/todo-lists-view/todo-lists-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/views/todo-lists-view/todo-lists-view.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/views/todo-lists-view/todo-lists-view.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/security/query/AuthenticationByToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/security/query/AuthenticationByToken.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/command/AddTeammateOnTeam.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/command/AddTeammateOnTeam.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/command/AddTeammateOnTeam.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/command/AddTeammateOnTeam.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/command/CreateTeam.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/command/CreateTeam.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/command/CreateTeam.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/command/CreateTeam.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/command/JoinTeammate.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/command/JoinTeammate.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/command/JoinTeammate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/command/JoinTeammate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/dto/Team.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/dto/Teammate.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/in-memory/data/team.data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/in-memory/data/team.data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/query/TeamList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/query/TeamList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/query/TeammateList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/query/TeammateList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/spi/TeamCommandHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/spi/TeamCommandHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/spi/TeamQueryHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/spi/TeamQueryHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/command/AddTodo.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/command/AddTodo.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/command/AddTodo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/command/AddTodo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/command/CreateTodoList.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/command/CreateTodoList.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/command/CreateTodoList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/command/CreateTodoList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/command/DeleteTodo.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/command/DeleteTodo.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/command/DeleteTodoList.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/command/DeleteTodoList.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/command/DoneTodo.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/command/DoneTodo.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/dto/Todo.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/dto/TodoList.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/in-memory/data/data.todo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/in-memory/data/data.todo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/query/TodoListById.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/query/TodoListById.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/query/TodoListsByUserId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/query/TodoListsByUserId.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/query/TodosByListId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/query/TodosByListId.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/spi/TodoCommandHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/spi/TodoCommandHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/spi/TodoQueryHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/spi/TodoQueryHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/team-details/Events.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/team-details/Events.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/team-details/TeamDetailsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/team-details/TeamDetailsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/team-details/TeamDetailsState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/team-details/TeamDetailsState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/team-details/TeamDetailsStoreApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/team-details/TeamDetailsStoreApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/team-details/data/inMemory.store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/team-details/data/inMemory.store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/team-list/Events.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/team-list/Events.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/team-list/TeamListReducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/team-list/TeamListReducers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/team-list/TeamListState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/team-list/TeamListState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/team-list/TeamListStoreApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/team-list/TeamListStoreApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/team-list/data/inMemory.store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/team-list/data/inMemory.store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/team-list/team-list-events.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/team-list/team-list-events.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/teammate-list/Events.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/teammate-list/Events.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/teammate-list/TeammateListReducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/teammate-list/TeammateListReducers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/teammate-list/TeammateListState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/teammate-list/TeammateListState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/teammate-list/TeammateListStoreApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/teammate-list/TeammateListStoreApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/teammate-list/data/inMemory.store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/teammate-list/data/inMemory.store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/teammate-list/teammate-list-event.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/teammate-list/teammate-list-event.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/todo-lists/Events.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/todo-lists/Events.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/todo-lists/TodoListStoreApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/todo-lists/TodoListStoreApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/todo-lists/TodoListsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/todo-lists/TodoListsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/todo-lists/TodoListsState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/todo-lists/TodoListsState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/todo-lists/data/inMemory.store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/todo-lists/data/inMemory.store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/todo-lists/todoList-events.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/todo-lists/todoList-events.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/todoList-details/Events.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/todoList-details/Events.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/todoList-details/TodoLisDetailsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/todoList-details/TodoLisDetailsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/todoList-details/TodoListDetailsState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/todoList-details/TodoListDetailsState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/store/todoList-details/functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/store/todoList-details/functions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,14 +280,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="module-info" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -145,22 +309,29 @@
     <option name="showScratchesAndConsoles" value="false" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/home/rahff/Bureau/TodoListJavaExemple",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/rahff/Bureau/TodoListJavaExemple/Web/src/main/java/org/example/persistance/repositories/todo/query&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.queryTeam.dto" />
+      <recent name="org.queryTeam.spi" />
+      <recent name="org.queryTeam.model" />
       <recent name="org.team.ports.dto" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/query" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.team.ports.dto" />
@@ -174,17 +345,17 @@
       <command value="mvn clean" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RemoveTeammateFromTeamTest.AManagerRemoveATeammateFromATeam">
-    <configuration name="AddTeammateCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TeamListViewQueryTest">
+    <configuration name="AddTeammateCommandTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Team" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="useCases.*" />
+          <option name="PATTERN" value="commands.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="useCases" />
-      <option name="MAIN_CLASS_NAME" value="useCases.AddTeammateCommandTest" />
+      <option name="PACKAGE_NAME" value="commands" />
+      <option name="MAIN_CLASS_NAME" value="commands.AddTeammateCommandTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -203,21 +374,6 @@
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateTeamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Team" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="useCases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="useCases" />
-      <option name="MAIN_CLASS_NAME" value="useCases.CreateTeamTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -253,16 +409,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TeamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Team" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="useCases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="useCases" />
-      <option name="MAIN_CLASS_NAME" value="useCases.TeamTest" />
+    <configuration name="TeamDetailsViewQueryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="QueryTeam" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TeamDetailsViewQueryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TeamListViewQueryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="QueryTeam" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TeamListViewQueryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -283,19 +442,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.CoreTodoApplication" />
-      <item itemvalue="JUnit.AddTeammateCommandTest" />
-      <item itemvalue="JUnit.CreateTeamTest" />
+      <item itemvalue="JUnit.TeamListViewQueryTest" />
+      <item itemvalue="JUnit.AddTeammateCommandTest (1)" />
+      <item itemvalue="JUnit.TeamDetailsViewQueryTest" />
       <item itemvalue="JUnit.RemoveTeammateFromTeamTest" />
       <item itemvalue="JUnit.RemoveTeammateFromTeamTest.AManagerRemoveATeammateFromATeam" />
-      <item itemvalue="JUnit.TeamTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TeamListViewQueryTest" />
+        <item itemvalue="JUnit.TeamDetailsViewQueryTest" />
+        <item itemvalue="JUnit.AddTeammateCommandTest (1)" />
         <item itemvalue="JUnit.RemoveTeammateFromTeamTest.AManagerRemoveATeammateFromATeam" />
         <item itemvalue="JUnit.RemoveTeammateFromTeamTest" />
-        <item itemvalue="JUnit.TeamTest" />
-        <item itemvalue="JUnit.AddTeammateCommandTest" />
-        <item itemvalue="JUnit.CreateTeamTest" />
       </list>
     </recent_temporary>
   </component>

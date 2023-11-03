@@ -9,7 +9,6 @@ public class Teammate {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", nullable = false)
   private Long id;
-
   private String ref;
 
   public Teammate(String ref) {
@@ -31,7 +30,4 @@ public class Teammate {
     return ref;
   }
 
-  public void setRef(String ref) {
-    this.ref = ref;
-  }
 }

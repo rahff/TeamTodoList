@@ -3,7 +3,6 @@ package org.security.entities;
 import org.security.ports.dto.UserDto;
 
 public class User {
-
   private final String id;
   private String email;
   private String name;

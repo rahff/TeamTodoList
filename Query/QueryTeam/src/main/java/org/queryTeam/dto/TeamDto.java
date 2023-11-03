@@ -1,4 +1,4 @@
-package org.queryTeam.model;
+package org.queryTeam.dto;
 
 import java.util.List;
 

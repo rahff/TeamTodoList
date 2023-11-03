@@ -1,4 +1,4 @@
-package utils;
+package org.security.utils;
 
 import org.security.ports.dto.UserDto;
 

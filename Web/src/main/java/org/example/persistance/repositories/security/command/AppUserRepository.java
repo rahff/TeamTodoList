@@ -1,4 +1,4 @@
-package org.example.persistance.repositories.security;
+package org.example.persistance.repositories.security.command;
 
 import org.example.persistance.entities.security.AppUser;
 import org.springframework.data.jpa.repository.JpaRepository;

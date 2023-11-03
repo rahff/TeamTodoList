@@ -1,5 +1,9 @@
 package org.example.config.beans.team;
 
+import org.queryTeam.api.TeamDetailsViewQuery;
+import org.queryTeam.spi.TeamDataAccess;
+import org.queryTeam.spi.TodoListDataAccess;
+import org.queryTeam.spi.UserDataAccess;
 import org.shared.api.Command;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +24,8 @@ public class TeamModuleBeanConfig {
   @Autowired
   private TeamRepository teamRepository;
 
+
+
   @Bean
   public Command<CreateTeamRequest> createTeamRequestCommand(){
     return new CreateTeam(teamRepository);
@@ -38,4 +44,6 @@ public class TeamModuleBeanConfig {
   Command<DeleteTeamRequest> deleteTeamRequestCommand(){
     return new DeleteTeam(teamRepository);
   }
+
+
 }

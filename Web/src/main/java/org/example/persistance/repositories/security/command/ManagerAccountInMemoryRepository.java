@@ -1,4 +1,4 @@
-package org.example.persistance.repositories.security;
+package org.example.persistance.repositories.security.command;
 
 import org.security.ports.spi.AccountRepository;
 import org.springframework.context.annotation.Profile;

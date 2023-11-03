@@ -1,4 +1,4 @@
-package org.example.persistance.repositories.security;
+package org.example.persistance.repositories.security.command;
 
 
 import org.security.ports.dto.UserDto;
@@ -8,7 +8,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

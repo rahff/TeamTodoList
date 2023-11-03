@@ -1,4 +1,4 @@
-package org.example.persistance.repositories.todo;
+package org.example.persistance.repositories.todo.command;
 
 import org.example.persistance.entities.todo.TodoList;
 import org.springframework.data.jpa.repository.JpaRepository;

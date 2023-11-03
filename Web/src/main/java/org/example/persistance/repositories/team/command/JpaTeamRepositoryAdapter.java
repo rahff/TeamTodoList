@@ -1,7 +1,8 @@
-package org.example.persistance.repositories.team;
+package org.example.persistance.repositories.team.command;
 
 import org.example.persistance.entities.team.Team;
 import org.example.persistance.mappers.team.TeamMapper;
+import org.example.persistance.repositories.team.command.JpaTeamRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 import org.team.ports.dto.TeamDto;

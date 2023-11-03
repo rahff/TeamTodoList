@@ -4,5 +4,6 @@ module Security {
   exports org.security.application;
   exports org.security.ports.api;
   exports org.security.exceptions;
+  exports org.security.utils;
   requires transitive Shared;
 }

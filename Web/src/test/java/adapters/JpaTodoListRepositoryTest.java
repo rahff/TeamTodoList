@@ -1,8 +1,6 @@
 package adapters;
 
 import org.example.Main;
-import org.example.persistance.entities.todo.TodoList;
-import org.example.persistance.repositories.todo.JpaTodoListRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

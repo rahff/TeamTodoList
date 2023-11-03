@@ -3,7 +3,7 @@ package adapters;
 
 import org.example.Main;
 import org.example.persistance.mappers.team.TeamMapper;
-import org.example.persistance.repositories.team.JpaTeamRepository;
+import org.example.persistance.repositories.team.command.JpaTeamRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

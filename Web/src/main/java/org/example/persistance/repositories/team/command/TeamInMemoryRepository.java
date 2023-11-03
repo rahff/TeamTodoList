@@ -1,4 +1,4 @@
-package org.example.persistance.repositories.team;
+package org.example.persistance.repositories.team.command;
 
 
 import org.springframework.context.annotation.Profile;

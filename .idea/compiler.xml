@@ -8,9 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Todo" />
         <module name="Team" />
+        <module name="QueryTeam" />
         <module name="Security" />
         <module name="Shared" />
-        <module name="Query" />
         <module name="TodoList_Web" />
       </profile>
     </annotationProcessing>

@@ -1,4 +1,3 @@
 package org.queryTeam.dto;
 
-public record TodoListDto() {
-}
+public record TodoListDto(String id, String name, String createdAt) {}

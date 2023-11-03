@@ -1,4 +1,4 @@
-package org.example.persistance.repositories.todo;
+package org.example.persistance.repositories.todo.command;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;

@@ -2,7 +2,7 @@ package adapters;
 
 
 import org.example.Main;
-import org.example.persistance.repositories.security.AppUserRepository;
+import org.example.persistance.repositories.security.command.AppUserRepository;
 import org.junit.jupiter.api.Test;
 import org.security.ports.dto.UserDto;
 import org.security.ports.spi.UserRepository;

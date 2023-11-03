@@ -27,7 +27,7 @@ public class CreateUserManager extends UserSecurity implements Signup {
 
   private UserDto initializeUserWithProperties(SignupUserRequest signupUserRequest){
     return new UserDto(
-      signupUserRequest.id(),
+      signupUserRequest.userId(),
       signupUserRequest.email(),
       signupUserRequest.name(),
       signupUserRequest.password(),

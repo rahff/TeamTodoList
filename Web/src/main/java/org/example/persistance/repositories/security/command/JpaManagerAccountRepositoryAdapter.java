@@ -1,4 +1,4 @@
-package org.example.persistance.repositories.security;
+package org.example.persistance.repositories.security.command;
 
 import org.example.persistance.entities.security.ManagerAccount;
 import org.security.ports.spi.AccountRepository;

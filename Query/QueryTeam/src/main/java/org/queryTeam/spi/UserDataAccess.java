@@ -1,2 +1,8 @@
-package org.queryTeam.spi;public interface UserDataAccess {
+package org.queryTeam.spi;
+
+import org.queryTeam.dto.TeammateDto;
+
+public interface UserDataAccess {
+
+    TeammateDto getTeammateByUserId(String userId);
 }

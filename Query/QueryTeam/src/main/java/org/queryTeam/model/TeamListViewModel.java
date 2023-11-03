@@ -1,4 +1,6 @@
 package org.queryTeam.model;
 
-public record TeamListViewModel() {
+import java.util.List;
+
+public record TeamListViewModel(List<TeamCard> list) {
 }
