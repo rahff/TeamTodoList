@@ -1,6 +1,7 @@
 package org.example.controllers.api.team;
 
 
+import org.example.controllers.api.todo.jsonPayloads.response.IdJson;
 import org.example.transactions.team.DeleteTeamTransaction;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,9 +20,10 @@ public class DeleteTeamController {
   }
 
   @DeleteMapping("/delete-team/{teamId}")
-  public void deleteTeam(@PathVariable("teamId") String teamId){
+  public IdJson deleteTeam(@PathVariable("teamId") String teamId){
     try{
       transaction.execute(new DeleteTeamRequest(teamId));
+      return new IdJson(teamId);
     }catch (Exception e){
       throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, e.getMessage());
     }

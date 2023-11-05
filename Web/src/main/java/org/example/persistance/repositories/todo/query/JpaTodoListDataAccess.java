@@ -1,22 +1,25 @@
 package org.example.persistance.repositories.todo.query;
 
-import org.queryTeam.dto.TodoListDto;
-import org.queryTeam.spi.TodoListDataAccess;
+
+import org.query.todo.dto.TodoListDto;
+import org.query.todo.spi.TodoListDataAccess;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Repository
 @Profile("prod")
 public class JpaTodoListDataAccess implements TodoListDataAccess {
 
-    public List<TodoListDto> getTodoListsByTeamId(String TeamId) {
-        return null;
+    public Optional<TodoListDto> getTodoListById(String id) {
+        return Optional.empty();
     }
 
-    public int getTodoListsCountByTeamId(String TeamId) {
-        return 0;
+    @Override
+    public List<TodoListDto> getUserTodoList(String userId) {
+        return null;
     }
 }

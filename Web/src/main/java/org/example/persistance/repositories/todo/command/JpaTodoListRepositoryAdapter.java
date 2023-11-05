@@ -26,7 +26,7 @@ public class JpaTodoListRepositoryAdapter implements TodoListRepository {
 
   @Override
   public Optional<TodoListDto> getTodoListByName(String userId, String todoListName) {
-    return todoListRepository.findByUserIdAndName(userId, todoListName)
+    return todoListRepository.findByRefAndName(userId, todoListName)
       .map(TodoList::toDto);
   }
 
@@ -37,7 +37,7 @@ public class JpaTodoListRepositoryAdapter implements TodoListRepository {
 
   @Override
   public int getTodoListCount(String userId) {
-    return todoListRepository.countByUserId(userId);
+    return todoListRepository.countByRef(userId);
   }
 
   @Override

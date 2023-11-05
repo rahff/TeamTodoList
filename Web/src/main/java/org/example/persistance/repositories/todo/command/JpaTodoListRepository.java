@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface JpaTodoListRepository extends JpaRepository<TodoList, String> {
   Optional<TodoList> findById(String id);
-  Optional<TodoList> findByUserIdAndName(String userId, String name);
-  int countByUserId(String userId);
+  Optional<TodoList> findByRefAndName(String userId, String name);
+  int countByRef(String userId);
 }

@@ -1,6 +1,7 @@
 package org.example.controllers.api.todo;
 
 
+import org.example.controllers.api.todo.jsonPayloads.response.IdJson;
 import org.shared.api.Command;
 import org.todo.port.dto.DeleteTodoListRequest;
 import org.springframework.http.HttpStatus;
@@ -19,10 +20,11 @@ public class DeleteTodoListController {
   }
 
   @DeleteMapping("/delete-todo-list/{todoListId}")
-  public void deleteTodoList(@PathVariable("todoListId") String todoListId){
+  public IdJson deleteTodoList(@PathVariable("todoListId") String todoListId){
     try{
       var request = new DeleteTodoListRequest(todoListId);
       command.execute(request);
+      return new IdJson(todoListId);
     }catch (Exception e){
       throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, e.getMessage());
     }

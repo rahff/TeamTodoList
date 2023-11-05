@@ -1,9 +1,5 @@
 package org.example.config.beans.team;
 
-import org.queryTeam.api.TeamDetailsViewQuery;
-import org.queryTeam.spi.TeamDataAccess;
-import org.queryTeam.spi.TodoListDataAccess;
-import org.queryTeam.spi.UserDataAccess;
 import org.shared.api.Command;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

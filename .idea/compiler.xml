@@ -8,12 +8,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Todo" />
         <module name="Team" />
-        <module name="QueryTeam" />
         <module name="Security" />
         <module name="Shared" />
         <module name="TodoList_Web" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="CommonQuery" target="17" />
+      <module name="QueryTeam" target="17" />
+      <module name="TodoQuery" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

@@ -1,14 +1,14 @@
 package org.example.controllers.api.todo;
 
 
-import org.example.controllers.api.todo.jsonPayloads.CreateTodoRequestBody;
+import org.example.controllers.api.todo.jsonPayloads.request.CreateTodoRequestBody;
+import org.example.controllers.api.todo.jsonPayloads.response.TodoListCardJson;
 import org.example.transactions.todo.CreateTodoListTransaction;
 import org.springframework.http.HttpStatus;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +17,7 @@ import org.todo.port.dto.CreateTodoListRequest;
 import org.todo.port.dto.UserContext;
 import org.todo.port.dto.UseRole;
 
+import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 
 @RestController
@@ -28,10 +29,11 @@ public class CreateTodoListController {
   }
 
   @PostMapping("/create-todo-list")
-  public void createTodoList(@RequestBody CreateTodoRequestBody body, @AuthenticationPrincipal UserDetails user) {
+  public TodoListCardJson createTodoList(@RequestBody CreateTodoRequestBody body, @AuthenticationPrincipal UserDetails user) {
     try{
       var request = createRequest(user, body);
       transaction.execute(request);
+      return new TodoListCardJson(body.id(), body.todoListName(), body.createdAt().format(DateTimeFormatter.ISO_DATE));
     }catch (Exception e){
       throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, e.getMessage());
     }
@@ -39,6 +41,6 @@ public class CreateTodoListController {
 
   private CreateTodoListRequest createRequest(UserDetails user, CreateTodoRequestBody body){
     var userRole = user.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.joining());
-    return new CreateTodoListRequest(new UserContext(user.getUsername(), UseRole.valueOf(userRole) ), body.id(), body.todoListName(), body.ref());
+    return new CreateTodoListRequest(new UserContext(user.getUsername(), UseRole.valueOf(userRole) ), body.id(), body.todoListName(), body.ref(), body.createdAt());
   }
 }

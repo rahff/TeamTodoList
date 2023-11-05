@@ -1,7 +1,8 @@
 package org.example.controllers.api.todo;
 
+import org.example.controllers.api.todo.jsonPayloads.response.IdJson;
 import org.todo.port.dto.DeleteTodoRequest;
-import org.example.controllers.api.todo.jsonPayloads.DeleteTodoRequestBody;
+import org.example.controllers.api.todo.jsonPayloads.request.DeleteTodoRequestBody;
 import org.example.transactions.todo.DeleteTodoTransaction;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -19,10 +20,11 @@ public class DeleteTodoController {
   }
 
   @PutMapping("delete-todo")
-  public void deleteTodo(@RequestBody DeleteTodoRequestBody body) {
+  public IdJson deleteTodo(@RequestBody DeleteTodoRequestBody body) {
     try{
       var request = new DeleteTodoRequest(body.todoListId(), body.todoId());
       transaction.execute(request);
+      return new IdJson(body.todoId());
     }catch (Exception e){
       throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, e.getMessage());
     }

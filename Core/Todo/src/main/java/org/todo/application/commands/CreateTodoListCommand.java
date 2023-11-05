@@ -22,7 +22,7 @@ public class CreateTodoListCommand implements Command<CreateTodoListRequest> {
   public void execute(CreateTodoListRequest request) {
     verifyUniquenessOfTodoList(request);
     verifyTodoListCreationLimit(request.userCtx());
-    repository.saveTodoList(new TodoListDto(request.todoListId(), request.ref(), request.todoListName(), List.of()));
+    repository.saveTodoList(new TodoListDto(request.todoListId(), request.ref(), request.todoListName(), List.of(), request.createdAt()));
   }
 
   private void verifyTodoListCreationLimit(UserContext userContext){

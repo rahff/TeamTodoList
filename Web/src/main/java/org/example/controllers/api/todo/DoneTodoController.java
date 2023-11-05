@@ -1,6 +1,7 @@
 package org.example.controllers.api.todo;
 
-import org.example.controllers.api.todo.jsonPayloads.DoneTodoRequestBody;
+import org.example.controllers.api.todo.jsonPayloads.request.DoneTodoRequestBody;
+import org.example.controllers.api.todo.jsonPayloads.response.IdJson;
 import org.todo.port.dto.DoneTodoRequest;
 import org.example.transactions.todo.DoneTodoTransaction;
 import org.springframework.http.HttpStatus;
@@ -19,10 +20,11 @@ public class DoneTodoController {
   }
 
   @PutMapping("/done-todo")
-  public void doneTodo(@RequestBody DoneTodoRequestBody body) {
+  public IdJson doneTodo(@RequestBody DoneTodoRequestBody body) {
     try{
       var request = new DoneTodoRequest(body.todoListId(), body.todoId());
       transaction.execute(request);
+      return new IdJson(body.todoId());
     }catch (Exception e){
       throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, e.getMessage());
     }

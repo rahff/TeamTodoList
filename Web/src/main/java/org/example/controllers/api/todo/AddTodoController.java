@@ -1,6 +1,7 @@
 package org.example.controllers.api.todo;
 
-import org.example.controllers.api.todo.jsonPayloads.AddTodoRequestBody;
+import org.example.controllers.api.todo.jsonPayloads.request.AddTodoRequestBody;
+import org.example.controllers.api.todo.jsonPayloads.response.TodoJson;
 import org.example.transactions.todo.AddTodoTransaction;
 import org.todo.port.dto.AddTodoRequest;
 import org.todo.port.dto.TodoDto;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.HttpClientErrorException;
 
-import java.time.LocalDate;
 
 @RestController
 public class AddTodoController {
@@ -22,11 +22,12 @@ public class AddTodoController {
   }
 
   @PostMapping("/add-todo")
-  public void addTodo(@RequestBody AddTodoRequestBody body) {
+  public TodoJson addTodo(@RequestBody AddTodoRequestBody body) {
     try{
-      var todo = new TodoDto(body.todoId(), body.description(), false, body.deadline(), LocalDate.now());
+      var todo = new TodoDto(body.todoId(), body.description(), false, body.deadline(), body.createdAt());
       var request = new AddTodoRequest(body.listId(), todo);
       transaction.execute(request);
+      return TodoJson.from(todo, body.listId());
     }catch (Exception e){
       throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, e.getMessage());
     }

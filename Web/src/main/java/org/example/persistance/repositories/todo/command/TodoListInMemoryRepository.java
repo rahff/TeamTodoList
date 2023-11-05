@@ -20,7 +20,7 @@ public class TodoListInMemoryRepository implements TodoListRepository {
   public TodoListInMemoryRepository(){
     var todos = new ArrayList<TodoDto>();
     todos.add(new TodoDto("1","do something", false, LocalDate.of(2023, 11, 2), LocalDate.now()));
-    data.add(new TodoListDto("1", "userId", "default todo list", todos));
+    data.add(new TodoListDto("1", "userId", "default todo list", todos, LocalDate.of(2023, 11, 5)));
   }
   public void saveTodoList(TodoListDto todoList) {
     data.add(todoList);
@@ -28,7 +28,7 @@ public class TodoListInMemoryRepository implements TodoListRepository {
 
   public Optional<TodoListDto> getTodoListByName(String userId, String todoListName) {
     return data.stream()
-      .filter(todoList -> todoList.userId().equals(userId))
+      .filter(todoList -> todoList.ref().equals(userId))
       .filter(todoList -> todoList.todoListName().equals(todoListName)).findFirst();
   }
 
@@ -41,7 +41,7 @@ public class TodoListInMemoryRepository implements TodoListRepository {
 
   public int getTodoListCount(String userId) {
      return (int) data.stream()
-       .filter(todoList -> todoList.userId().equals(userId)).count();
+       .filter(todoList -> todoList.ref().equals(userId)).count();
   }
 
   public void delete(String id) {

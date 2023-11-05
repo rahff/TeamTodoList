@@ -1,10 +1,11 @@
 package org.todo.port.dto;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-public record TodoListDto(String listId, String ref, String todoListName, List<TodoDto> list) {
+public record TodoListDto(String listId, String ref, String todoListName, List<TodoDto> list, LocalDate createdAt) {
 
   @Override
   public boolean equals(Object o) {
