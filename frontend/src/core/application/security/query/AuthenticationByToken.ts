@@ -1,4 +1,4 @@
-import { Observable, catchError, map } from "rxjs";
+import { Observable, catchError, map, of, switchMap } from "rxjs";
 import { Query } from "../../shared/query/Query";
 import { Authentication } from "../dto/Authentication";
 import { AuthenticationGateway } from "../spi/AuthenticationGateway";
@@ -16,8 +16,13 @@ export class AuthenticationByToken extends Query<Authentication> {
     public authenticate(): Observable<Result<Authentication>> {
         const token = this.userContextHolder.getToken();
         return this.authenticationGateway.authenticateByToken(token)
-        .pipe(map(this.onSuccess), catchError(this.handleError.bind(this)));
+        .pipe(switchMap(this.onSuccesResult.bind(this)), catchError(this.handleError.bind(this)));
     }
+
+    private onSuccesResult(authentication: Authentication): Observable<Result<Authentication>> {
+        this.userContextHolder.save(authentication);
+        return of(this.onSuccess(authentication));
+     }
 
     private handleError(error: Error): Observable<Result<Authentication>> {
         if(this.needRefreshToken(error)) return this.refreshToken(error.refreshToken);

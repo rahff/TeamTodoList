@@ -36,11 +36,15 @@ public class TeamQueryBeanConfig {
     }
 
     @Bean
-    TeammateAddedQuery teammateAddedQuery(){
-        return new TeammateAddedQuery(userDataAccess);
+    TeammatesAddedQuery teammateAddedQuery(){
+        return new TeammatesAddedQuery(userDataAccess);
     }
     @Bean
     TeamCreatedQuery teamCreatedQuery(){
         return new TeamCreatedQuery(teamDataAccess, todoListDataAccess);
+    }
+    @Bean
+    TeammateCreatedQuery teammateCreatedQuery() {
+        return new TeammateCreatedQuery(userDataAccess);
     }
 }

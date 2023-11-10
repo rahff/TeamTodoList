@@ -5,18 +5,23 @@ import org.example.Main;
 import org.example.controllers.api.team.jsonPayloads.response.TeamJson;
 import org.example.controllers.api.team.jsonPayloads.response.TeammateJson;
 import org.example.controllers.api.todo.jsonPayloads.response.IdJson;
+import org.example.email.FakeEmailService;
 import org.junit.jupiter.api.Test;
 
+import org.shared.spi.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
 import org.team.ports.dto.*;
 
 import java.util.List;
 
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -26,6 +31,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ActiveProfiles("test")
 public class TeamControllerTest extends BaseControllerTest {
 
+  @Autowired
+  private UserRepository userRepository;
+  @Autowired
+  private FakeEmailService emailService;
   @Test
   void  createTeam() throws Exception {
     var body = objectMapper.writeValueAsString(new CreateTeamRequest("teamId1", "Team1", List.of("teammate1", "teammate2"), "accountId"));
@@ -56,5 +65,18 @@ public class TeamControllerTest extends BaseControllerTest {
     var expected = objectMapper.writeValueAsString(new IdJson("teamId"));
     mockMvc.perform(delete("/delete-team/teamId"))
       .andExpect(status().isOk()).andExpect(content().json(expected));
+  }
+
+  @Test
+  @WithMockUser(username = "manager@gmail.com", authorities = "MANAGER")
+  void  addTeammateOnOrganization() throws Exception {
+    var body = objectMapper.writeValueAsString(new CreateTeammateRequest("teammateId","teammate@gmail.com", "Mikki", "accountId"));
+    var expected = objectMapper.writeValueAsString(new TeammateJson("teammateId", "teammateNameteammateId", "teammateteammateId@gmail.com", null));
+    mockMvc.perform(post("/add-teammate").contentType(MediaType.APPLICATION_JSON).content(body))
+            .andExpect(status().isOk()).andExpect(content().json(expected));
+    var teammate = userRepository.findByEmail("teammate@gmail.com").orElse(null);
+    assertNotNull(teammate);
+    assertEquals("TEAMMATE", teammate.role());
+    assertTrue(emailService.verify("teammate@gmail.com", "Rahff"));
   }
 }

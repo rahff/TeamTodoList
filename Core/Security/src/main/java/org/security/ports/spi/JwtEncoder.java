@@ -1,6 +1,8 @@
 package org.security.ports.spi;
 
+import org.security.ports.dto.JwtTokenPair;
+
 public interface JwtEncoder {
-  String encode(String userEmail, String role);
+  JwtTokenPair encode(String userEmail, String role);
 
 }

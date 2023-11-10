@@ -7,6 +7,7 @@ import org.security.ports.api.CreateAccount;
 import org.security.ports.api.Signup;
 import org.security.ports.api.UsernamePasswordAuthentication;
 import org.security.ports.spi.*;
+import org.shared.spi.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +17,9 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.team.application.commands.CreateTeammate;
+import org.team.ports.api.AddTeammate;
+import org.team.ports.spi.CodeGenerator;
 
 
 @EnableWebSecurity
@@ -28,7 +32,7 @@ public class SecurityConfig {
   @Autowired
   UserRepository userRepository;
   @Autowired
-  SecurityTokenService jwtService;
+  TokenService jwtService;
   @Autowired
   AccountRepository accountRepository;
 
@@ -48,10 +52,10 @@ public class SecurityConfig {
     return new BCryptPasswordEncoder();
   }
 
-  @Bean
+  /*@Bean
   CodeGenerator codeGenerator(){
     return new TeammateCodeGenerator(passwordEncoder());
-  }
+  }*/
 
   @Bean
   PasswordSecurity passwordSecurity(){
@@ -70,11 +74,6 @@ public class SecurityConfig {
   @Bean
   CreateAccount createAccount(){
     return new CreateManagerAccount(accountRepository);
-  }
-
-  @Bean
-  AddTeammate addTeammate(){
-    return new CreateTeammate(userRepository, codeGenerator());
   }
 
   @Bean

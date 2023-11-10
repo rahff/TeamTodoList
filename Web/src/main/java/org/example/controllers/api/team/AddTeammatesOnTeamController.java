@@ -2,7 +2,7 @@ package org.example.controllers.api.team;
 
 import org.example.controllers.api.team.jsonPayloads.response.TeammateJson;
 import org.example.transactions.team.AddTeammateOnTeamTransaction;
-import org.query.team.api.TeammateAddedQuery;
+import org.query.team.api.TeammatesAddedQuery;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,9 +16,9 @@ import java.util.List;
 public class AddTeammatesOnTeamController {
 
   private final AddTeammateOnTeamTransaction transaction;
-  private final TeammateAddedQuery teammateAddedQuery;
+  private final TeammatesAddedQuery teammateAddedQuery;
 
-  public AddTeammatesOnTeamController(AddTeammateOnTeamTransaction transaction, TeammateAddedQuery teammateAddedQuery) {
+  public AddTeammatesOnTeamController(AddTeammateOnTeamTransaction transaction, TeammatesAddedQuery teammateAddedQuery) {
     this.transaction = transaction;
     this.teammateAddedQuery = teammateAddedQuery;
   }

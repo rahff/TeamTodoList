@@ -14,7 +14,7 @@ describe('BootstrapComponent', () => {
   let authenticationByToken: AuthenticationByToken;
   let userContextHolder: jasmine.SpyObj<UserContextHolder>
   beforeEach(() => {
-    userContextHolder = jasmine.createSpyObj("UserContextHolder", ["getToken"])
+    userContextHolder = jasmine.createSpyObj("UserContextHolder", ["getToken", "save"])
     authenticationByToken = new AuthenticationByToken(new InMemoryEmailPasswordAuthentication(), userContextHolder);
     router = jasmine.createSpyObj("Router", ["navigateByUrl"]);
     component = new BootstrapViewComponent(authenticationByToken, router);

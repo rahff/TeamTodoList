@@ -2,8 +2,8 @@ package org.example.persistance.repositories.security.command;
 
 import org.example.persistance.entities.security.AppUser;
 import org.example.persistance.mappers.security.UserMapper;
-import org.security.ports.dto.UserDto;
-import org.security.ports.spi.UserRepository;
+import org.shared.dto.UserDto;
+import org.shared.spi.UserRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 

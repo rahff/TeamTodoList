@@ -1,7 +1,7 @@
 package org.example.security;
 
-import org.security.ports.dto.GeneratedCodePair;
-import org.security.ports.spi.CodeGenerator;
+import org.team.ports.dto.GeneratedCodePair;
+import org.team.ports.spi.CodeGenerator;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

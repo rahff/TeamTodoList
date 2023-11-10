@@ -1,8 +1,8 @@
 package org.example.persistance.repositories.security.command;
 
 
-import org.security.ports.dto.UserDto;
-import org.security.ports.spi.UserRepository;
+import org.shared.dto.UserDto;
+import org.shared.spi.UserRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,7 +19,7 @@ public class UserInMemoryRepository implements UserRepository {
 
   public UserInMemoryRepository() {
     data = new ArrayList<>();
-    data.addAll(List.of(UserProvider.manager(), UserProvider.teammate()));
+    data.addAll(List.of(UserProvider.manager(), UserProvider.teammate(), UserProvider.teammate2()));
 
   }
 
@@ -50,5 +50,9 @@ class UserProvider {
 
   public static UserDto teammate(){
     return new UserDto("userId", "teammate@gmail.com", "Mikki", passwordEncoder.encode("12345"), "TEAMMATE", "accountId");
+  }
+
+  public static UserDto teammate2(){
+    return new UserDto("userId2", "teammate2@gmail.com", "Jacques", passwordEncoder.encode("12345"), "TEAMMATE", "accountId");
   }
 }

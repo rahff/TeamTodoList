@@ -3,14 +3,13 @@ package org.example.transactions.security;
 import jakarta.transaction.Transactional;
 import org.example.email.EmailService;
 import org.example.email.JoiningMessageParameters;
-import org.security.ports.dto.CreateTeammateRequest;
-import org.security.ports.spi.AddTeammate;
+import org.team.ports.dto.CreateTeammateRequest;
+import org.team.ports.api.AddTeammate;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CreateTeammateTransaction {
   private final AddTeammate addTeammate;
-  private final String ROLE = "TEAMMATE";
   private final EmailService emailService;
 
   public CreateTeammateTransaction(AddTeammate addTeammate, EmailService emailService) {

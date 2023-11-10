@@ -4,10 +4,10 @@ package org.security.application;
 import org.security.ports.api.Signup;
 import org.security.ports.dto.JwtAuthenticationResult;
 import org.security.ports.dto.SignupUserRequest;
-import org.security.ports.dto.UserDto;
+import org.shared.dto.UserDto;
 import org.security.ports.spi.JwtEncoder;
 import org.security.ports.spi.PasswordSecurity;
-import org.security.ports.spi.UserRepository;
+import org.shared.spi.UserRepository;
 
 public class CreateUserManager extends UserSecurity implements Signup {
   private final String DEFAULT_ROLE = "MANAGER";

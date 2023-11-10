@@ -1,6 +1,6 @@
 package org.security.entities;
 
-import org.security.ports.dto.UserDto;
+import org.shared.dto.UserDto;
 
 public class User {
   private final String id;

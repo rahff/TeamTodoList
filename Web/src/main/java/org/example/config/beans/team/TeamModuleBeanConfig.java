@@ -1,17 +1,17 @@
 package org.example.config.beans.team;
 
 import org.shared.api.Command;
+import org.shared.spi.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.team.application.commands.AddTeammatesOnTeam;
-import org.team.application.commands.CreateTeam;
-import org.team.application.commands.DeleteTeam;
-import org.team.application.commands.RemoveTeammateFromTeam;
+import org.team.application.commands.*;
+import org.team.ports.api.AddTeammate;
 import org.team.ports.dto.AddTeammatesOnTeamRequest;
 import org.team.ports.dto.CreateTeamRequest;
 import org.team.ports.dto.DeleteTeamRequest;
 import org.team.ports.dto.RemoveTeammateFromTeamRequest;
+import org.team.ports.spi.CodeGenerator;
 import org.team.ports.spi.TeamRepository;
 
 @Configuration
@@ -20,8 +20,11 @@ public class TeamModuleBeanConfig {
   @Autowired
   private TeamRepository teamRepository;
 
+  @Autowired
+  UserRepository userRepository;
 
-
+  @Autowired
+  CodeGenerator codeGenerator;
   @Bean
   public Command<CreateTeamRequest> createTeamRequestCommand(){
     return new CreateTeam(teamRepository);
@@ -41,5 +44,8 @@ public class TeamModuleBeanConfig {
     return new DeleteTeam(teamRepository);
   }
 
-
+  @Bean
+  AddTeammate addTeammate(){
+    return new CreateTeammate(userRepository, codeGenerator);
+  }
 }

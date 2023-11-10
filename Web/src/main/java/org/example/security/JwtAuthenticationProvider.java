@@ -14,10 +14,10 @@ import java.util.List;
 @Service
 public class JwtAuthenticationProvider implements AuthenticationProvider {
 
-  private final SecurityTokenService jwtService;
+  private final TokenService jwtService;
   private final UserDetailsService userDetailsService;
 
-  public JwtAuthenticationProvider(SecurityTokenService jwtService, UserDetailsService userDetailsService) {
+  public JwtAuthenticationProvider(TokenService jwtService, UserDetailsService userDetailsService) {
     this.jwtService = jwtService;
     this.userDetailsService = userDetailsService;
   }
@@ -27,7 +27,7 @@ public class JwtAuthenticationProvider implements AuthenticationProvider {
     var token = authentication.getCredentials();
     var jwtClaims = jwtService.decode(token.toString());
     var userEmail = jwtClaims.get("username");
-    var userPlan = jwtClaims.get("userPlan");
+    var userPlan = jwtClaims.get("userRole");
     var principal = userDetailsService.loadUserByUsername(userEmail.toString());
     return new JwtAuthenticationToken(principal, null, List.of(new SimpleGrantedAuthority(userPlan.toString())));
   }

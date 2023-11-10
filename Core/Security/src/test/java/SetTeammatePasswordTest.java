@@ -3,10 +3,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.security.application.SetTeammatePassword;
 import org.security.ports.dto.ChangePasswordRequest;
-import org.security.ports.dto.UserDto;
+import org.shared.dto.UserDto;
 import org.security.ports.spi.FakePasswordEncoder;
 import org.security.ports.spi.PasswordSecurity;
-import org.security.ports.spi.UserRepository;
+import org.shared.spi.UserRepository;
 
 import java.util.Optional;
 

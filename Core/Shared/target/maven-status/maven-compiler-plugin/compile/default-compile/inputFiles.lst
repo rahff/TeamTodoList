@@ -1,0 +1,5 @@
+/home/rahff/Bureau/TodoListJavaExemple/Core/Shared/src/main/java/module-info.java
+/home/rahff/Bureau/TodoListJavaExemple/Core/Shared/src/main/java/org/shared/api/Command.java
+/home/rahff/Bureau/TodoListJavaExemple/Core/Shared/src/main/java/org/shared/spi/DateProvider.java
+/home/rahff/Bureau/TodoListJavaExemple/Core/Shared/src/main/java/org/shared/dto/UserDto.java
+/home/rahff/Bureau/TodoListJavaExemple/Core/Shared/src/main/java/org/shared/spi/UserRepository.java

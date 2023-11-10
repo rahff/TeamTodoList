@@ -1,7 +1,7 @@
 package org.example.persistance.entities.security;
 
 import jakarta.persistence.*;
-import org.security.ports.dto.UserDto;
+import org.shared.dto.UserDto;
 
 @Entity
 @Table(name = "user")

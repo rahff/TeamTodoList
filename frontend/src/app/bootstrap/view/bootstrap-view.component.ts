@@ -20,6 +20,8 @@ export class BootstrapViewComponent implements OnInit {
   }
 
   private onAuthenticationResult(result: Result<Authentication>): void {
+    console.log("result: ", result);
+    
     if(result.isOk()) this.router.navigateByUrl("/dashboard")
     else this.router.navigateByUrl("/auth/login")
   }

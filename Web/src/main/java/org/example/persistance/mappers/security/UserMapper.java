@@ -2,7 +2,7 @@ package org.example.persistance.mappers.security;
 
 import org.example.persistance.entities.security.AppUser;
 import org.example.persistance.entities.security.Authority;
-import org.security.ports.dto.UserDto;
+import org.shared.dto.UserDto;
 
 public class UserMapper {
 

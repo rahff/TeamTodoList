@@ -2,12 +2,12 @@ package org.security.application;
 
 
 import org.security.ports.dto.JwtAuthenticationResult;
-import org.security.ports.dto.UserDto;
+import org.shared.dto.UserDto;
 import org.security.ports.spi.JwtEncoder;
 import org.security.ports.spi.PasswordSecurity;
-import org.security.ports.spi.UserRepository;
+import org.shared.spi.UserRepository;
 
-public class UserSecurity {
+public abstract class UserSecurity {
   protected final JwtEncoder jwtService;
   protected final UserRepository userRepository;
   protected final PasswordSecurity passwordEncoder;
@@ -20,6 +20,6 @@ public class UserSecurity {
 
   protected JwtAuthenticationResult makeJwtResult(UserDto user, String role) {
     var token = jwtService.encode(user.email(), role);
-    return new JwtAuthenticationResult(user, token);
+    return new JwtAuthenticationResult(user, token.accessToken(), token.refreshToken());
   }
 }
