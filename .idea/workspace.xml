@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79a0513d-e75c-473e-8348-93ff222d5633" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Web/src/main/resources/dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitIgnore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitIgnore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="79a0513d-e75c-473e-8348-93ff222d5633" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,6 +65,7 @@
       <recent name="org.queryTeam.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Web/src/main/resources" />
       <recent name="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/query" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">

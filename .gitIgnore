@@ -1,2 +1,2 @@
 production/**
-application.properties
+resources/application.properties
