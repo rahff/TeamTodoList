@@ -1,8 +1,8 @@
 package org.example.security;
 
+import org.shared.dto.UserDto;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
@@ -10,13 +10,13 @@ public class JwtAuthenticationToken implements Authentication {
 
   private final String token;
   private Collection<? extends GrantedAuthority> authorities;
-  private UserDetails principal;
+  private UserDto principal;
 
   public JwtAuthenticationToken(String token) {
     this.token = token;
   }
 
-  public JwtAuthenticationToken(UserDetails principal, String token, Collection<? extends GrantedAuthority> authorities) {
+  public JwtAuthenticationToken(UserDto principal, String token, Collection<? extends GrantedAuthority> authorities) {
     this.token = token;
     this.authorities = authorities;
     this.principal = principal;
@@ -52,6 +52,6 @@ public class JwtAuthenticationToken implements Authentication {
 
   @Override
   public String getName() {
-    return principal.getUsername();
+    return getClass().getSimpleName();
   }
 }

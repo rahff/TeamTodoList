@@ -25,7 +25,7 @@ public class TeamDetailsViewQueryTest {
     }
     @Test
     public void should_aggregates_data_to_view_model() throws ExecutionException, InterruptedException {
-        var result = query.query("teamId1");
+        var result = query.query("teamId1", "accountId");
         assertEquals(result, FakeTeamDetailsViewModel.get());
     }
 

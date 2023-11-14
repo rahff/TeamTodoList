@@ -4,13 +4,16 @@ import org.shared.api.Command;
 import org.team.entities.Team;
 import org.team.ports.dto.AddTeammatesOnTeamRequest;
 import org.team.ports.spi.TeamRepository;
+import org.team.ports.spi.TeammateRepository;
 
 public class AddTeammatesOnTeam implements Command<AddTeammatesOnTeamRequest> {
 
   private final TeamRepository teamRepository;
+  private final TeammateRepository teammateRepository;
 
-  public AddTeammatesOnTeam(TeamRepository teamRepository) {
+  public AddTeammatesOnTeam(TeamRepository teamRepository, TeammateRepository teammateRepository) {
     this.teamRepository = teamRepository;
+    this.teammateRepository = teammateRepository;
   }
 
 
@@ -18,6 +21,7 @@ public class AddTeammatesOnTeam implements Command<AddTeammatesOnTeamRequest> {
     var teamDto = teamRepository.getTeamById(request.teamId()).orElseThrow(() -> new RuntimeException("not found"));
     var team = new Team(teamDto.id(), teamDto.name(), teamDto.teammates(), teamDto.accountId());
     team.addTeammates(request.teammateToAdd());
+    teammateRepository.addTeamIdOnTeammate(request.teammateToAdd(), request.teamId());
     teamRepository.saveTeam(team.snapshot());
   }
 }

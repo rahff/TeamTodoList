@@ -1,6 +1,7 @@
 package org.example.persistance.repositories.security.command;
 
 import org.example.persistance.entities.security.ManagerAccount;
+import org.example.persistance.repositories.security.springData.ManagerAccountRepository;
 import org.security.ports.spi.AccountRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;

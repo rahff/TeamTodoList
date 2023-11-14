@@ -4,6 +4,7 @@ package org.example.controllers.api.todo;
 import org.example.controllers.api.todo.jsonPayloads.request.CreateTodoRequestBody;
 import org.example.controllers.api.todo.jsonPayloads.response.TodoListCardJson;
 import org.example.transactions.todo.CreateTodoListTransaction;
+import org.shared.dto.UserDto;
 import org.springframework.http.HttpStatus;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -29,7 +30,7 @@ public class CreateTodoListController {
   }
 
   @PostMapping("/create-todo-list")
-  public TodoListCardJson createTodoList(@RequestBody CreateTodoRequestBody body, @AuthenticationPrincipal UserDetails user) {
+  public TodoListCardJson createTodoList(@RequestBody CreateTodoRequestBody body, @AuthenticationPrincipal UserDto user) {
     try{
       var request = createRequest(user, body);
       transaction.execute(request);
@@ -39,8 +40,7 @@ public class CreateTodoListController {
     }
   }
 
-  private CreateTodoListRequest createRequest(UserDetails user, CreateTodoRequestBody body){
-    var userRole = user.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.joining());
-    return new CreateTodoListRequest(new UserContext(user.getUsername(), UseRole.valueOf(userRole) ), body.id(), body.todoListName(), body.ref(), body.createdAt());
+  private CreateTodoListRequest createRequest(UserDto user, CreateTodoRequestBody body){
+    return new CreateTodoListRequest(new UserContext(user.email(), UseRole.valueOf(user.role()) ), body.id(), body.todoListName(), body.ref(), body.createdAt());
   }
 }

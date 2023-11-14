@@ -5,107 +5,123 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79a0513d-e75c-473e-8348-93ff222d5633" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/dto/JwtTokenPair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Shared/src/main/java/org/shared/spi/DateProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Shared/src/test/java/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Query/src/main/java/org/query/team/api/TeammateCreatedQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/security/jsonPayload/JwtAuthenticationJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/security/jsonPayload/UserJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/security/mapper/UserDtoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/security/FakeTokenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/security/TokenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/service/DateSystemProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/service/FakeDateProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/spi/TeammateRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/src/main/java/org/query/account/api/AccountDetailsViewQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/src/main/java/org/query/account/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/src/main/java/org/query/account/mappers/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/src/main/java/org/query/account/model/AccountDetailsViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/src/main/java/org/query/account/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Query/src/main/java/org/query/account/spi/UserDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/account/AccountQueryBeanConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/query/account/AccountDetailsViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/query/InMemoryAccountUserDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/query/JpaAccountUserDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/query/mapper/UserEntityMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/command/InMemoryTeammateRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/command/JpaTeammateRepositoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/query/JpaTeamQueryTodoListDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/query/mappers/TeamMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/query/mappers/TodoListMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/springData/JpaTeammateRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/test/java/adapters/query/JpaTeamQueryTeamDataAccessTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Web/src/test/java/adapters/query/JpaTeamTodoListDataAccessTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/application/CreateTeammate.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/application/commands/CreateTeammate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/application/CreateUserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/application/CreateUserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/application/SetTeammatePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/application/SetTeammatePassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/application/UserSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/application/UserSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/application/UsernamePasswordAuthenticationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/application/UsernamePasswordAuthenticationProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/dto/CreateTeammateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/dto/CreateTeammateRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/dto/GeneratedCodePair.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/dto/GeneratedCodePair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/dto/JwtAuthenticationResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/dto/JwtAuthenticationResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/dto/TeammateJoiningRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/dto/TeammateJoiningRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Shared/src/main/java/org/shared/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/spi/AddTeammate.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/api/AddTeammate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/spi/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/ports/spi/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/spi/FakePasswordEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/spi/FakePasswordEncoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/spi/JwtEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/spi/JwtEncoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/ports/spi/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Shared/src/main/java/org/shared/spi/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/org/security/utils/FakeData.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/src/test/java/utils/FakeData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/test/java/CreateTeammateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/src/test/java/commands/CreateTeammateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/src/test/java/SetTeammatePasswordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/test/java/SetTeammatePasswordTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/CreateTeammate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/CreateUserManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/CreateUserManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/SetTeammatePassword.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/SetTeammatePassword.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/UserSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/UserSecurity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/UsernamePasswordAuthenticationProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/target/classes/org/security/application/UsernamePasswordAuthenticationProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/target/classes/org/security/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/CreateTeammateRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/GeneratedCodePair.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/JwtAuthenticationResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/JwtAuthenticationResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/TeammateJoiningRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/dto/UserDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/spi/AddTeammate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/spi/CodeGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/spi/JwtEncoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/spi/JwtEncoder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/ports/spi/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/org/security/utils/FakeData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/test-classes/CreateTeammateTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Security/target/test-classes/SetTeammatePasswordTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/target/test-classes/SetTeammatePasswordTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Shared/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Shared/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Shared/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Shared/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Security/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Security/target/classes/module-info.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Shared/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Shared/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Team/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Todo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Todo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Query/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Query/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Query/src/main/java/org/query/team/api/TeammateAddedQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/Query/src/main/java/org/query/team/api/TeammatesAddedQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/config/beans/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/beans/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/config/beans/team/TeamModuleBeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/beans/team/TeamModuleBeanConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/config/beans/team/TeamQueryBeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/beans/team/TeamQueryBeanConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/security/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/security/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/security/CreateTeammateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/team/CreateTeammateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/team/AddTeammatesOnTeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/team/AddTeammatesOnTeamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/application/commands/AddTeammatesOnTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/application/commands/AddTeammatesOnTeam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/application/commands/CreateTeammate.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/src/main/java/org/team/application/commands/CreateTeammate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/src/test/java/commands/AddTeammateCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/src/test/java/commands/AddTeammateCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/src/test/java/commands/CreateTeammateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/src/test/java/commands/CreateTeammateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/classes/org/team/application/commands/CreateTeammate.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/target/classes/org/team/application/commands/CreateTeammate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Team/target/test-classes/commands/CreateTeammateTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Team/target/test-classes/commands/CreateTeammateTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Todo/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Todo/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Query/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Query/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Query/src/main/java/org/query/team/api/TeamDetailsViewQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/Query/src/main/java/org/query/team/api/TeamDetailsViewQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Query/src/main/java/org/query/team/spi/TeamDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/Query/src/main/java/org/query/team/spi/TeamDataAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Query/src/main/java/org/query/team/spi/fakes/InMemoryTeamDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/Query/src/main/java/org/query/team/spi/fakes/InMemoryTeamDataAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Query/src/test/java/team/TeamDetailsViewQueryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Query/src/test/java/team/TeamDetailsViewQueryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/config/beans/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/config/beans/team/TeamModuleBeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/team/TeamModuleBeanConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/config/beans/team/TeamQueryBeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/team/TeamQueryBeanConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/config/beans/todo/TodoModuleBeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/todo/TodoModuleBeanConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/config/beans/todo/TodoQueryBeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/todo/TodoQueryBeanConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/security/SetPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/security/SetPasswordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/team/CreateTeammateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/team/CreateTeammateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/todo/CreateTodoListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/todo/CreateTodoListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/query/team/TeamDetailsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/query/team/TeamDetailsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/email/AppEmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/email/AppEmailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/entities/security/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/entities/security/AppUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/mappers/security/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/mappers/security/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/entities/team/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/entities/team/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/entities/team/Teammate.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/entities/team/Teammate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/entities/todo/TodoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/entities/todo/TodoList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/mappers/team/TeamMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/mappers/team/TeamMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/mappers/team/TeammateMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/mappers/team/TeammateMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/command/AppUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/springData/AppUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/command/JpaManagerAccountRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/command/JpaManagerAccountRepositoryAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/command/JpaUserRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/command/JpaUserRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/command/UserInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/command/UserInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/command/ManagerAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/springData/ManagerAccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/command/JpaTeamRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/springData/JpaTeamRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/command/JpaTeamRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/command/JpaTeamRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/query/InMemoryTeamDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/query/InMemoryTeamDataAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/query/JpaTeamDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/team/query/JpaTeamQueryTeamDataAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/command/JpaTodoListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/springData/JpaTodoListRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/command/JpaTodoListRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/command/JpaTodoListRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/security/JpaUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/security/JpaUserDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/security/JwtAuthenticationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/security/JwtAuthenticationProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/security/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/security/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/security/SecurityTokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/security/SecurityTokenService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/security/TeammateCodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/security/TeammateCodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/transactions/security/CreateTeammateTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/transactions/security/CreateTeammateTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/test/java/adapters/AppEmailServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/test/java/adapters/AppEmailServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/test/java/adapters/JpaUserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/test/java/adapters/JpaUserRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/security/JwtAuthenticationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/security/JwtAuthenticationToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/test/java/adapters/AppEmailServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/test/java/adapters/command/AppEmailServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/test/java/adapters/JpaTeamRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/test/java/adapters/command/JpaTeamRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/test/java/adapters/JpaTodoListRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/test/java/adapters/command/JpaTodoListRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/test/java/adapters/JpaUserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/test/java/adapters/command/JpaUserRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/test/java/controllers/BaseControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/test/java/controllers/BaseControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/src/test/java/controllers/SecurityControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/test/java/controllers/SecurityControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/src/test/java/controllers/TeamControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/test/java/controllers/TeamControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/config/beans/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/config/beans/security/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/config/beans/team/TeamModuleBeanConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/config/beans/team/TeamModuleBeanConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/config/beans/team/TeamQueryBeanConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/config/beans/team/TeamQueryBeanConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/security/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/security/AuthenticationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/security/CreateTeammateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/team/AddTeammatesOnTeamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/team/AddTeammatesOnTeamController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/test/java/utils/TodoListProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/test/java/utils/TodoListProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/config/beans/security/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/config/beans/team/TeamModuleBeanConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/config/beans/team/TeamQueryBeanConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/config/beans/todo/TodoModuleBeanConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/config/beans/todo/TodoQueryBeanConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/security/SetPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/security/SetPasswordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/team/CreateTeammateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/team/CreateTeammateController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/todo/CreateTodoListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/api/todo/CreateTodoListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/query/team/TeamDetailsViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/controllers/query/team/TeamDetailsViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/email/AppEmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/email/AppEmailService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/entities/security/AppUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/entities/security/AppUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/mappers/security/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/mappers/security/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/entities/team/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/entities/team/Team.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/entities/team/Teammate.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/entities/team/Teammate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/entities/todo/TodoList.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/entities/todo/TodoList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/mappers/team/TeamMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/mappers/team/TeamMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/mappers/team/TeammateMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/mappers/team/TeammateMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/security/command/AppUserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/security/command/JpaManagerAccountRepositoryAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/security/command/JpaManagerAccountRepositoryAdapter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/security/command/JpaUserRepositoryAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/security/command/JpaUserRepositoryAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/security/command/UserInMemoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/security/command/UserInMemoryRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/security/command/UserProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/security/command/UserProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/security/command/ManagerAccountRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/team/command/JpaTeamRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/team/command/JpaTeamRepositoryAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/team/command/JpaTeamRepositoryAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/team/query/InMemoryTeamDataAccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/team/query/InMemoryTeamDataAccess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/team/query/JpaTeamDataAccess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/todo/command/JpaTodoListRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/todo/command/JpaTodoListRepositoryAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/persistance/repositories/todo/command/JpaTodoListRepositoryAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JpaUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JpaUserDetailsService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/SecurityTokenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/SecurityTokenService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/TeammateCodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/TeammateCodeGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/security/CreateTeammateTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/transactions/security/CreateTeammateTransaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/adapters/AppEmailServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/test-classes/adapters/AppEmailServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/adapters/JpaUserRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/test-classes/adapters/JpaUserRepositoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/controllers/SecurityControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/test-classes/controllers/SecurityControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/controllers/TeamControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/test-classes/controllers/TeamControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/bootstrap/view/bootstrap-view.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/bootstrap/view/bootstrap-view.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/bootstrap/view/bootstrap-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/bootstrap/view/bootstrap-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/security/query/AuthenticationByToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/security/query/AuthenticationByToken.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Query/org/query/team/api/TeammateAddedQuery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/classes/org/example/security/JwtAuthenticationToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/adapters/AppEmailServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/adapters/JpaTeamRepositoryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/adapters/JpaTodoListRepositoryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/adapters/JpaUserRepositoryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/target/test-classes/utils/TodoListProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Web/target/test-classes/utils/TodoListProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Query/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Query/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Query/org/query/team/api/TeamDetailsViewQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Query/org/query/team/api/TeamDetailsViewQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Query/org/query/team/spi/TeamDataAccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Query/org/query/team/spi/TeamDataAccess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Query/org/query/team/spi/fakes/InMemoryTeamDataAccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Query/org/query/team/spi/fakes/InMemoryTeamDataAccess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Query/team/TeamDetailsViewQueryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/test/Query/team/TeamDetailsViewQueryTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,8 +132,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
-        <option value="Interface" />
         <option value="Record" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -151,7 +167,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/rahff/Bureau/TodoListJavaExemple&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/rahff/Desktop/TeamTodoList&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -160,11 +176,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.team.ports.spi" />
       <recent name="org.security.ports.dto" />
       <recent name="org.queryTeam.dto" />
       <recent name="org.queryTeam.spi" />
       <recent name="org.queryTeam.model" />
-      <recent name="org.team.ports.dto" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/todo/query" />
@@ -183,34 +199,87 @@
       <command value="mvn clean" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.integrationTests">
-    <configuration name="SecurityControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.Adapters">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="TodoList_Web" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controllers.*" />
+          <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="controllers" />
-      <option name="MAIN_CLASS_NAME" value="controllers.SecurityControllerTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Adapters" type="JUnit" factoryName="JUnit">
+      <module name="TodoList_Web" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="PACKAGE_NAME" value="adapters" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JpaTeamQueryTeamDataAccessTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TodoList_Web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="adapters.query.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="adapters.query" />
+      <option name="MAIN_CLASS_NAME" value="adapters.query.JpaTeamQueryTeamDataAccessTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityControllerTest.login" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JpaTeamQueryTeamDataAccessTest.JpaTeamQueryTeamDataAccess_getAllTeam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TodoList_Web" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controllers.*" />
+          <option name="PATTERN" value="adapters.query.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="controllers" />
-      <option name="MAIN_CLASS_NAME" value="controllers.SecurityControllerTest" />
-      <option name="METHOD_NAME" value="login" />
+      <option name="PACKAGE_NAME" value="adapters.query" />
+      <option name="MAIN_CLASS_NAME" value="adapters.query.JpaTeamQueryTeamDataAccessTest" />
+      <option name="METHOD_NAME" value="JpaTeamQueryTeamDataAccess_getAllTeam" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JpaTeamQueryTeamDataAccessTest.JpaTeamQueryTeamDataAccess_getTeamIdOfTeammate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TodoList_Web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="adapters.query.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="adapters.query" />
+      <option name="MAIN_CLASS_NAME" value="adapters.query.JpaTeamQueryTeamDataAccessTest" />
+      <option name="METHOD_NAME" value="JpaTeamQueryTeamDataAccess_getTeamIdOfTeammate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TeamCommand" type="JUnit" factoryName="JUnit">
+      <module name="Team" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="PACKAGE_NAME" value="commands" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -246,14 +315,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.integrationTests" />
-      <item itemvalue="JUnit.SecurityControllerTest" />
-      <item itemvalue="JUnit.SecurityControllerTest.login" />
+      <item itemvalue="JUnit.Adapters" />
+      <item itemvalue="JUnit.TeamCommand" />
+      <item itemvalue="JUnit.JpaTeamQueryTeamDataAccessTest" />
+      <item itemvalue="JUnit.JpaTeamQueryTeamDataAccessTest.JpaTeamQueryTeamDataAccess_getAllTeam" />
+      <item itemvalue="JUnit.JpaTeamQueryTeamDataAccessTest.JpaTeamQueryTeamDataAccess_getTeamIdOfTeammate" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SecurityControllerTest" />
-        <item itemvalue="JUnit.SecurityControllerTest.login" />
+        <item itemvalue="JUnit.JpaTeamQueryTeamDataAccessTest" />
+        <item itemvalue="JUnit.JpaTeamQueryTeamDataAccessTest.JpaTeamQueryTeamDataAccess_getTeamIdOfTeammate" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.JpaTeamQueryTeamDataAccessTest.JpaTeamQueryTeamDataAccess_getAllTeam" />
       </list>
     </recent_temporary>
   </component>
@@ -272,14 +347,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/todo/CreateTodoListController.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/todo/CreateTodoListController.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/Web/src/main/java/org/example/persistance/repositories/security/query/mapper/UserEntityMapper.java</url>
+          <line>5</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

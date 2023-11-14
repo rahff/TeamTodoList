@@ -18,7 +18,12 @@ public class InMemoryTeamDataAccess implements TeamDataAccess {
         return Optional.of(teamDto);
     }
 
-    public List<String> getAvailableTeammatesRef() {
+  @Override
+  public List<String> getAvailableTeammatesRef(String accountId) {
+    return null;
+  }
+
+  public List<String> getAvailableTeammatesRef() {
         return List.of("id_teammate3", "id_teammate4");
     }
 

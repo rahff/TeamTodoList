@@ -9,4 +9,7 @@ module Query {
     exports org.query.todo.model;
     exports org.query.todo.dto;
     exports org.query.todo.spi.fakes;
+    exports org.query.account.api;
+    exports org.query.account.model;
+    exports org.query.account.spi;
 }

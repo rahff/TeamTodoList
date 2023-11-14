@@ -8,6 +8,9 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 
 @Service
 @Profile("prod")
@@ -16,15 +19,21 @@ public class AppEmailService implements  EmailService {
   @Value("${hostname.domain.login}")
   private String loginLink;
   private final JavaMailSender mailSender;
+  private ExecutorService executorService;
 
   public AppEmailService(JavaMailSender mailSender) {
     this.mailSender = mailSender;
   }
 
   public void sendJoiningEmail(JoiningMessageParameters parameters) throws MessagingException {
-    var message = createMessage(parameters.managerName());
-    formatMessage(message, parameters);
-    mailSender.send(message);
+    try{
+      executorService = Executors.newSingleThreadExecutor();
+      var message = createMessage(parameters.managerName());
+      formatMessage(message, parameters);
+      executorService.submit(() ->  mailSender.send(message));
+    }finally {
+      executorService.shutdown();
+    }
   }
 
   private MimeMessage createMessage(String managerName) throws MessagingException {

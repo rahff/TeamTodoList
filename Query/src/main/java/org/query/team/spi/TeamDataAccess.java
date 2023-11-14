@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public interface TeamDataAccess {
     Optional<TeamDto> getTeamById(String id);
-    List<String> getAvailableTeammatesRef();
+    List<String> getAvailableTeammatesRef(String accountId);
     List<TeamDto> getAllTeam(String accountId);
     Optional<String> getTeamIdOfTeammate(String teammateId);
 }

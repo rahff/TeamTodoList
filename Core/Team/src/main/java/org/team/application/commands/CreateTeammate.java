@@ -7,21 +7,25 @@ import org.team.ports.api.AddTeammate;
 import org.team.ports.dto.CreateTeammateRequest;
 import org.team.ports.dto.TeammateJoiningRequest;
 import org.team.ports.spi.CodeGenerator;
+import org.team.ports.spi.TeammateRepository;
 
 public class CreateTeammate implements AddTeammate {
 
   private final UserRepository userRepository;
   private final CodeGenerator codeGenerator;
-  private final String ROLE = "TEAMMATE";
+  private final TeammateRepository teammateRepository;
 
-  public CreateTeammate(UserRepository userRepository, CodeGenerator codeGenerator) {
+  public CreateTeammate(UserRepository userRepository, CodeGenerator codeGenerator, TeammateRepository teammateRepository) {
     this.userRepository = userRepository;
     this.codeGenerator = codeGenerator;
+    this.teammateRepository = teammateRepository;
   }
 
   public TeammateJoiningRequest execute(CreateTeammateRequest request) {
+    String ROLE = "TEAMMATE";
     var generatedCode = codeGenerator.generateCode();
-    var teammate = userRepository.save(new UserDto(request.teammateId(), request.email(), request.name(), generatedCode.encoded(), ROLE, request.accountId()));
-    return new TeammateJoiningRequest(teammate.email(), teammate.name(), generatedCode.rawCode()) ;
+    var userDto = userRepository.save(new UserDto(request.teammateId(), request.email(), request.name(), generatedCode.encoded(), ROLE, request.accountId()));
+    teammateRepository.saveUserAsTeammate(userDto);
+    return new TeammateJoiningRequest(userDto.email(), userDto.name(), generatedCode.rawCode()) ;
   }
 }

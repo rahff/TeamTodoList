@@ -14,7 +14,6 @@ public class Team {
   @Column(name = "id", nullable = false, length = 45)
   private String id;
   private String name;
-  @Column(unique = true)
   private String accountId;
 
   @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

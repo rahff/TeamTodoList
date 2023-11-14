@@ -1,12 +1,13 @@
 package org.example.security;
 
 
+
+import org.example.persistance.repositories.security.springData.AppUserRepository;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,9 +16,9 @@ import java.util.List;
 public class JwtAuthenticationProvider implements AuthenticationProvider {
 
   private final TokenService jwtService;
-  private final UserDetailsService userDetailsService;
+  private final AppUserRepository userDetailsService;
 
-  public JwtAuthenticationProvider(TokenService jwtService, UserDetailsService userDetailsService) {
+  public JwtAuthenticationProvider(TokenService jwtService, AppUserRepository userDetailsService) {
     this.jwtService = jwtService;
     this.userDetailsService = userDetailsService;
   }
@@ -28,8 +29,8 @@ public class JwtAuthenticationProvider implements AuthenticationProvider {
     var jwtClaims = jwtService.decode(token.toString());
     var userEmail = jwtClaims.get("username");
     var userPlan = jwtClaims.get("userRole");
-    var principal = userDetailsService.loadUserByUsername(userEmail.toString());
-    return new JwtAuthenticationToken(principal, null, List.of(new SimpleGrantedAuthority(userPlan.toString())));
+    var principal = userDetailsService.findByEmail(userEmail.toString()).orElseThrow(() -> new BadCredentialsException("bad credentials"));
+    return new JwtAuthenticationToken(principal.toDto(), null, List.of(new SimpleGrantedAuthority(userPlan.toString())));
   }
 
   @Override

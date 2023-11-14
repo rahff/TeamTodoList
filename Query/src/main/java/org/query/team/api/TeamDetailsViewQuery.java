@@ -33,11 +33,11 @@ public class TeamDetailsViewQuery {
         this.userDataAccess = userDataAccess;
     }
 
-    public TeamDetailsViewModel query(final String teamId) throws ExecutionException, InterruptedException {
+    public TeamDetailsViewModel query(final String teamId, final String accountId) throws ExecutionException, InterruptedException {
         try{
             executorService = Executors.newCachedThreadPool();
             Future<TeamDto> teamDto$ = executorService.submit(() -> teamDataAccess.getTeamById(teamId).orElseThrow());
-            Future<List<String>> availableTeammatesRefs$ = executorService.submit(teamDataAccess::getAvailableTeammatesRef);
+            Future<List<String>> availableTeammatesRefs$ = executorService.submit(() ->teamDataAccess.getAvailableTeammatesRef(accountId));
             Future<List<TodoListDto>> teamTodoListsDto$ = executorService.submit(() -> todoListDataAccess.getTodoListsByTeamId(teamId));
             Future<List<Teammate>> availableTeammates$ = executorService.submit(() -> getAvailableTeammate(availableTeammatesRefs$));
             Future<List<TodoList>> teamTodoLists$ = executorService.submit(() -> getTeamTodoList(teamTodoListsDto$));

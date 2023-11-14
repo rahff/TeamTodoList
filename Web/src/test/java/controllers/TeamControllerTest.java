@@ -6,14 +6,19 @@ import org.example.controllers.api.team.jsonPayloads.response.TeamJson;
 import org.example.controllers.api.team.jsonPayloads.response.TeammateJson;
 import org.example.controllers.api.todo.jsonPayloads.response.IdJson;
 import org.example.email.FakeEmailService;
+import org.example.security.JwtAuthenticationToken;
 import org.junit.jupiter.api.Test;
 
+import org.shared.dto.UserDto;
 import org.shared.spi.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
 import org.team.ports.dto.*;
@@ -35,6 +40,8 @@ public class TeamControllerTest extends BaseControllerTest {
   private UserRepository userRepository;
   @Autowired
   private FakeEmailService emailService;
+
+
   @Test
   void  createTeam() throws Exception {
     var body = objectMapper.writeValueAsString(new CreateTeamRequest("teamId1", "Team1", List.of("teammate1", "teammate2"), "accountId"));
@@ -68,7 +75,6 @@ public class TeamControllerTest extends BaseControllerTest {
   }
 
   @Test
-  @WithMockUser(username = "manager@gmail.com", authorities = "MANAGER")
   void  addTeammateOnOrganization() throws Exception {
     var body = objectMapper.writeValueAsString(new CreateTeammateRequest("teammateId","teammate@gmail.com", "Mikki", "accountId"));
     var expected = objectMapper.writeValueAsString(new TeammateJson("teammateId", "teammateNameteammateId", "teammateteammateId@gmail.com", null));

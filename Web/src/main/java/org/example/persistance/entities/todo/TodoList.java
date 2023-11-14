@@ -5,6 +5,7 @@ import org.example.persistance.entities.todo.Todo;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.todo.port.dto.TodoListDto;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,16 +17,14 @@ public class TodoList {
   @Column(name = "id", nullable = false)
   private String id;
 
-  @Column(unique = true)
   private String name;
   @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
   private List<Todo> todos;
 
-  @Column(unique = true)
   private String ref;
 
-  @Column(columnDefinition = "DATE")
-  private LocalDate createdAt;
+  @Temporal(TemporalType.DATE)
+  private Date createdAt;
 
 
   public TodoList(String id, String name, String ref, List<Todo> todos) {
@@ -33,8 +32,11 @@ public class TodoList {
     this.name = name;
     this.todos = todos;
     this.ref = ref;
+    this.createdAt = new Date(System.currentTimeMillis());
   }
-  public TodoList(){}
+  public TodoList(){
+    this.createdAt = new Date(System.currentTimeMillis());
+  }
 
   public String getId() {
     return id;
@@ -56,11 +58,11 @@ public class TodoList {
     this.ref = ref;
   }
 
-  public LocalDate getCreatedAt() {
+  public Date getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(LocalDate createdAt) {
+  public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
   }
 
@@ -78,6 +80,6 @@ public class TodoList {
 
   public TodoListDto toDto() {
     var list = todos.stream().map(Todo::toDto).collect(Collectors.toList());
-    return new TodoListDto(id, ref, name, list, createdAt);
+    return new TodoListDto(id, ref, name, list, createdAt.toLocalDate());
   }
 }

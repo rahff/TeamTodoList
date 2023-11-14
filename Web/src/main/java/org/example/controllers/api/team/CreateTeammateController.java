@@ -3,6 +3,7 @@ package org.example.controllers.api.team;
 import org.example.controllers.api.team.jsonPayloads.response.TeammateJson;
 import org.example.transactions.security.CreateTeammateTransaction;
 import org.query.team.api.TeammateCreatedQuery;
+import org.shared.dto.UserDto;
 import org.team.ports.dto.CreateTeammateRequest;
 import org.shared.spi.UserRepository;
 import org.springframework.http.HttpStatus;
@@ -27,10 +28,9 @@ public class CreateTeammateController {
   }
 
   @PostMapping("/add-teammate")
-  public TeammateJson addTeammateOnOrganization(@RequestBody CreateTeammateRequest bodyRequest, @AuthenticationPrincipal UserDetails userDetails) {
+  public TeammateJson addTeammateOnOrganization(@RequestBody CreateTeammateRequest bodyRequest, @AuthenticationPrincipal UserDto userDetails) {
     try{
-      var manager = userRepository.findByEmail(userDetails.getUsername()).orElseThrow();
-      createTeammateTransaction.execute(bodyRequest, manager.name());
+      createTeammateTransaction.execute(bodyRequest, userDetails.name());
       return getCreatedTeammate(bodyRequest.teammateId());
     }catch (Exception e){
       throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, e.getMessage());

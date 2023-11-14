@@ -3,6 +3,7 @@ package org.example.controllers.api.security;
 import org.example.controllers.api.security.jsonPayload.ChangePasswordPayload;
 import org.example.transactions.security.SetPasswordTransaction;
 import org.security.ports.dto.ChangePasswordRequest;
+import org.shared.dto.UserDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -22,9 +23,9 @@ public class SetPasswordController {
   }
 
   @PostMapping("/set-password")
-  public void setTeammatePassword(@RequestBody ChangePasswordPayload requestBody, @AuthenticationPrincipal UserDetails userDetails){
+  public void setTeammatePassword(@RequestBody ChangePasswordPayload requestBody, @AuthenticationPrincipal UserDto userDetails){
     try{
-      transaction.execute(new ChangePasswordRequest(userDetails.getUsername(), requestBody.newPassword()));
+      transaction.execute(new ChangePasswordRequest(userDetails.email(), requestBody.newPassword()));
     }catch (Exception e){
       throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, e.getMessage());
     }

@@ -2,7 +2,7 @@ package org.example.security;
 
 import org.example.persistance.entities.security.AppUser;
 import org.example.persistance.entities.security.Authority;
-import org.example.persistance.repositories.security.command.AppUserRepository;
+import org.example.persistance.repositories.security.springData.AppUserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;

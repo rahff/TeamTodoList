@@ -56,8 +56,8 @@ public class SecurityControllerTest extends BaseControllerTest{
   }
 
   @Test
-  @WithMockUser(username = "teammate@gmail.com", authorities = "TEAMMATE")
   void setTeammatePassword() throws Exception {
+    initSecurityContext(fakeTeammateAuthentication);
     var userBefore = userRepository.findByEmail("teammate@gmail.com").orElse(null);
     assertNotNull(userBefore);
     var body = objectMapper.writeValueAsString(new ChangePasswordPayload("newPassword"));

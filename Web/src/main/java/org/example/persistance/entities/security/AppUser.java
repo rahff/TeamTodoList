@@ -13,7 +13,6 @@ public class AppUser {
   private String email;
   private String password;
   private String name;
-  @Column(unique = true)
   private String accountId;
   @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   private Authority authority;
@@ -72,5 +71,9 @@ public class AppUser {
 
   public UserDto toDto(){
     return new UserDto(id, email, name, password, getAuthority().getUserRole(), accountId);
+  }
+
+  public String getAccountId() {
+    return accountId;
   }
 }
