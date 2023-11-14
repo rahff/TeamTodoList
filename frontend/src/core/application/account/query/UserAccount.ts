@@ -5,6 +5,8 @@ import { Observable, catchError, map } from "rxjs";
 import { Result } from "../../shared/dto/Result";
 import { UserContextHolder } from "../../shared/interfaces/UserContextHolder";
 
+
+
 export class UserAccount extends Query<AccountDetailsViewModel> {
 
     public constructor(private queryHandler: AccountQueryHandler,
