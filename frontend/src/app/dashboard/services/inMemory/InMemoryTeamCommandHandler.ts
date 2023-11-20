@@ -47,7 +47,7 @@ export class InMemoryTeamCommandHandler implements TeamCommandHandler {
         return of(teamId);
     }
 
-    public addTeammateOnTeam(request: AddTeammateOnTeamRequest): Observable<Teammate[]> {
+    public addTeammatesOnTeam(request: AddTeammateOnTeamRequest): Observable<Teammate[]> {
         this.methodCalls.set("addTeammateOnTeam", request)
         if(request.teamId === "failure") return throwError(() => this.error);
         return of([newTeammate]);

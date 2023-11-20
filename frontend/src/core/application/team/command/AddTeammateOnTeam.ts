@@ -12,7 +12,7 @@ export class AddTeammateOnTeam extends Command<Teammate[], AddTeammateOnTeamRequ
     public constructor(private commandHandler: TeamCommandHandler){super()}
 
     public execute(request: AddTeammateOnTeamRequest): Observable<Result<Teammate[]>> {
-        return this.commandHandler.addTeammateOnTeam(request)
+        return this.commandHandler.addTeammatesOnTeam(request)
         .pipe(map(this.onSuccess),
         catchError(this.onError));
     }

@@ -18,7 +18,7 @@ public class RemoveTeammateFromTeamController {
     this.transaction = transaction;
   }
 
-  @PutMapping("remove-teammate")
+  @PutMapping("remove-teammate-from-team")
   public IdJson removeTeammate(@RequestBody RemoveTeammateFromTeamRequest body){
     try{
       transaction.execute(body);

@@ -1,7 +1,7 @@
-import { Observable, catchError, map, of, switchMap } from "rxjs";
+import { Observable, catchError, of, switchMap } from "rxjs";
 import { Query } from "../../shared/query/Query";
 import { Authentication } from "../dto/Authentication";
-import { AuthenticationGateway } from "../spi/AuthenticationGateway";
+import { TokenGateway } from "../spi/AuthenticationGateway";
 import { Result } from "../../shared/dto/Result";
 import { UserContextHolder } from "../../shared/interfaces/UserContextHolder";
 import { TokenExpiresException } from "../exceptions/authentication-exceptions";
@@ -10,19 +10,18 @@ import { TokenExpiresException } from "../exceptions/authentication-exceptions";
 
 export class AuthenticationByToken extends Query<Authentication> {
 
-    public constructor(private authenticationGateway: AuthenticationGateway,
+    public constructor(private authenticationGateway: TokenGateway,
                        private userContextHolder: UserContextHolder){super()}
 
     public authenticate(): Observable<Result<Authentication>> {
-        const token = this.userContextHolder.getToken();
-        return this.authenticationGateway.authenticateByToken(token)
+        return this.authenticationGateway.authenticate()
         .pipe(switchMap(this.onSuccesResult.bind(this)), catchError(this.handleError.bind(this)));
     }
 
     private onSuccesResult(authentication: Authentication): Observable<Result<Authentication>> {
-        this.userContextHolder.save(authentication);
+        this.userContextHolder.saveAuthentication(authentication);
         return of(this.onSuccess(authentication));
-     }
+    }
 
     private handleError(error: Error): Observable<Result<Authentication>> {
         if(this.needRefreshToken(error)) return this.refreshToken(error.refreshToken);
@@ -33,9 +32,9 @@ export class AuthenticationByToken extends Query<Authentication> {
         return error instanceof TokenExpiresException;
     }
 
-    private refreshToken(token: string): Observable<Result<Authentication>> {
+    public refreshToken(token: string): Observable<Result<Authentication>> {
         return this.authenticationGateway.refreshToken(token)
-            .pipe(map(this.onSuccess),
+            .pipe(switchMap(this.onSuccesResult.bind(this)),
              catchError(this.onError))
     }
 }

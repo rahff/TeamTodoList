@@ -1,10 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ConfirmActionService } from 'src/app/dashboard/services/confirm-action.service';
 import { Result } from 'src/core/application/shared/dto/Result';
-import { AddTeammateOnTeam } from 'src/core/application/team/command/AddTeammateOnTeam';
 import { FireTeammate } from 'src/core/application/team/command/FireTeammate';
 import { RemoveTeammateFromTeam } from 'src/core/application/team/command/RemoveTeammateFromTeam';
-import { Teammate } from 'src/core/application/team/dto/Teammate';
+import { Teammate } from 'src/core/model/team/Teammate';
 
 
 
@@ -22,7 +21,6 @@ export class TeammateListComponent implements OnInit {
   
   constructor(private fireTeammate: FireTeammate,
               private removeTeammateFromTeam: RemoveTeammateFromTeam,
-              private addTeammateOnTeam: AddTeammateOnTeam,
               private confirmService: ConfirmActionService) { }
 
   ngOnInit(): void {

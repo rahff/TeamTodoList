@@ -3,16 +3,16 @@ import { Observable, throwError } from 'rxjs';
 import { fakeAuthentication } from 'src/core/application/security/data/authentication.data';
 import { EmailPasswordCredentials, Authentication, SignupUserRequest, TokenJwtPair } from 'src/core/application/security/dto/Authentication';
 import { InvalidTokenException, TokenExpiresException } from 'src/core/application/security/exceptions/authentication-exceptions';
-import { AuthenticationGateway } from 'src/core/application/security/spi/AuthenticationGateway';
+import { EmailPasswordGateway, TokenGateway } from 'src/core/application/security/spi/AuthenticationGateway';
 
 @Injectable({
   providedIn: 'root'
 })
-export class InMemoryEmailPasswordAuthentication implements AuthenticationGateway {
+export class InMemoryEmailPasswordAuthentication implements EmailPasswordGateway {
 
   constructor() { }
 
-  public login(credentials: EmailPasswordCredentials): Observable<Authentication> {
+  public authenticate(credentials: EmailPasswordCredentials): Observable<Authentication> {
     if(credentials.email === "validemail@gmail.com" && credentials.password === "correctPassword"){
       return new Observable((observable) => {
         observable.next(fakeAuthentication);
@@ -28,7 +28,25 @@ export class InMemoryEmailPasswordAuthentication implements AuthenticationGatewa
     }else return throwError(() => new Error("email already exists"));
   }
 
-  public authenticateByToken(token: TokenJwtPair | null): Observable<Authentication> {
+ 
+}
+
+@Injectable({
+  providedIn: "root"
+})
+export class InMemoryTokenAuthentication implements TokenGateway {
+
+  private localAuthentication: Authentication | null = fakeAuthentication;
+
+  public constructor(){}
+
+  public setAuthentication(authentication: Authentication | null): void {
+    this.localAuthentication = authentication;
+  }
+
+  public authenticate(): Observable<Authentication> {
+  
+    const token = this.localAuthentication?.token;
     if(!token) return throwError(() => new Error("no token"));
     if(token.accessToken === "expires token") return throwError(()=> new TokenExpiresException(token.refreshToken))
     if(token.accessToken === fakeAuthentication.token.accessToken) {
@@ -39,10 +57,12 @@ export class InMemoryEmailPasswordAuthentication implements AuthenticationGatewa
   }
 
   public refreshToken(token: string): Observable<Authentication> {
-    if(token === "refreshToken")
-      return new Observable((observable) => {
-        observable.next(fakeAuthentication);
-      })
+    if(token === this.localAuthentication?.token.refreshToken)
+    return new Observable((observable) => {
+      observable.next(fakeAuthentication);
+    })
     else return throwError(() => new InvalidTokenException());
   }
-}
+  
+} 
+

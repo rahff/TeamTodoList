@@ -2,5 +2,6 @@ export type User = {
     name: string,
     email: string,
     accountId: string,
-    role: "manager" | "teammate"
+    role: "manager" | "teammate",
+    id: string
 }

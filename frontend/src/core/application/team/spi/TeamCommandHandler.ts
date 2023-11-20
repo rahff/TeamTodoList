@@ -12,7 +12,7 @@ export interface TeamCommandHandler {
     createTeam(request: CreateTeamRequest): Observable<TeamCard>;
     joinTeammate(request: JoinTeammateRequest): Observable<Teammate>;
     deleteTeam(teamId: string): Observable<string>;
-    addTeammateOnTeam(request: AddTeammateOnTeamRequest): Observable<Teammate[]>;
+    addTeammatesOnTeam(request: AddTeammateOnTeamRequest): Observable<Teammate[]>;
     removeTeammateFromTeam(request: RemoveTeammateFromTeamRequest): Observable<string>;
     fireTeammate(teammateId: string): Observable<string>;
 }

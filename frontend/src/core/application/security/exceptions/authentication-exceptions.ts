@@ -5,3 +5,5 @@ export class TokenExpiresException extends Error {
 export class InvalidTokenException extends Error {
     constructor(){super("invalid token")}
 }
+
+export class BadcredentialsException extends Error {}

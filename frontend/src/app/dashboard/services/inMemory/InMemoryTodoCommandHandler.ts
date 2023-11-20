@@ -1,7 +1,7 @@
 import { Observable, of, throwError } from "rxjs";
 import { Injectable } from "@angular/core";
 import { CreateTodoRequest } from "src/core/application/todo/dto/CreateTodoFormData";
-import { CreateTodoListRequest } from "src/core/application/todo/dto/CreateTodoListFormData";
+import { CreateTodoListRequest, DeleteTodoRequest } from "src/core/application/todo/dto/CreateTodoListFormData";
 import { newTeamTodoList, newTodo } from "src/core/application/todo/in-memory/data/data.todo";
 import { TodoCommandHandler } from "src/core/application/todo/spi/TodoCommandHandler";
 import { Todo } from "src/core/model/todo/Todo";
@@ -47,10 +47,10 @@ export class InMemoryTodoCommandHandler implements TodoCommandHandler {
         return of(todoId);
     }
 
-    public deleteTodo(todoId: string): Observable<string> {
-        this.methodCalls.set("deleteTodo", todoId)
-        if(todoId == "failure") return throwError(() => new Error("bad request"));
-        return of(todoId);
+    public deleteTodo(request: DeleteTodoRequest): Observable<string> {
+        this.methodCalls.set("deleteTodo", request)
+        if(request.todoId == "failure") return throwError(() => new Error("bad request"));
+        return of(request.todoId);
     }
 
     public deleteTodoList(todoListId: string): Observable<string> {

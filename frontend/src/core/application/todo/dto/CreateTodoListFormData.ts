@@ -9,3 +9,8 @@ export type CreateTodoListRequest = {
     createdAt: Date,
     ref: string
 }
+
+export type DeleteTodoRequest = {
+    todoId: string,
+    todoListId: string
+}

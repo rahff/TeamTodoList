@@ -9,6 +9,6 @@ export class UUIDService implements IDProvider {
   constructor() { }
 
   public generate(): string {
-    return crypto.randomUUID()
+    return crypto.randomUUID();
   }
 }

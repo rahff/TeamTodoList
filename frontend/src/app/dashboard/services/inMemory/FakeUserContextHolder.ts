@@ -25,7 +25,7 @@ export class FakeUserContextHolder implements UserContextHolder {
         return "123";
     }
 
-    public save(authentication: Authentication): void {
+    public saveAuthentication(authentication: Authentication): void {
         this.context.set("authentication", authentication)
     }
 

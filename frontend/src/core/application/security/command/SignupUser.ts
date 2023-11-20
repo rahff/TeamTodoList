@@ -1,15 +1,15 @@
-import { Observable, catchError, map, of, switchMap, tap } from "rxjs";
+import { Observable, catchError, of, switchMap } from "rxjs";
 import { Command } from "../../shared/command/Command";
 import { Result } from "../../shared/dto/Result";
 import { Authentication, SignupUserRequest } from "../dto/Authentication";
-import { AuthenticationGateway } from "../spi/AuthenticationGateway";
+import { EmailPasswordGateway } from "../spi/AuthenticationGateway";
 import { UserContextHolder } from "../../shared/interfaces/UserContextHolder";
 
 
 
 export class SignupUser extends Command<Authentication, SignupUserRequest> {
     
-    public constructor(private authenticationGateway: AuthenticationGateway,
+    public constructor(private authenticationGateway: EmailPasswordGateway,
                        private userContextHolder: UserContextHolder){super()}
 
 
@@ -20,7 +20,7 @@ export class SignupUser extends Command<Authentication, SignupUserRequest> {
     }
 
     private onSuccesResult(authentication: Authentication): Observable<Result<Authentication>> {
-        this.userContextHolder.save(authentication);
+        this.userContextHolder.saveAuthentication(authentication);
         return of(this.onSuccess(authentication));
      }
 }

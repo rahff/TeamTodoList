@@ -1,10 +1,10 @@
 import { Observable, catchError, map } from "rxjs";
 import { UserContextHolder } from "../../shared/interfaces/UserContextHolder";
 import { TeamQueryHandler } from "../spi/TeamQueryHandler";
-import { Teammate } from "../../../model/team/Teammate";
 import { Query } from "../../shared/query/Query";
 import { Result } from "../../shared/dto/Result";
 import { TeammateListViewModel } from "src/core/store/teammate-list/TeammateListState";
+import { UnAuthenticatedException } from "../../shared/execptions/UnAuthenticatedException";
 
 
 
@@ -15,7 +15,8 @@ export class TeammateList extends Query<TeammateListViewModel> {
 
 
     public query(): Observable<Result<TeammateListViewModel>> {
-        const accountId =  this.userContextHolder.getAccountId()
+        const accountId =  this.userContextHolder.getAccountId();
+        if(!accountId) return this.onError(new UnAuthenticatedException());
         return this.queryHandler.getTeammateList(accountId)
         .pipe(map(this.onSuccess),
         catchError(this.onError));

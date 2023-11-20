@@ -6,7 +6,8 @@ export const accountDetailsFakeState: AccountDetailsViewModel = {
         name: "Rahff",
         accountId: "123",
         email: "rahff@gmail.com",
-        role: "manager"
+        role: "manager",
+        id: "userId123"
        }
     }
 }

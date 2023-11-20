@@ -31,7 +31,8 @@ export class TodoListComponent {
   }
 
   public onDeleteTodoButtonClicked(id: string): void {
-    this.deleteTodo.execute(id).pipe(first()).subscribe({
+    this.deleteTodo.execute({todoId: id, todoListId: this.listId})
+    .pipe(first()).subscribe({
       next: this.onDeleteTodoResult.bind(this)
     })
   }

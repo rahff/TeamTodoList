@@ -10,6 +10,11 @@ import { UserContextHolder } from 'src/core/application/shared/interfaces/UserCo
 import { InMemoryTeamQueryHandler } from '../../services/inMemory/InMemoryTeamQueryHandler';
 import { FakeUserContextHolder } from '../../services/inMemory/FakeUserContextHolder';
 import { AddTeammateFormComponent } from './components/add-teammate-form/add-teammate-form.component';
+import { JoinTeammate } from 'src/core/application/team/command/JoinTeammate';
+import { TeamCommandHandler } from 'src/core/application/team/spi/TeamCommandHandler';
+import { IDProvider } from 'src/core/application/shared/interfaces/IDProvider';
+import { InMemoryTeamCommandHandler } from '../../services/inMemory/InMemoryTeamCommandHandler';
+import { UUIDService } from '../../services/uuid.service';
 
 
 
@@ -30,6 +35,10 @@ import { AddTeammateFormComponent } from './components/add-teammate-form/add-tea
     {
       provide: TeammateList, useFactory: (qh: TeamQueryHandler, uch: UserContextHolder) => new TeammateList(qh, uch),
       deps: [InMemoryTeamQueryHandler, FakeUserContextHolder]
+    },
+    {
+      provide: JoinTeammate, useFactory: (ch: TeamCommandHandler, idp: IDProvider) => new JoinTeammate(ch, idp),
+      deps: [InMemoryTeamCommandHandler, UUIDService]
     },
   ]
 })

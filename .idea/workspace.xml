@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79a0513d-e75c-473e-8348-93ff222d5633" name="Changes" comment="" />
+    <list default="true" id="79a0513d-e75c-473e-8348-93ff222d5633" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/team/RemoveTeammateFromTeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/controllers/api/team/RemoveTeammateFromTeamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/bootstrap/view/bootstrap-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/bootstrap/view/bootstrap-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/services/inMemory/FakeUserContextHolder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/services/inMemory/FakeUserContextHolder.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/services/inMemory/InMemoryTeamCommandHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/services/inMemory/InMemoryTeamCommandHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/dashboard/services/uuid.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/dashboard/services/uuid.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/security/dto/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/security/dto/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/security/exceptions/authentication-exceptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/security/exceptions/authentication-exceptions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/shared/interfaces/UserContextHolder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/shared/interfaces/UserContextHolder.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/command/AddTeammateOnTeam.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/command/AddTeammateOnTeam.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/query/TeamList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/query/TeamList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/query/TeammateList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/query/TeammateList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/spi/TeamCommandHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/spi/TeamCommandHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/team/spi/TeamQueryHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/team/spi/TeamQueryHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/query/TodoListsByUserId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/query/TodoListsByUserId.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/core/application/todo/spi/TodoCommandHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/core/application/todo/spi/TodoCommandHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/environments/environment.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,20 +61,20 @@
     <option name="showScratchesAndConsoles" value="false" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/home/rahff/Desktop/TeamTodoList/Web/src/main/resources",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/rahff/Desktop/TeamTodoList/Web/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.team.ports.spi" />

@@ -5,6 +5,7 @@ import { Query } from "../../shared/query/Query";
 import { TodoQueryHandler } from "../spi/TodoQueryHandler";
 import { UserContextHolder } from "../../shared/interfaces/UserContextHolder";
 import { Result } from "../../shared/dto/Result";
+import { UnAuthenticatedException } from "../../shared/execptions/UnAuthenticatedException";
 
 export class TodoListsByUserId extends Query<TodoListsViewModel>{
     
@@ -13,6 +14,7 @@ export class TodoListsByUserId extends Query<TodoListsViewModel>{
 
     public query(): Observable<Result<TodoListsViewModel>> {
         const userId = this.userContextHolder.getUserId();
+        if(!userId) return this.onError(new UnAuthenticatedException());
         return this.queryHandler.getTodoListByRef(userId)
         .pipe(map(this.onSuccess),
          catchError(this.onError));

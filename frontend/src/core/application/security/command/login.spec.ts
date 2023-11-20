@@ -1,15 +1,16 @@
 import { InMemoryEmailPasswordAuthentication } from "src/app/authentication/services/in-memory-email-password-authentication.service";
 import { Result } from "../../shared/dto/Result";
 import { fakeAuthentication } from "../data/authentication.data";
-import { Authentication } from "../dto/Authentication";
-import { AuthenticationGateway } from "../spi/AuthenticationGateway";
+import { Authentication, EmailPasswordCredentials, SignupUserRequest } from "../dto/Authentication";
 import { LoginUser } from "./LoginUser";
-import { UserContextHolder } from "../../shared/interfaces/UserContextHolder";
 import { FakeUserContextHolder } from "src/app/dashboard/services/inMemory/FakeUserContextHolder";
+import { EmailPasswordGateway } from "../spi/AuthenticationGateway";
+
+
 
 describe("LoginCommand", () => {
     let login: LoginUser;
-    let authenticationGateway: AuthenticationGateway;
+    let authenticationGateway: EmailPasswordGateway;
     let userContextHolder: FakeUserContextHolder
     beforeEach(() => {
         userContextHolder = new FakeUserContextHolder

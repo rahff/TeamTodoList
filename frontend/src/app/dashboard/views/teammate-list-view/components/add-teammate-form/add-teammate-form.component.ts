@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs';
 import { Result } from 'src/core/application/shared/dto/Result';
 import { JoinTeammate } from 'src/core/application/team/command/JoinTeammate';
-import { Teammate } from 'src/core/application/team/dto/Teammate';
+import { Teammate } from 'src/core/model/team/Teammate';
+
 
 @Component({
   selector: 'app-add-teammate-form',
