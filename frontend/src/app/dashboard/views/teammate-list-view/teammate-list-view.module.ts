@@ -15,6 +15,8 @@ import { TeamCommandHandler } from 'src/core/application/team/spi/TeamCommandHan
 import { IDProvider } from 'src/core/application/shared/interfaces/IDProvider';
 import { InMemoryTeamCommandHandler } from '../../services/inMemory/InMemoryTeamCommandHandler';
 import { UUIDService } from '../../services/uuid.service';
+import {JoinTeammateDependencyProvider, TeammateListDependencyProvider} from "./dependencyProvider";
+import {environment} from "../../../../environments/environment";
 
 
 
@@ -34,11 +36,11 @@ import { UUIDService } from '../../services/uuid.service';
     },
     {
       provide: TeammateList, useFactory: (qh: TeamQueryHandler, uch: UserContextHolder) => new TeammateList(qh, uch),
-      deps: [InMemoryTeamQueryHandler, FakeUserContextHolder]
+      deps: TeammateListDependencyProvider(environment.dataSource)
     },
     {
       provide: JoinTeammate, useFactory: (ch: TeamCommandHandler, idp: IDProvider) => new JoinTeammate(ch, idp),
-      deps: [InMemoryTeamCommandHandler, UUIDService]
+      deps: JoinTeammateDependencyProvider(environment.dataSource)
     },
   ]
 })

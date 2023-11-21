@@ -15,11 +15,11 @@ export class SignupUser extends Command<Authentication, SignupUserRequest> {
 
     public override execute(request: SignupUserRequest): Observable<Result<Authentication>> {
         return this.authenticationGateway.signup(request)
-        .pipe(switchMap(this.onSuccesResult.bind(this)),
+        .pipe(switchMap(this.onSuccessResult.bind(this)),
               catchError(this.onError));
     }
 
-    private onSuccesResult(authentication: Authentication): Observable<Result<Authentication>> {
+    private onSuccessResult(authentication: Authentication): Observable<Result<Authentication>> {
         this.userContextHolder.saveAuthentication(authentication);
         return of(this.onSuccess(authentication));
      }

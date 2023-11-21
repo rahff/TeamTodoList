@@ -6,13 +6,11 @@ import { TeamDetailsStoreApi } from 'src/core/store/team-details/TeamDetailsStor
 import { store } from 'src/core/store/Store';
 import { TeamById } from 'src/core/application/team/query/TeamById';
 import { TeamQueryHandler } from 'src/core/application/team/spi/TeamQueryHandler';
-import { InMemoryTeamQueryHandler } from '../../services/inMemory/InMemoryTeamQueryHandler';
 import { AddTeammateOnTeamSelectComponent } from './components/add-teammate-on-team-select/add-teammate-on-team-select.component';
 import { AddTeammateOnTeam } from 'src/core/application/team/command/AddTeammateOnTeam';
 import { TeamCommandHandler } from 'src/core/application/team/spi/TeamCommandHandler';
-import { InMemoryTeamCommandHandler } from '../../services/inMemory/InMemoryTeamCommandHandler';
-
-
+import { AddTeammateOnTeamDependencyProvider, TeamByIdDependencyProvider } from "./dependencyProvider";
+import { environment } from "../../../../environments/environment";
 
 
 @NgModule({
@@ -31,11 +29,11 @@ import { InMemoryTeamCommandHandler } from '../../services/inMemory/InMemoryTeam
     },
     {
       provide: TeamById, useFactory: (q: TeamQueryHandler) => new TeamById(q),
-      deps: [InMemoryTeamQueryHandler] 
+      deps: TeamByIdDependencyProvider(environment.dataSource)
     },
     {
       provide: AddTeammateOnTeam, useFactory: (c: TeamCommandHandler) => new AddTeammateOnTeam(c),
-      deps: [InMemoryTeamCommandHandler] 
+      deps: AddTeammateOnTeamDependencyProvider(environment.dataSource)
     }
   ]
 })

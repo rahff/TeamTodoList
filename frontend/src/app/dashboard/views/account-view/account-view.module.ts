@@ -8,6 +8,8 @@ import { InMemoryAccountQueryHandler } from '../../services/inMemory/InMemoryAcc
 import { FakeUserContextHolder } from '../../services/inMemory/FakeUserContextHolder';
 import { AccountDetailsStoreApi } from 'src/core/store/account-details/AccountDetailsStoreApi';
 import { store } from 'src/core/store/Store';
+import {UserAccountDependencyProvider} from "./dependencyProvider";
+import {environment} from "../../../../environments/environment";
 
 
 
@@ -25,7 +27,7 @@ import { store } from 'src/core/store/Store';
     },
     {
       provide: UserAccount, useFactory: (q: AccountQueryHandler, u: UserContextHolder) => new UserAccount(q, u),
-      deps: [InMemoryAccountQueryHandler, FakeUserContextHolder]
+      deps: UserAccountDependencyProvider(environment.dataSource)
     }
   ]
 })
