@@ -4,9 +4,7 @@ import { TeamCommandHandler } from "../spi/TeamCommandHandler";
 import { Result } from "src/core/application/shared/dto/Result";
 import { IDProvider } from "src/core/application/shared/interfaces/IDProvider";
 import { Command } from "src/core/application/shared/command/Command";
-import { Team } from "../../../model/team/Team";
 import { TeamCard } from "src/core/model/team/TeamCard";
-
 
 
 export class CreateTeam extends Command<TeamCard, CreateTeamFormData> {

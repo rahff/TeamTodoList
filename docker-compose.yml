@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: todo
+      MYSQL_USER: rahff
+      MYSQL_PASSWORD: bouboulover23-pw
+    networks:
+      - db_admin
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - db_admin
+
+networks:
+  db_admin:
+
+
+volumes:
+  mysql_data:

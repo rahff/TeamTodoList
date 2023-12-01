@@ -4,6 +4,7 @@ import { fakeAuthentication } from 'src/core/application/security/data/authentic
 import { EmailPasswordCredentials, Authentication, SignupUserRequest, TokenJwtPair } from 'src/core/application/security/dto/Authentication';
 import { InvalidTokenException, TokenExpiresException } from 'src/core/application/security/exceptions/authentication-exceptions';
 import { EmailPasswordGateway, TokenGateway } from 'src/core/application/security/spi/AuthenticationGateway';
+import {BrowserContextService} from "../../dashboard/services/shared/browser-context.service";
 
 @Injectable({
   providedIn: 'root'
@@ -30,39 +31,4 @@ export class InMemoryEmailPasswordAuthentication implements EmailPasswordGateway
 
  
 }
-
-@Injectable({
-  providedIn: "root"
-})
-export class InMemoryTokenAuthentication implements TokenGateway {
-
-  private localAuthentication: Authentication | null = fakeAuthentication;
-
-  public constructor(){}
-
-  public setAuthentication(authentication: Authentication | null): void {
-    this.localAuthentication = authentication;
-  }
-
-  public authenticate(): Observable<Authentication> {
-  
-    const token = this.localAuthentication?.token;
-    if(!token) return throwError(() => new Error("no token"));
-    if(token.accessToken === "expires token") return throwError(()=> new TokenExpiresException(token.refreshToken))
-    if(token.accessToken === fakeAuthentication.token.accessToken) {
-      return new Observable((observable) => {
-        observable.next(fakeAuthentication);
-      })
-    }else return throwError(() => new InvalidTokenException());
-  }
-
-  public refreshToken(token: string): Observable<Authentication> {
-    if(token === this.localAuthentication?.token.refreshToken)
-    return new Observable((observable) => {
-      observable.next(fakeAuthentication);
-    })
-    else return throwError(() => new InvalidTokenException());
-  }
-  
-} 
 

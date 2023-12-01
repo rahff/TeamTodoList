@@ -19,7 +19,7 @@ public class DeleteTodoController {
     this.transaction = transaction;
   }
 
-  @PutMapping("delete-todo")
+  @PutMapping("/delete-todo")
   public IdJson deleteTodo(@RequestBody DeleteTodoRequestBody body) {
     try{
       var request = new DeleteTodoRequest(body.todoListId(), body.todoId());

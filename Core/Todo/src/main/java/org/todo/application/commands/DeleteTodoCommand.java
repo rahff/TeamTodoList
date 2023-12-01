@@ -14,7 +14,7 @@ public class DeleteTodoCommand implements Command<DeleteTodoRequest> {
   }
 
   public void execute(DeleteTodoRequest request) {
-    var foundedTodoList = todoListRepository.getTodoListById(request.todoListId()).orElseThrow();
+    var foundedTodoList = todoListRepository.getTodoListById(request.todoListId()).orElseThrow(() -> new RuntimeException("catch in core"));
     var todoList = TodoList.fromDto(foundedTodoList);
     todoList.deleteTodo(request.todoId());
     todoListRepository.saveTodoList(todoList.snapshot());

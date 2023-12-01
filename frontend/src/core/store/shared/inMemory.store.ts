@@ -21,7 +21,8 @@ export const GLOBAL_INITIAL_STATE: GlobalState = {
     },
     teamList: {
         viewModel: {
-            list: []
+            list: [],
+            availableTeammates: []
         }
     },
     teammateList: {

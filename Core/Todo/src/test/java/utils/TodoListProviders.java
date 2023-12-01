@@ -37,4 +37,8 @@ public class TodoListProviders {
         new TodoDto("todoID3","do another thing", false, DateProviders.getDateInFuture(), DateProviders.now())
       ), DateProviders.now());
   }
+
+  public static List<TodoListDto> getList(){
+    return List.of(emptyTodoListDto(), todoListDtoWithSeveralTodo());
+  }
 }

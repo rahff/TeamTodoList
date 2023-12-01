@@ -14,7 +14,7 @@ public class DoneTodoCommand implements Command<DoneTodoRequest> {
   }
 
   public void execute(DoneTodoRequest request) {
-    var foundedTodoList = todoListRepository.getTodoListById(request.todoListId()).orElseThrow();
+    var foundedTodoList = todoListRepository.getTodoListById(request.todoListId()).orElseThrow(() -> new RuntimeException("catch in core"));
     var todoList = TodoList.fromDto(foundedTodoList);
     todoList.doneTodo(request.todoId());
     todoListRepository.saveTodoList(todoList.snapshot());

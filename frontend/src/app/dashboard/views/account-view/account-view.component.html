@@ -1,1 +1,3 @@
 <p *ngIf="userAccount$ | async let userAccount"> {{userAccount | json}} </p>
+
+<app-change-password-form (passwordChangedEvent)="onPasswordChangedEvent($event)" ></app-change-password-form>

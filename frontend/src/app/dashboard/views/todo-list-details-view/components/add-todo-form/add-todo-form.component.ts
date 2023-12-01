@@ -11,9 +11,9 @@ export class AddTodoFormComponent implements OnInit {
   @Output() public todoFormSubmited = new EventEmitter<{description: string, deadline: string}>();
   public todoForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  public constructor(private formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.todoForm = this.formBuilder.group({
       description: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(255)]],
       deadline: ["", [Validators.required]]

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DropdownMenuComponent } from 'src/app/dashboard/views/shared-view/components/dropdown-menu/dropdown-menu.component';
+import {Teammate} from "../../../../../../core/model/team/Teammate";
 
 
 
@@ -10,12 +11,12 @@ import { DropdownMenuComponent } from 'src/app/dashboard/views/shared-view/compo
 })
 export class TeammateListDropdownComponent extends DropdownMenuComponent {
 
-  @Input() public teammateId!: string;
-  @Output() public fireTeammateButtonClicked = new EventEmitter<string>()
+  @Input() public teammate!: Teammate;
+  @Output() public fireTeammateButtonClicked = new EventEmitter<Teammate>()
 
-  constructor() { super() }
+  public constructor() { super() }
 
-  public firedAction(id: string): void {
-    this.fireTeammateButtonClicked.emit(id);
+  public firedAction(): void {
+    this.fireTeammateButtonClicked.emit(this.teammate);
   }
 }

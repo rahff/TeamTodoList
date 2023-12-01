@@ -12,17 +12,17 @@ import { environment } from "src/environments/environment";
   })
   export class TokenAuthentication implements TokenGateway {
   
-    private baseserverUrl: string = environment.serverUrl;
+    private baseServerUrl: string = environment.serverUrl;
 
     constructor(private http: HttpClient) { }
 
     public authenticate(): Observable<Authentication> {
-        return this.http.get<Authentication>(this.baseserverUrl+"/authentication");
+        return this.http.get<Authentication>(this.baseServerUrl+"/authentication");
     }
 
     public refreshToken(refreshToken: string): Observable<Authentication> {
       const headers = new HttpHeaders({"Authorization": refreshToken});
-      return this.http.get<Authentication>(this.baseserverUrl+"/refresh-token", {headers});
+      return this.http.get<Authentication>(this.baseServerUrl+"/refresh-token", {headers});
     }
   }
   

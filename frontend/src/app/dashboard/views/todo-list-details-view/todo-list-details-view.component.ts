@@ -20,7 +20,7 @@ export class TodoListDetailsViewComponent implements OnInit, OnDestroy {
   public todoListDetails$!: Observable<TodoListDetails>;
   private subscription = new Subscription();
 
-  constructor(private storeApi: TodoListDetailsStoreApi, 
+  public constructor(private storeApi: TodoListDetailsStoreApi,
               private todoListById: TodoListById,
               private activatedRoute: ActivatedRoute) { }
 

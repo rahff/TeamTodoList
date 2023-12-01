@@ -1,1 +1,16 @@
-<p>add-team-form works!</p>
+<form [formGroup]="teamForm">
+    <div>
+        <label>Team name</label>
+        <input formControlName="name">
+    </div>
+    <div *ngIf="availableTeammates.length">
+        <label>Select Teammates</label>
+        <select multiple formControlName="teammates">
+            <option
+            *ngFor="let teammate of availableTeammates"
+            [value]="teammate.id"> {{teammate.name}}
+            </option>
+        </select>
+    </div>
+    <button class="border-2" (click)="onSubmit()" >Create team</button>
+</form>

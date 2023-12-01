@@ -13,14 +13,13 @@ import { CreateTeam } from 'src/core/application/team/command/CreateTeam';
 import { DeleteTeam } from 'src/core/application/team/command/DeleteTeam';
 import { TeamCommandHandler } from 'src/core/application/team/spi/TeamCommandHandler';
 import { IDProvider } from 'src/core/application/shared/interfaces/IDProvider';
-import { InMemoryTeamCommandHandler } from '../../services/inMemory/InMemoryTeamCommandHandler';
-import { UUIDService } from '../../services/uuid.service';
 import {
   CreateTeamDependencyProvider,
   DeleteTeamDependencyProvider,
   TeamListDependencyProvider
 } from "./dependencyProvider";
 import { environment } from "../../../../environments/environment";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -32,10 +31,11 @@ import { environment } from "../../../../environments/environment";
     TeamListComponent,
     AddTeamFormComponent
   ],
-  imports: [
-    CommonModule,
-    TeamListViewRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        TeamListViewRoutingModule,
+        ReactiveFormsModule
+    ],
   providers: [
     {
       provide: TeamListStoreApi, useFactory: () => new TeamListStoreApi(store)

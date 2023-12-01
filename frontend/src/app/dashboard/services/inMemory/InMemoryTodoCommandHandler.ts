@@ -6,6 +6,7 @@ import { newTeamTodoList, newTodo } from "src/core/application/todo/in-memory/da
 import { TodoCommandHandler } from "src/core/application/todo/spi/TodoCommandHandler";
 import { Todo } from "src/core/model/todo/Todo";
 import { TodoList } from "src/core/model/todo/TodoList";
+import {DoneTodoRequest} from "../../../../core/application/todo/dto/DoneTodoRequest";
 
 
 
@@ -41,10 +42,10 @@ export class InMemoryTodoCommandHandler implements TodoCommandHandler {
         return of(newTodo);
     }
 
-    public doneTodo(todoId: string): Observable<string> {
-        this.methodCalls.set("doneTodo", todoId);
-        if(todoId === "failure") return throwError(() => new Error("bad request"));
-        return of(todoId);
+    public doneTodo(request: DoneTodoRequest): Observable<string> {
+        this.methodCalls.set("doneTodo", request);
+        if(request.todoId === "failure") return throwError(() => new Error("bad request"));
+        return of(request.todoId);
     }
 
     public deleteTodo(request: DeleteTodoRequest): Observable<string> {

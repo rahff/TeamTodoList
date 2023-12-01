@@ -17,7 +17,7 @@ export class AddTeammateFormComponent implements OnInit {
 
   private joinTeammateForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, 
+  public constructor(private formBuilder: FormBuilder,
               private joinTeammate: JoinTeammate) { }
 
   public ngOnInit(): void {

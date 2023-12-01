@@ -17,6 +17,6 @@ public class TeammatesAddedQuery {
     public List<Teammate> getTeammates(List<String> theirIds, final String teamId) {
         var teammatesDto = theirIds.stream().parallel()
                 .map(id -> userDataAccess.getTeammateByUserId(id).orElseThrow());
-        return teammatesDto.map(dto -> new Teammate(dto.id(), dto.name(), dto.email(), Optional.of(teamId))).toList();
+        return teammatesDto.map(dto -> new Teammate(dto.id(), dto.name(), dto.email(), teamId)).toList();
     }
 }

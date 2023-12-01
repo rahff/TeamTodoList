@@ -4,6 +4,7 @@ package org.example.config.security;
 import org.example.security.*;
 import org.security.application.*;
 import org.security.ports.api.CreateAccount;
+import org.security.ports.api.RefreshAuthentication;
 import org.security.ports.api.Signup;
 import org.security.ports.api.UsernamePasswordAuthentication;
 import org.security.ports.spi.*;
@@ -11,15 +12,13 @@ import org.shared.spi.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.team.application.commands.CreateTeammate;
-import org.team.ports.api.AddTeammate;
-import org.team.ports.spi.CodeGenerator;
 
 
 @EnableWebSecurity
@@ -39,7 +38,7 @@ public class SecurityConfig {
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http.csrf(AbstractHttpConfigurer::disable);
-    http.authorizeHttpRequests(authorize -> authorize.requestMatchers("/join", "/login", "/create-account").permitAll()
+    http.authorizeHttpRequests(authorize -> authorize.requestMatchers( "/login", "/create-account").permitAll()
       .anyRequest().authenticated());
     http.apply(new JwtConfigurer()
       .withJwtFilter(jwtFilter)
@@ -63,7 +62,7 @@ public class SecurityConfig {
   }
   @Bean
   Signup signup(){
-    return new CreateUserManager(userRepository, jwtService, passwordSecurity());
+    return new CreateUserManager(userRepository, jwtService);
   }
 
   @Bean
@@ -72,7 +71,12 @@ public class SecurityConfig {
   }
 
   @Bean
-  public ChangePassword changePassword(){
+  ChangePassword changePassword(){
     return new SetTeammatePassword(userRepository, passwordSecurity());
+  }
+
+  @Bean
+  RefreshAuthentication refreshAuthentication(){
+    return new RefreshUserAuthentication(userRepository, jwtService);
   }
 }

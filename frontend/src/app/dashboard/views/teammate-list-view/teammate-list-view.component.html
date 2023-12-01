@@ -3,9 +3,12 @@
     <app-add-teammate-form
     (teammateJoinedEvent)="onTeammateJoinedEvent($event)"
     ></app-add-teammate-form>
-    <app-teammate-list 
-    (teammateFiredEvent)="onTeammateFired($event)"
-    
-    ></app-teammate-list>
-    </div> 
+        <div *ngIf="teammateList$ | async let teammates">
+            <app-teammate-list
+                    (teammateFiredEvent)="onTeammateFired($event)"
+                    [teammates]="teammates"
+            ></app-teammate-list>
+
+        </div>
+    </div>
 </div>

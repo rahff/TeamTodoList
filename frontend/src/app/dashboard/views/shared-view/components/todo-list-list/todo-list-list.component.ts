@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ConfirmActionService } from 'src/app/dashboard/services/confirm-action.service';
+import { ConfirmActionService } from 'src/app/dashboard/services/shared/confirm-action.service';
 import { Result } from 'src/core/application/shared/dto/Result';
 import { DeleteTodoList } from 'src/core/application/todo/command/DeleteTodoList';
 import { TodoList } from 'src/core/model/todo/TodoList';
@@ -19,7 +19,7 @@ export class TodoListListComponent implements OnDestroy {
   @Output() public todoListDeletedEvent = new EventEmitter<string>();
   private subscription = new Subscription();
 
-  constructor(private deleteTodoList: DeleteTodoList, 
+  public constructor(private deleteTodoList: DeleteTodoList,
               private confirmationService: ConfirmActionService) { }
 
 

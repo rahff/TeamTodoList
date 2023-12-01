@@ -12,7 +12,7 @@ export class TeamListDropdownComponent extends DropdownMenuComponent {
   @Input() public teamId!: string;
   @Output() public deleteActionClicked = new EventEmitter<string>();
   
-  constructor() { super() }
+  public constructor() { super() }
 
   public deleteActionClick(id: string): void {
     this.deleteActionClicked.emit(id);

@@ -15,6 +15,9 @@ import org.team.ports.spi.CodeGenerator;
 import org.team.ports.spi.TeamRepository;
 import org.team.ports.spi.TeammateRepository;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 @Configuration
 public class TeamModuleBeanConfig {
 
@@ -31,26 +34,36 @@ public class TeamModuleBeanConfig {
 
 
   @Bean
-  public Command<CreateTeamRequest> createTeamRequestCommand(){
+  public Command<CreateTeamRequest> createTeamCommand(){
     return new CreateTeam(teamRepository);
   }
 
   @Bean
-  Command<AddTeammatesOnTeamRequest> addTeammatesOnTeamRequestCommand(){
+  Command<AddTeammatesOnTeamRequest> addTeammatesOnTeamCommand(){
     return new AddTeammatesOnTeam(teamRepository, teammateRepository);
   }
 
   @Bean
-  Command<RemoveTeammateFromTeamRequest> removeTeammateFromTeamRequestCommand(){
+  Command<RemoveTeammateFromTeamRequest> removeTeammateFromTeamCommand(){
     return new RemoveTeammateFromTeam(teamRepository);
   }
   @Bean
-  Command<DeleteTeamRequest> deleteTeamRequestCommand(){
+  Command<DeleteTeamRequest> deleteTeamCommand(){
     return new DeleteTeam(teamRepository);
   }
 
   @Bean
   AddTeammate addTeammate(){
     return new CreateTeammate(userRepository, codeGenerator, teammateRepository);
+  }
+
+  @Bean
+  FireTeammateCommand fireTeammateCommand() {
+    return new FireTeammateCommand(teammateRepository, removeTeammateFromTeamCommand());
+  }
+
+  @Bean
+  ExecutorService executorService(){
+    return Executors.newFixedThreadPool(2);
   }
 }

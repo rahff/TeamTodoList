@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ConfirmActionService } from 'src/app/dashboard/services/confirm-action.service';
+import { ConfirmActionService } from 'src/app/dashboard/services/shared/confirm-action.service';
 import { Result } from 'src/core/application/shared/dto/Result';
 import { FireTeammate } from 'src/core/application/team/command/FireTeammate';
 import { RemoveTeammateFromTeam } from 'src/core/application/team/command/RemoveTeammateFromTeam';
@@ -19,15 +19,15 @@ export class TeammateListComponent implements OnInit {
   @Output() public teammateFiredEvent = new EventEmitter<string>();
   @Output() public teammateRemovedFromTeamEvent = new EventEmitter<string>();
   
-  constructor(private fireTeammate: FireTeammate,
+  public constructor(private fireTeammate: FireTeammate,
               private removeTeammateFromTeam: RemoveTeammateFromTeam,
               private confirmService: ConfirmActionService) { }
 
   ngOnInit(): void {
   }
 
-  public onfireTeammateButtonClicked(id: string): void {
-    this.confirmService.askConfirmationFor(this.fireTeammate, id)
+  public onFireTeammateButtonClicked(teammate: Teammate): void {
+    this.confirmService.askConfirmationFor(this.fireTeammate, teammate)
     .subscribe((result: Result<string>) => {
       if(result.isOk()) this.teammateFiredEvent.emit(result.getValue())
     })

@@ -3,24 +3,28 @@ import { LoginViewRoutingModule } from './login-view-routing.module';
 import { LoginUser } from 'src/core/application/security/command/LoginUser';
 import { EmailPasswordGateway } from 'src/core/application/security/spi/AuthenticationGateway';
 import { UserContextHolder } from 'src/core/application/shared/interfaces/UserContextHolder';
-import { InMemoryEmailPasswordAuthentication } from '../../services/in-memory-email-password-authentication.service';
-import { FakeUserContextHolder } from 'src/app/dashboard/services/inMemory/FakeUserContextHolder';
+import {ReactiveFormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
+import {loginUserDependencyProvider} from "./dependencyProvider";
+import {environment} from "../../../../environments/environment";
 
 
 
 @NgModule({
-  declarations: [
+    declarations: [
     ...LoginViewRoutingModule.viewComponents,
-  ],
-  imports: [
-    LoginViewRoutingModule
-  ],
-  providers: [
-    {
-      provide: LoginUser, 
-      useFactory: (a: EmailPasswordGateway, u: UserContextHolder) => new LoginUser(a, u),
-      deps: [InMemoryEmailPasswordAuthentication, FakeUserContextHolder]
-    }
-  ]
+    ],
+    imports: [
+        CommonModule,
+        LoginViewRoutingModule,
+        ReactiveFormsModule
+    ],
+    providers: [
+        {
+          provide: LoginUser,
+          useFactory: (a: EmailPasswordGateway, u: UserContextHolder) => new LoginUser(a, u),
+          deps: loginUserDependencyProvider(environment.dataSource)
+        }
+    ]
 })
 export class LoginViewModule { }

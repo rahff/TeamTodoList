@@ -19,7 +19,6 @@ public class TeamListViewController {
     }
 
     @GetMapping("/teams/{accountId}")
-
     public TeamListViewModel teamListViewModel(@PathVariable String accountId){
         try{
             return viewModel.query(accountId);

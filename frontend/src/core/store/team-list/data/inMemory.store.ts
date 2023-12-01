@@ -26,7 +26,8 @@ export const teamListView: TeamListViewModel = {
                 teammateCount: 2,
                 todoListCount: 0
             },
-        ]
+        ],
+        availableTeammates: []
     }
 }
 
@@ -60,7 +61,8 @@ export const teamListViewAfterTeam4Added: TeamListViewModel = {
                 todoListCount: 0
             },
             team4
-        ]
+        ],
+        availableTeammates: []
     }
 }
 
@@ -82,6 +84,7 @@ export const teamListViewAfterDeletingTeam2: TeamListViewModel = {
                 teammateCount: 2,
                 todoListCount: 0
             },
-        ]
+        ],
+        availableTeammates: []
     }
 }

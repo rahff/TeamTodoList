@@ -1,6 +1,7 @@
 import { Result } from "src/core/application/shared/dto/Result";
 import { DoneTodo } from "./DoneTodo";
 import { InMemoryTodoCommandHandler } from "src/app/dashboard/services/inMemory/InMemoryTodoCommandHandler";
+import {DoneTodoRequest} from "../dto/DoneTodoRequest";
 
 describe("DoneTodo", () => {
     let doneTodo: DoneTodo;
@@ -12,16 +13,16 @@ describe("DoneTodo", () => {
     })
 
     it(" A teammate done a todo", () => {
-        const doneTodoId = "todoId";
-        doneTodo.execute(doneTodoId).subscribe((result: Result<string>) => {
+        const doneTodoRequest: DoneTodoRequest = {todoId: "todoId", todoListId: "1"};
+        doneTodo.execute(doneTodoRequest).subscribe((result: Result<string>) => {
             expect(result.isOk()).toBeTrue();
-            expect(dataSource.hasBeenCalled("doneTodo")).toEqual(doneTodoId);
+            expect(dataSource.hasBeenCalled("doneTodo")).toEqual(doneTodoRequest);
         })
     })
 
     it(" A teammate done a todo but it fails", () => {
-        const doneTodoId = "failure";
-        doneTodo.execute(doneTodoId).subscribe((result: Result<string>) => {
+        const doneTodoRequest: DoneTodoRequest = {todoId: "failure", todoListId: "1"};
+        doneTodo.execute(doneTodoRequest).subscribe((result: Result<string>) => {
             expect(result.getError().message).toEqual("bad request");
         })
     })

@@ -1,0 +1,9 @@
+commands/RemoveTeammateFromTeamTest.class
+utils/TeamProvider.class
+utils/RequestProvider.class
+commands/FireTeammateCommandTest.class
+commands/CreateTeammateTest.class
+commands/DeleteTeamTest.class
+commands/CreateTeamTest.class
+commands/AddTeammateCommandTest.class
+utils/FakeData.class

@@ -1,6 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TeammateListStoreApi } from 'src/core/store/teammate-list/TeammateListStoreApi';
+import {Teammate} from "../../../../../../core/model/team/Teammate";
 
 @Component({
   selector: 'app-add-team-form',
@@ -10,15 +10,17 @@ import { TeammateListStoreApi } from 'src/core/store/teammate-list/TeammateListS
 export class AddTeamFormComponent implements OnInit {
 
   @Output() public teamFormSubmited = new EventEmitter<{name: string, teammates: string[]}>();
+  @Input() public availableTeammates!: Teammate[];
   public teamForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  public constructor(private formBuilder: FormBuilder) { }
 
   public ngOnInit(): void {
     this.teamForm = this.formBuilder.group({
       name: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(255)]],
-      teammates: [[]]
+      teammates: []
     })
+
   }
 
   public onSubmit(): void {

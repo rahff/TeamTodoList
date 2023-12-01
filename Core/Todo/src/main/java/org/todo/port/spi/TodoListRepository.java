@@ -2,6 +2,7 @@ package org.todo.port.spi;
 
 import org.todo.port.dto.TodoListDto;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface TodoListRepository {
@@ -10,4 +11,5 @@ public interface TodoListRepository {
   Optional<TodoListDto> getTodoListById(String todoListId);
   int getTodoListCount(String userId);
   void delete(String id);
+  List<TodoListDto> getTodoListsByUserRef(String userId);
 }

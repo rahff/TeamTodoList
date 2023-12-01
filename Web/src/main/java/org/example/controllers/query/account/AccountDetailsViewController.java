@@ -25,6 +25,4 @@ public class AccountDetailsViewController {
       throw new HttpClientErrorException(HttpStatus.BAD_REQUEST);
     }
   }
-
-
 }

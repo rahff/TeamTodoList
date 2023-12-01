@@ -12,12 +12,12 @@ import { Result } from 'src/core/application/shared/dto/Result';
 })
 export class BootstrapViewComponent implements OnInit, OnDestroy {
 
-  private subscribtion!: Subscription;
+  private subscription!: Subscription;
 
   constructor(private authenticationByToken: AuthenticationByToken, private router: Router) { }
 
   public ngOnInit(): void {
-    this.subscribtion = this.authenticationByToken.authenticate().subscribe({
+    this.subscription = this.authenticationByToken.authenticate().subscribe({
       next: this.onAuthenticationResult.bind(this)
     })
   }
@@ -28,7 +28,7 @@ export class BootstrapViewComponent implements OnInit, OnDestroy {
   }
 
   public ngOnDestroy(): void {
-    this.subscribtion.unsubscribe();
+    this.subscription.unsubscribe();
   }
 
 }

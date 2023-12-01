@@ -1,10 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import {Observable, of, Subscription} from 'rxjs';
 import { UserAccount } from 'src/core/application/account/query/UserAccount';
 import { Result } from 'src/core/application/shared/dto/Result';
 import { AccountDetails, AccountDetailsViewModel } from 'src/core/store/account-details/AccountDetailsState';
 import { AccountDetailsStoreApi } from 'src/core/store/account-details/AccountDetailsStoreApi';
 import { accountDetailsReceivedEvent } from 'src/core/store/account-details/Events';
+import {Message} from "../../../../core/application/shared/dto/Message";
+
 
 @Component({
   selector: 'app-account',
@@ -16,10 +18,12 @@ export class AccountViewComponent implements OnInit, OnDestroy {
   public userAccount$!: Observable<AccountDetails>;
   private subscription!: Subscription;
 
-  constructor(private storeApi: AccountDetailsStoreApi,
+
+  public constructor(private storeApi: AccountDetailsStoreApi,
               private userAccount: UserAccount) { }
 
   public ngOnInit(): void {
+
     this.userAccount$ = this.storeApi.getAccountDetails();
     this.subscription = this.userAccount.query().subscribe({
       next: this.onQueryResult.bind(this)
@@ -27,6 +31,7 @@ export class AccountViewComponent implements OnInit, OnDestroy {
   }
 
   private onQueryResult(result: Result<AccountDetailsViewModel>): void {
+    console.log(result.getValue())
     if(result.isOk()) 
       this.storeApi.fireEvent(accountDetailsReceivedEvent(result.getValue()));
   }
@@ -35,4 +40,7 @@ export class AccountViewComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  public onPasswordChangedEvent($event: Message) {
+    // annonce the success or the failure of password change
+  }
 }

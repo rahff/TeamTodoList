@@ -1,1 +1,6 @@
-<p>login-view works!</p>
+<form [formGroup]="loginForm">
+    <input formControlName="email">
+    <input formControlName="password">
+    <button (click)="onSubmit()">Submit</button>
+    <p *ngIf="errorMessage">{{errorMessage}}</p>
+</form>

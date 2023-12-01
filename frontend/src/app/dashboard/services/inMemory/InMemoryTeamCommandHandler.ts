@@ -63,10 +63,10 @@ export class InMemoryTeamCommandHandler implements TeamCommandHandler {
         return this.methodCalls.get(methodName)
     }
 
-    public fireTeammate(teammateId: string): Observable<string> {
-        this.methodCalls.set( "fireTeammate", teammateId)
-        if(teammateId === "failure") return throwError(() => this.error);
-        return of(teammateId);
+    public fireTeammate(teammate: Teammate): Observable<string> {
+        this.methodCalls.set( "fireTeammate", teammate)
+        if(teammate.id === "failure") return throwError(() => this.error);
+        return of(teammate.id);
     }
 
 }

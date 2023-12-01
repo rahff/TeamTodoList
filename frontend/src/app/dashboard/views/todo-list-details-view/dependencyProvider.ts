@@ -1,9 +1,9 @@
 import {DATA_SOURCE} from "../../../../environments/constants";
 import {InMemoryTodoQueryHandler} from "../../services/inMemory/InMemoryTodoQueryHandler";
-import {TodoQueryService} from "../../services/todo-query.service";
-import {UUIDService} from "../../services/uuid.service";
+import {TodoQueryService} from "../../services/todo/todo-query.service";
+import {UUIDService} from "../../services/shared/uuid.service";
 import {InMemoryTodoCommandHandler} from "../../services/inMemory/InMemoryTodoCommandHandler";
-import {TodoCommandService} from "../../services/todo-command.service";
+import {TodoCommandService} from "../../services/todo/todo-command.service";
 
 
 export const TodoListByIdDependencyProvider = (dataSource: number) => {

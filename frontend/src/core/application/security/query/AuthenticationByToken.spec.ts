@@ -1,12 +1,10 @@
-import { InMemoryTokenAuthentication } from "src/app/authentication/services/in-memory-email-password-authentication.service";
-
 import { AuthenticationByToken } from "./AuthenticationByToken"
 import { UserContextHolder } from "../../shared/interfaces/UserContextHolder";
 
 import { Result } from "../../shared/dto/Result";
 import { Authentication } from "../dto/Authentication";
 import { fakeAuthentication, fakeAuthenticationWithExpiredAccessToken, fakeAuthenticationWithInvalidToken } from "../data/authentication.data";
-import { TokenGateway } from "../spi/AuthenticationGateway";
+import {FakeTokenAuthentication} from "../../../../app/authentication/services/in-memory-token-authentication.service";
 
 
 
@@ -14,7 +12,7 @@ describe("AuthenticationByToken", () => {
     let authenticationByToken: AuthenticationByToken;
     let userContextHolder: jasmine.SpyObj<UserContextHolder>
     const setupSecurityContextHolder = (authentication:Authentication | null) => {
-        const tokenAuthenticator = new InMemoryTokenAuthentication()
+        const tokenAuthenticator = new FakeTokenAuthentication()
         tokenAuthenticator.setAuthentication(authentication)
         userContextHolder = jasmine.createSpyObj("UserContextHolder", ["saveAuthentication"]);
         authenticationByToken = new AuthenticationByToken(tokenAuthenticator, userContextHolder);

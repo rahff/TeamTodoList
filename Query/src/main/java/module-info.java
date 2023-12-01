@@ -12,4 +12,5 @@ module Query {
     exports org.query.account.api;
     exports org.query.account.model;
     exports org.query.account.spi;
+    exports org.query.account.dto;
 }

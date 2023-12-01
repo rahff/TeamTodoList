@@ -8,6 +8,7 @@ import org.todo.port.spi.TodoListRepository;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -16,14 +17,18 @@ import java.util.stream.Collectors;
 @Profile("test")
 public class TodoListInMemoryRepository implements TodoListRepository {
 
-  private List<TodoListDto> data = new ArrayList<>();
+  private final List<TodoListDto> data = new ArrayList<>();
   public TodoListInMemoryRepository(){
-    var todos = new ArrayList<TodoDto>();
-    todos.add(new TodoDto("1","do something", false, LocalDate.of(2023, 11, 2), LocalDate.now()));
-    data.add(new TodoListDto("1", "userId", "default todo list", todos, LocalDate.of(2023, 11, 5)));
+    this.data.addAll(List.of(TodoListProvider.getTodoList()));
   }
   public void saveTodoList(TodoListDto todoList) {
-    data.add(todoList);
+    var existingTodoList = getTodoListById(todoList.listId()).orElse(null);
+    if(existingTodoList != null){
+      delete(existingTodoList.listId());
+      data.add(todoList);
+    }else{
+      data.add(todoList);
+    }
   }
 
   public Optional<TodoListDto> getTodoListByName(String userId, String todoListName) {
@@ -45,6 +50,20 @@ public class TodoListInMemoryRepository implements TodoListRepository {
   }
 
   public void delete(String id) {
-      data = data.stream().filter(todoList -> !todoList.listId().equals(id)).collect(Collectors.toList());
+      data.removeIf(todoList -> !todoList.listId().equals(id));
+  }
+
+  public List<TodoListDto> getTodoListsByUserRef(String userId) {
+    return data.stream()
+            .filter(todoList -> todoList.ref().equals(userId)).toList();
+  }
+}
+
+
+class TodoListProvider {
+
+  public static TodoListDto getTodoList(){
+    var todos = List.of(new TodoDto("1","do something", false, LocalDate.of(2023, 11, 2), LocalDate.now()));
+    return new TodoListDto("1", "userId", "default todo list", todos, LocalDate.of(2023, 11, 5));
   }
 }

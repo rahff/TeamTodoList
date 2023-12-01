@@ -37,7 +37,7 @@ public class TeamDetailsViewQuery {
         try{
             executorService = Executors.newCachedThreadPool();
             Future<TeamDto> teamDto$ = executorService.submit(() -> teamDataAccess.getTeamById(teamId).orElseThrow());
-            Future<List<String>> availableTeammatesRefs$ = executorService.submit(() ->teamDataAccess.getAvailableTeammatesRef(accountId));
+            Future<List<String>> availableTeammatesRefs$ = executorService.submit(() -> teamDataAccess.getAvailableTeammatesRef(accountId));
             Future<List<TodoListDto>> teamTodoListsDto$ = executorService.submit(() -> todoListDataAccess.getTodoListsByTeamId(teamId));
             Future<List<Teammate>> availableTeammates$ = executorService.submit(() -> getAvailableTeammate(availableTeammatesRefs$));
             Future<List<TodoList>> teamTodoLists$ = executorService.submit(() -> getTeamTodoList(teamTodoListsDto$));
@@ -51,8 +51,8 @@ public class TeamDetailsViewQuery {
     }
     private List<Teammate> getTeammatesTeam(Future<TeamDto> teamDto$, String teamId) throws ExecutionException, InterruptedException {
         return teamDto$.get().teammateIds()
-                .stream().parallel().map(id -> userDataAccess.getTeammateByUserId(id).orElseThrow())
-                .map(dto -> new Teammate(dto.id(), dto.name(), dto.email(), Optional.of(teamId))).toList();
+                .parallelStream().map(id -> userDataAccess.getTeammateByUserId(id).orElseThrow())
+                .map(dto -> new Teammate(dto.id(), dto.name(), dto.email(), teamId)).toList();
     }
 
     private List<TodoList> getTeamTodoList(Future<List<TodoListDto>> todoListDto$) throws ExecutionException, InterruptedException {
@@ -60,8 +60,8 @@ public class TeamDetailsViewQuery {
     }
 
     private List<Teammate> getAvailableTeammate(Future<List<String>> theirIds$) throws ExecutionException, InterruptedException {
-        return theirIds$.get().stream().parallel().map(id -> userDataAccess.getTeammateByUserId(id).orElseThrow())
-                .map(dto -> new Teammate(dto.id(), dto.name(), dto.email(), Optional.empty()))
+        return theirIds$.get().parallelStream().map(id -> userDataAccess.getTeammateByUserId(id).orElseThrow())
+                .map(dto -> new Teammate(dto.id(), dto.name(), dto.email(), null))
                 .toList();
     }
 }

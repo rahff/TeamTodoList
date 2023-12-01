@@ -8,6 +8,7 @@ import org.example.persistance.entities.todo.TodoList;
 import org.example.persistance.mappers.todo.TodoListMapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -44,5 +45,10 @@ public class JpaTodoListRepositoryAdapter implements TodoListRepository {
   @Override
   public void delete(String id) {
     todoListRepository.deleteById(id);
+  }
+
+  @Override
+  public List<TodoListDto> getTodoListsByUserRef(String userId) {
+    return null;
   }
 }

@@ -1,10 +1,10 @@
 import { Router } from '@angular/router';
 import { BootstrapViewComponent } from './bootstrap-view.component';
 import { AuthenticationByToken } from 'src/core/application/security/query/AuthenticationByToken';
-import {  InMemoryTokenAuthentication } from 'src/app/authentication/services/in-memory-email-password-authentication.service';
 import { UserContextHolder } from 'src/core/application/shared/interfaces/UserContextHolder';
 import { fakeAuthentication, fakeAuthenticationWithExpiredAccessToken, fakeAuthenticationWithInvalidToken } from 'src/core/application/security/data/authentication.data';
 import { Authentication } from 'src/core/application/security/dto/Authentication';
+import {FakeTokenAuthentication} from "../../authentication/services/in-memory-token-authentication.service";
 
 
 
@@ -14,7 +14,7 @@ describe('BootstrapComponent', () => {
   let authenticationByToken: AuthenticationByToken;
   let userContextHolder: jasmine.SpyObj<UserContextHolder>
   const setupSecurityContextHolder = (authentication:Authentication | null) => {
-    const tokenAuthenticator = new InMemoryTokenAuthentication();
+    const tokenAuthenticator = new FakeTokenAuthentication();
     tokenAuthenticator.setAuthentication(authentication);
     authenticationByToken = new AuthenticationByToken(tokenAuthenticator, userContextHolder);
     component = new BootstrapViewComponent(authenticationByToken, router);

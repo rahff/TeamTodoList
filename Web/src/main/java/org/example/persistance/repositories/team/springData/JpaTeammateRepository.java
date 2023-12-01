@@ -10,4 +10,6 @@ public interface JpaTeammateRepository extends JpaRepository<Teammate, Long> {
   List<Teammate> findByAccountIdAndTeamIdIsNull(String accountId);
 
     List<Teammate> findByRef(String teammateId);
+
+  void deleteByRef(String userId);
 }

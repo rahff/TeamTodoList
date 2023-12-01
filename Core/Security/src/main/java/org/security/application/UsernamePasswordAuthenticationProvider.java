@@ -10,15 +10,17 @@ import org.security.ports.spi.PasswordSecurity;
 import org.shared.spi.UserRepository;
 
 public class UsernamePasswordAuthenticationProvider extends UserSecurity implements UsernamePasswordAuthentication {
+  private final  PasswordSecurity passwordEncoder;
   public UsernamePasswordAuthenticationProvider(UserRepository userRepository, PasswordSecurity passwordEncoder, JwtEncoder jwtService) {
-    super(jwtService, userRepository, passwordEncoder);
+    super(jwtService, userRepository);
+    this. passwordEncoder =  passwordEncoder;
   }
 
   public JwtAuthenticationResult loginUser(LoginUserRequest loginUserRequest) throws BadCredentialsException {
     var foundedUser = userRepository.findByEmail(loginUserRequest.email())
       .orElseThrow(BadCredentialsException::new);
     if(passwordEncoder.matches(loginUserRequest.password(), foundedUser.password())){
-      return makeJwtResult(foundedUser, foundedUser.role());
+      return makeJwtResult(foundedUser);
     }
     throw new BadCredentialsException();
   }

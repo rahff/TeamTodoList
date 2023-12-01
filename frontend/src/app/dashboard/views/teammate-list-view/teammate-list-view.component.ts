@@ -20,7 +20,7 @@ export class TeammateListViewComponent implements OnInit, OnDestroy {
   public teammateList$!: Observable<Teammate[]>
   private subscription!: Subscription;
 
-  constructor(private storeApi: TeammateListStoreApi, 
+  public constructor(private storeApi: TeammateListStoreApi,
               private teammateList: TeammateList) {}
 
   public ngOnInit(): void {

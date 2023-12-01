@@ -25,7 +25,7 @@ export class TeamDetailsViewComponent implements OnInit, OnDestroy {
   public availableTeammate$!: Observable<Teammate[]>;
   private subscription!: Subscription
 
-  constructor(private storeApi: TeamDetailsStoreApi, 
+  public constructor(private storeApi: TeamDetailsStoreApi,
               private teamDetails: TeamById,
               private activatedRoute: ActivatedRoute) { }
 

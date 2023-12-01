@@ -39,4 +39,9 @@ public class TodoModuleBeanConfiguration {
     return new DeleteTodoLIstCommand(todoListrepository);
   }
 
+  @Bean
+  Command<DeleteUserTodoListsRequest> deleteUserTodoLists(){
+    return new DeleteUserTodoLists(todoListrepository);
+  }
+
 }

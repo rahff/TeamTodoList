@@ -10,16 +10,15 @@ import org.shared.spi.UserRepository;
 public abstract class UserSecurity {
   protected final JwtEncoder jwtService;
   protected final UserRepository userRepository;
-  protected final PasswordSecurity passwordEncoder;
 
-  public UserSecurity(JwtEncoder jwtService, UserRepository userRepository, PasswordSecurity passwordEncoder) {
+  public UserSecurity(JwtEncoder jwtService, UserRepository userRepository) {
     this.jwtService = jwtService;
     this.userRepository = userRepository;
-    this.passwordEncoder = passwordEncoder;
+
   }
 
-  protected JwtAuthenticationResult makeJwtResult(UserDto user, String role) {
-    var token = jwtService.encode(user.email(), role);
+  protected JwtAuthenticationResult makeJwtResult(UserDto user) {
+    var token = jwtService.encode(user.email(), user.role());
     return new JwtAuthenticationResult(user, token.accessToken(), token.refreshToken());
   }
 }

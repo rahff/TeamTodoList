@@ -27,7 +27,7 @@ export class InMemoryTeamQueryHandler implements TeamQueryHandler {
        
         return new Observable<TeamListViewModel>((observable) => {
             setTimeout(() => {
-                observable.next({viewModel: {list: teamCardList}});
+                observable.next({viewModel: {list: teamCardList, availableTeammates}});
             }, 500);
         });
        

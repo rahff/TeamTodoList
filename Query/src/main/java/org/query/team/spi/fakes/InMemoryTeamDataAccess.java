@@ -15,14 +15,11 @@ public class InMemoryTeamDataAccess implements TeamDataAccess {
         return Optional.of(teamDto);
     }
 
-  @Override
-  public List<String> getAvailableTeammatesRef(String accountId) {
-    return List.of();
+
+    public List<String> getAvailableTeammatesRef(String accountId) {
+      return List.of("id_teammate3", "id_teammate4");
   }
 
-  public List<String> getAvailableTeammatesRef() {
-        return List.of("id_teammate3", "id_teammate4");
-    }
 
     public List<TeamDto> getAllTeam(String accountId) {
         return List.of(teamDto, teamDto2);

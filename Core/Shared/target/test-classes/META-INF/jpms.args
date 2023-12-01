@@ -1,0 +1,4 @@
+--patch-module
+Shared=_
+--add-reads
+Shared=ALL-UNNAMED

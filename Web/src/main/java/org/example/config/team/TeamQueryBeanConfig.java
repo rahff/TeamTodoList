@@ -27,7 +27,7 @@ public class TeamQueryBeanConfig {
 
     @Bean
     TeamListViewQuery teamListViewQuery(){
-        return new TeamListViewQuery(teamDataAccess, todoListDataAccess);
+        return new TeamListViewQuery(teamDataAccess, todoListDataAccess, userDataAccess);
     }
 
     @Bean

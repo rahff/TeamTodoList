@@ -20,12 +20,12 @@ export class TodoListComponent {
   @Output() public todoDeletedEvent = new EventEmitter<string>();
   @Output() public todoAddedEvent = new EventEmitter<Todo>();
 
-  constructor(private doneTodo: DoneTodo,
+  public constructor(private doneTodo: DoneTodo,
               private deleteTodo: DeleteTodo,
               private addTodo: AddTodo) { }
 
   public onDoneTodoButtonClicked(id: string): void {
-    this.doneTodo.execute(id).pipe(first()).subscribe({
+    this.doneTodo.execute({todoListId: this.listId, todoId: id}).pipe(first()).subscribe({
       next: this.onDoneTodoResult.bind(this)
     })
   }

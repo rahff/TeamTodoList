@@ -17,7 +17,7 @@ public class AddTodoCommand implements Command<AddTodoRequest> {
   }
 
   public void execute(AddTodoRequest request){
-    var todoList = todoListRepository.getTodoListById(request.todoListId()).orElseThrow();
+    var todoList = todoListRepository.getTodoListById(request.todoListId()).orElseThrow(() -> new RuntimeException("not found"));
     var todoListEntity = TodoList.fromDto(todoList);
     todoListEntity.addTodo(Todo.fromDto(request.todoDto()));
     todoListRepository.saveTodoList(todoListEntity.snapshot());

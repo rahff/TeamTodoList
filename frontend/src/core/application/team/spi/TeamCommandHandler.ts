@@ -14,5 +14,5 @@ export interface TeamCommandHandler {
     deleteTeam(teamId: string): Observable<string>;
     addTeammatesOnTeam(request: AddTeammateOnTeamRequest): Observable<Teammate[]>;
     removeTeammateFromTeam(request: RemoveTeammateFromTeamRequest): Observable<string>;
-    fireTeammate(teammateId: string): Observable<string>;
+    fireTeammate(teammate: Teammate): Observable<string>;
 }

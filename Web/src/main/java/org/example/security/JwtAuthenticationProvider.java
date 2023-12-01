@@ -3,6 +3,8 @@ package org.example.security;
 
 
 import org.example.persistance.repositories.security.springData.AppUserRepository;
+import org.shared.spi.UserRepository;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
@@ -16,9 +18,9 @@ import java.util.List;
 public class JwtAuthenticationProvider implements AuthenticationProvider {
 
   private final TokenService jwtService;
-  private final AppUserRepository userDetailsService;
+  private final UserRepository userDetailsService;
 
-  public JwtAuthenticationProvider(TokenService jwtService, AppUserRepository userDetailsService) {
+  public JwtAuthenticationProvider(TokenService jwtService, UserRepository userDetailsService) {
     this.jwtService = jwtService;
     this.userDetailsService = userDetailsService;
   }
@@ -30,7 +32,7 @@ public class JwtAuthenticationProvider implements AuthenticationProvider {
     var userEmail = jwtClaims.get("username");
     var userPlan = jwtClaims.get("userRole");
     var principal = userDetailsService.findByEmail(userEmail.toString()).orElseThrow(() -> new BadCredentialsException("bad credentials"));
-    return new JwtAuthenticationToken(principal.toDto(), null, List.of(new SimpleGrantedAuthority(userPlan.toString())));
+    return new JwtAuthenticationToken(principal, null, List.of(new SimpleGrantedAuthority(userPlan.toString())));
   }
 
   @Override

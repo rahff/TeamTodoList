@@ -1,7 +1,7 @@
 import {InMemoryTodoQueryHandler} from "../../services/inMemory/InMemoryTodoQueryHandler";
 import {DATA_SOURCE} from "../../../../environments/constants";
-import {TodoQueryService} from "../../services/todo-query.service";
-import {BrowserContextService} from "../../services/browser-context.service";
+import {TodoQueryService} from "../../services/todo/todo-query.service";
+import {BrowserContextService} from "../../services/shared/browser-context.service";
 
 
 

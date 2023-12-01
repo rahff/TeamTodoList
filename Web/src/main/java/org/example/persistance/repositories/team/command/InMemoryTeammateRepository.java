@@ -28,6 +28,10 @@ public class InMemoryTeammateRepository implements TeammateRepository {
 
   }
 
+  public void removeTeammateUser(String userId) {
+    data.removeIf((dto)-> dto.getRef().equals(userId));
+  }
+
   public List<Teammate> items(){
     return data;
   }

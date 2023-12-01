@@ -7,14 +7,12 @@ import { DropdownMenuComponent } from '../dropdown-menu/dropdown-menu.component'
   templateUrl: './todo-list-dropdown.component.html',
   styleUrls: ['./todo-list-dropdown.component.css']
 })
-export class TodoListDropdownComponent extends DropdownMenuComponent implements OnInit {
+export class TodoListDropdownComponent extends DropdownMenuComponent {
 
   @Input() public todoListId!: string
   @Output() public deleteTodoListButtonClicked = new EventEmitter<string>();
-  constructor() { super() }
+  public constructor() { super() }
 
-  ngOnInit(): void {
-  }
 
   public deleteTodoList(id: string): void {
     this.deleteTodoListButtonClicked.emit(id);

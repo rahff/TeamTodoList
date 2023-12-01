@@ -10,6 +10,7 @@
         <module name="Team" />
         <module name="Security" />
         <module name="Shared" />
+        <module name="Query" />
         <module name="TodoList_Web" />
       </profile>
     </annotationProcessing>

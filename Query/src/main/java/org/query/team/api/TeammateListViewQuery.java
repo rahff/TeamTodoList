@@ -23,7 +23,7 @@ public class TeammateListViewQuery {
         var teammateDto = userDataAccess.getAllTeammate(accountId);
         var teammates = teammateDto.stream().parallel().map((dto)-> {
             var teamId = teamDataAccess.getTeamIdOfTeammate(dto.id());
-            return new Teammate(dto.id(), dto.name(), dto.email(), teamId);
+            return new Teammate(dto.id(), dto.name(), dto.email(), teamId.orElse(null));
         }).collect(Collectors.toList());
         return new TeammateListViewModel(teammates);
     }

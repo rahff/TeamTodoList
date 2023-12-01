@@ -15,6 +15,6 @@ public class TeammateCreatedQuery {
 
     public Teammate getTeammate(String itsId) {
         var teammateDto = userDataAccess.getTeammateByUserId(itsId).orElseThrow();
-        return new Teammate(teammateDto.id(), teammateDto.name(), teammateDto.email(), Optional.empty());
+        return new Teammate(teammateDto.id(), teammateDto.name(), teammateDto.email(), null);
     }
 }

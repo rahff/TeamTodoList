@@ -3,7 +3,7 @@ package org.query.team.model;
 import java.util.Objects;
 import java.util.Optional;
 
-public record Teammate(String id, String name, String email, Optional<String> teamId) {
+public record Teammate(String id, String name, String email, String teamId) {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

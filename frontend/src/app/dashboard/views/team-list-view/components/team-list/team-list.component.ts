@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subscription, first, pipe } from 'rxjs';
-import { ConfirmActionService } from 'src/app/dashboard/services/confirm-action.service';
+import { ConfirmActionService } from 'src/app/dashboard/services/shared/confirm-action.service';
 import { Result } from 'src/core/application/shared/dto/Result';
 import { CreateTeam } from 'src/core/application/team/command/CreateTeam';
 import { DeleteTeam } from 'src/core/application/team/command/DeleteTeam';
 import { CreateTeamFormData } from 'src/core/application/team/dto/CreateTeamFormData';
 import { TeamCard } from 'src/core/model/team/TeamCard';
+import {Teammate} from "../../../../../../core/model/team/Teammate";
 
 
 @Component({
@@ -18,14 +19,15 @@ export class TeamListComponent implements OnDestroy {
   @Input() public teamList!: TeamCard[];
   @Output() private teamDeletedEvent = new EventEmitter<string>();
   @Output() private teamCreatedEvent = new EventEmitter<TeamCard>();
-  private subcription = new Subscription();
+  private subscription = new Subscription();
+  @Input() availableTeammate!: Teammate[];
 
-  constructor(private deleteTeam: DeleteTeam, 
+  public constructor(private deleteTeam: DeleteTeam,
               private createTeam: CreateTeam,
               private confirmService: ConfirmActionService) {}
 
   public onDeleteActionClicked(id: string): void {
-    this.subcription.add(this.confirmService.askConfirmationFor(this.deleteTeam, id)
+    this.subscription.add(this.confirmService.askConfirmationFor(this.deleteTeam, id)
     .pipe(first()).subscribe({ next: this.onResult.bind(this) }));
   }
 
@@ -50,7 +52,7 @@ export class TeamListComponent implements OnDestroy {
   }
 
   public ngOnDestroy(): void {
-      this.subcription.unsubscribe();
+      this.subscription.unsubscribe();
   }
 
 }

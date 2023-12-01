@@ -3,6 +3,7 @@ package org.example.security;
 import org.example.persistance.entities.security.AppUser;
 import org.example.persistance.entities.security.Authority;
 import org.example.persistance.repositories.security.springData.AppUserRepository;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -15,6 +16,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Service
+@Profile("prod")
 public class JpaUserDetailsService implements UserDetailsService {
 
   private final AppUserRepository userRepository;

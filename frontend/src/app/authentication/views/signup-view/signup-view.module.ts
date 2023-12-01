@@ -6,6 +6,9 @@ import { EmailPasswordGateway } from 'src/core/application/security/spi/Authenti
 import { UserContextHolder } from 'src/core/application/shared/interfaces/UserContextHolder';
 import { InMemoryEmailPasswordAuthentication } from '../../services/in-memory-email-password-authentication.service';
 import { FakeUserContextHolder } from 'src/app/dashboard/services/inMemory/FakeUserContextHolder';
+import {ReactiveFormsModule} from "@angular/forms";
+import {signupUserDependencyProvider} from "./dependencyProvider";
+import {environment} from "../../../../environments/environment";
 
 
 
@@ -13,15 +16,16 @@ import { FakeUserContextHolder } from 'src/app/dashboard/services/inMemory/FakeU
   declarations: [
     ...SignupViewRoutingModule.viewComponent,
   ],
-  imports: [
-    CommonModule,
-    SignupViewRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        SignupViewRoutingModule,
+        ReactiveFormsModule
+    ],
   providers: [
     {
       provide: SignupUser, 
       useFactory: (a: EmailPasswordGateway, u: UserContextHolder) => new SignupUser(a, u),
-      deps: [InMemoryEmailPasswordAuthentication, FakeUserContextHolder]
+      deps: signupUserDependencyProvider(environment.dataSource)
     }
   ]
 })

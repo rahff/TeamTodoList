@@ -20,7 +20,7 @@ export class AddTeammateOnTeamSelectComponent {
   @Output() public teammatesAddedOnTeamEvent = new EventEmitter<Teammate[]>();
   public selectedTeammates: string[] = [];
   
-  constructor(private addTeammateOnTeam: AddTeammateOnTeam){}
+  public constructor(private addTeammateOnTeam: AddTeammateOnTeam){}
 
   public submit(): void {
     if(this.selectedTeammates.length){

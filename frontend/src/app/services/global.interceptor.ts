@@ -7,7 +7,7 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { Observable, catchError, switchMap, throwError } from 'rxjs';
-import { BrowserContextService } from '../dashboard/services/browser-context.service';
+import { BrowserContextService } from '../dashboard/services/shared/browser-context.service';
 import { Authentication } from 'src/core/application/security/dto/Authentication';
 import { AuthenticationByToken } from 'src/core/application/security/query/AuthenticationByToken';
 import { Result } from 'src/core/application/shared/dto/Result';

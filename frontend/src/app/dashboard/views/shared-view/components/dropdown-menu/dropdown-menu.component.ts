@@ -15,7 +15,7 @@ export abstract class DropdownMenuComponent implements AfterViewInit {
   @ViewChild("popoverDropdownRef", { static: false })
   public popoverDropdownRef!: ElementRef;
 
-  ngAfterViewInit() {
+  public ngAfterViewInit(): void {
     createPopper(
       this.btnDropdownRef.nativeElement,
       this.popoverDropdownRef.nativeElement,
@@ -27,11 +27,7 @@ export abstract class DropdownMenuComponent implements AfterViewInit {
 
   public toggleDropdown(event: MouseEvent): void {
     event.preventDefault();
-    if (this.dropdownPopoverShow) {
-      this.dropdownPopoverShow = false;
-    } else {
-      this.dropdownPopoverShow = true;
-    }
+    this.dropdownPopoverShow = !this.dropdownPopoverShow;
   }
 
 }

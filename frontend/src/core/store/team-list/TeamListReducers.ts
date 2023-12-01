@@ -17,7 +17,7 @@ export const addTeam: TeamReducer<TeamCard> = (state, event) => {
     const list = state.viewModel.list;
     return {
         viewModel: {
-            ...state,
+            ...state.viewModel,
             list: addItemOnList(list)(event.payload)
         }
     };

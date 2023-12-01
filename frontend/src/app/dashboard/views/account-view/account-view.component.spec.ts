@@ -10,11 +10,11 @@ import { fakeAsync } from '@angular/core/testing';
 import { ngOnInitPast500Ms } from '../../root/views/utils/tests.utils';
 
 
-
 describe('AccountViewComponent', () => {
   let component: AccountViewComponent;
   let storeApi: AccountDetailsStoreApi;
-  let query: UserAccount
+  let query: UserAccount;
+
   beforeEach(() => {
     storeApi = new AccountDetailsStoreApi(createStore(GLOBAL_INITIAL_STATE));
     query = new UserAccount(new InMemoryAccountQueryHandler(), new FakeUserContextHolder());
@@ -27,4 +27,9 @@ describe('AccountViewComponent', () => {
       expect(userAccount).toEqual(accountDetailsFakeState.viewModel)
     })
   }));
+
+/*  it('A user submit a change password request', fakeAsync(() => {
+    ngOnInitPast500Ms(component);
+
+  }));*/
 });

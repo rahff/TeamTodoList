@@ -9,7 +9,6 @@ public class Teammate {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", nullable = false)
   private Long id;
-  @Column(unique = true)
   private String ref;
 
   private String accountId;

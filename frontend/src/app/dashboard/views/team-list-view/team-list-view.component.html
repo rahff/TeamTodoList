@@ -1,9 +1,11 @@
-<div *ngIf="teamList$ | async let teamList" class="flex flex-wrap mt-4">
+
+<div *ngIf="teamListView$ | async let teamListView" class="flex flex-wrap mt-4">
     <div class="w-full xl:w-12/12 mb-12 xl:mb-0 px-4">
       <!-- //begin -->
   
-    <app-team-list 
-    [teamList]="teamList" 
+    <app-team-list
+    [teamList]="teamListView.viewModel.list"
+    [availableTeammate]="teamListView.viewModel.availableTeammates"
     (teamCreatedEvent)="onTeamCreatedEvent($event)" 
     (teamDeletedEvent)="onTeamDeletedEvent($event)">
     </app-team-list>

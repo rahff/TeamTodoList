@@ -15,10 +15,10 @@ export class AuthenticationByToken extends Query<Authentication> {
 
     public authenticate(): Observable<Result<Authentication>> {
         return this.authenticationGateway.authenticate()
-        .pipe(switchMap(this.onSuccesResult.bind(this)), catchError(this.handleError.bind(this)));
+        .pipe(switchMap(this.onSuccessResult.bind(this)), catchError(this.handleError.bind(this)));
     }
 
-    private onSuccesResult(authentication: Authentication): Observable<Result<Authentication>> {
+    private onSuccessResult(authentication: Authentication): Observable<Result<Authentication>> {
         this.userContextHolder.saveAuthentication(authentication);
         return of(this.onSuccess(authentication));
     }
@@ -34,7 +34,7 @@ export class AuthenticationByToken extends Query<Authentication> {
 
     public refreshToken(token: string): Observable<Result<Authentication>> {
         return this.authenticationGateway.refreshToken(token)
-            .pipe(switchMap(this.onSuccesResult.bind(this)),
+            .pipe(switchMap(this.onSuccessResult.bind(this)),
              catchError(this.onError))
     }
 }

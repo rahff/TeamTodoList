@@ -1,11 +1,13 @@
-<app-add-team-form (teamFormSubmited)="onTeamFormSubmited($event)" ></app-add-team-form>
+
+<app-add-team-form [availableTeammates]="availableTeammate" (teamFormSubmited)="onTeamFormSubmited($event)" ></app-add-team-form>
 <ul class="bg-white shadow overflow-hidden sm:rounded-md max-w-sm mx-auto mt-16">
   <li class="border-t border-gray-200" *ngFor="let team of teamList">
       <div class="px-4 py-5 sm:px-6">
           <div class="flex items-center justify-between">
               <h3 class="text-lg leading-6 font-medium text-gray-900">{{ team.name }}</h3>
-              <p class="mt-1 max-w-2xl text-sm text-gray-500">Description for Item 1</p>
-              <app-team-list-dropdown 
+              <p class="mt-1 max-w-2xl text-sm text-gray-500"> {{team.teammateCount}} teammates in this team</p>
+              <p class="mt-1 max-w-2xl text-sm text-gray-500"> {{team.todoListCount}} todolist(s) for this team</p>
+              <app-team-list-dropdown
               (deleteActionClicked)="onDeleteActionClicked($event)" 
               [teamId]="team.id">
             </app-team-list-dropdown>

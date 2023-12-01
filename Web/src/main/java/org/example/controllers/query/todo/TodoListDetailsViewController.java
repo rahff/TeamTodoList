@@ -17,7 +17,7 @@ public class TodoListDetailsViewController {
         this.viewQuery = viewQuery;
     }
 
-    @GetMapping("/todo-list/{id}")
+    @GetMapping("/todo-list-details/{id}")
     public TodoListDetailsViewModel todoListDetailsViewModel(@PathVariable String id){
         try{
             return viewQuery.query(id);

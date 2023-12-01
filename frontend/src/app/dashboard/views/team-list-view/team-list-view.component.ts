@@ -2,11 +2,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Result } from 'src/core/application/shared/dto/Result';
 import { TeamList } from 'src/core/application/team/query/TeamList';
-import { Team } from 'src/core/model/team/Team';
 import { TeamCard } from 'src/core/model/team/TeamCard';
 import { teamCreatedEvent, teamDeletedEvent, teamListReceivedEvent } from 'src/core/store/team-list/Events';
 import { TeamListViewModel } from 'src/core/store/team-list/TeamListState';
 import { TeamListStoreApi } from 'src/core/store/team-list/TeamListStoreApi';
+import {Teammate} from "../../../../core/model/team/Teammate";
 
 @Component({
   selector: 'app-team',
@@ -15,13 +15,13 @@ import { TeamListStoreApi } from 'src/core/store/team-list/TeamListStoreApi';
 })
 export class TeamListViewComponent implements OnInit, OnDestroy {
 
-  public teamList$!: Observable<TeamCard[]>;
+  public teamListView$!: Observable<TeamListViewModel>;
   private subscription!: Subscription;
 
-  constructor(private storeApi: TeamListStoreApi, private teamList: TeamList) { }
+  public constructor(private storeApi: TeamListStoreApi, private teamList: TeamList) { }
 
-  ngOnInit(): void {
-    this.teamList$ = this.storeApi.getTeamList();
+  public ngOnInit(): void {
+    this.teamListView$ = this.storeApi.getTeamList();
     this.subscription = this.teamList.query().subscribe({
       next: this.onQueryResult.bind(this)
     })

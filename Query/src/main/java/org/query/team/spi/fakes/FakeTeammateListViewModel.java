@@ -13,10 +13,10 @@ public class FakeTeammateListViewModel {
     public static TeammateListViewModel get(){
         return new TeammateListViewModel(
                 List.of(
-                        new Teammate("teammateId1", "teammateName1", "teammateName1@gmail.com", Optional.of("teamId1")),
-                        new Teammate("teammateId2", "teammateName2", "teammateName2@gmail.com", Optional.of("teamId1")),
-                        new Teammate("teammateId3", "teammateName3", "teammateName3@gmail.com", Optional.of("teamId2")),
-                        new Teammate("teammateId4", "teammateName4", "teammateName4@gmail.com", Optional.of("teamId2"))
+                        new Teammate("teammateId1", "teammateName1", "teammateName1@gmail.com","teamId1"),
+                        new Teammate("teammateId2", "teammateName2", "teammateName2@gmail.com", "teamId1"),
+                        new Teammate("teammateId3", "teammateName3", "teammateName3@gmail.com", "teamId2"),
+                        new Teammate("teammateId4", "teammateName4", "teammateName4@gmail.com", "teamId2")
                 ));
     }
 }

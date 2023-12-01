@@ -1,8 +1,8 @@
 import {DATA_SOURCE} from "../../../../environments/constants";
 import {InMemoryTeamQueryHandler} from "../../services/inMemory/InMemoryTeamQueryHandler";
-import {TeamQueryService} from "../../services/team-query.service";
+import {TeamQueryService} from "../../services/team/team-query.service";
 import {InMemoryTeamCommandHandler} from "../../services/inMemory/InMemoryTeamCommandHandler";
-import {TeamCommandService} from "../../services/team-command.service";
+import {TeamCommandService} from "../../services/team/team-command.service";
 
 
 export const TeamByIdDependencyProvider = (dataSource: number) => {

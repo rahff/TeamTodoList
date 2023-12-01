@@ -11,12 +11,11 @@ import { accountDetailsFakeState } from "src/core/store/account-details/data/inM
 })
 export class InMemoryAccountQueryHandler implements AccountQueryHandler {
 
-    public getUserAccountView(accountId: string): Observable<AccountDetailsViewModel> {
+    public getUserAccountView(userId: string): Observable<AccountDetailsViewModel> {
         return new Observable((observable) => {
             setTimeout(() => {
                 observable.next(accountDetailsFakeState);
             }, 500);
         })
     }
-
 }

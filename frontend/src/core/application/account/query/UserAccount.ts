@@ -14,9 +14,9 @@ export class UserAccount extends Query<AccountDetailsViewModel> {
                        private userContextHolder: UserContextHolder){super()}
 
     public query(): Observable<Result<AccountDetailsViewModel>> {
-        const accountId = this.userContextHolder.getAccountId();
-        if(!accountId) return this.onError(new UnAuthenticatedException());
-        return this.queryHandler.getUserAccountView(accountId)
+        const userId = this.userContextHolder.getUserId();
+        if(!userId) return this.onError(new UnAuthenticatedException());
+        return this.queryHandler.getUserAccountView(userId)
         .pipe(map(this.onSuccess),
         catchError(this.onError))
     }

@@ -33,14 +33,11 @@ export class InMemoryTodoQueryHandler implements TodoQueryHandler {
     }
 
     public getTodoListDetailById(id: string): Observable<TodoListDetailsViewModel> {
-        if(id === "todoListId") {
-            return new Observable((observable) => {
-                setTimeout(() => {
-                    observable.next(teammateTodoListDetails)
-                }, 500);
-            })
-        }
-        throw "404"
+        return new Observable((observable) => {
+            setTimeout(() => {
+                observable.next(teammateTodoListDetails)
+            }, 500);
+        })
     }
     
     public getTodosByListId(id: string): Observable<Todo[]> {

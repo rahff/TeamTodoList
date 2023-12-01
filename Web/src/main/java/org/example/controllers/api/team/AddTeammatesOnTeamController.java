@@ -23,7 +23,7 @@ public class AddTeammatesOnTeamController {
     this.teammateAddedQuery = teammateAddedQuery;
   }
 
-  @PutMapping("add-teammates")
+  @PutMapping("add-teammates-on-team")
   public List<TeammateJson> addTeammates(@RequestBody AddTeammatesOnTeamRequest body){
     try{
       transaction.execute(body);
@@ -35,7 +35,7 @@ public class AddTeammatesOnTeamController {
 
   private List<TeammateJson> queryResult(List<String> ids, String teamId) {
     return teammateAddedQuery.getTeammates(ids, teamId)
-            .stream().map(t -> new TeammateJson(t.id(), t.name(), t.email(), t.teamId().orElse(teamId)))
+            .parallelStream().map(t -> new TeammateJson(t.id(), t.name(), t.email(), t.teamId()))
             .toList();
   }
 }

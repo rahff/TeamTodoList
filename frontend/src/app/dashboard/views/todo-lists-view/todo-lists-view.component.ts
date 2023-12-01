@@ -19,10 +19,10 @@ export class TodoListsViewComponent implements OnInit, OnDestroy {
   public personalTodoLists$!: Observable<TodoList[]>;
   private subscription!: Subscription;
   
-  constructor(private storeApi: TodoListsStoreApi, 
-              private todoLists: TodoListsByUserId) { }
+  public constructor(private storeApi: TodoListsStoreApi,
+                     private todoLists: TodoListsByUserId) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.personalTodoLists$ = this.storeApi.getListOfTodoList();
     this.subscription = this.todoLists.query().subscribe({
       next: this.onQueryResult.bind(this)
@@ -40,5 +40,4 @@ export class TodoListsViewComponent implements OnInit, OnDestroy {
   public onTodoListDeletedEvent(id: string): void {
     this.storeApi.fireEvent(todoListDeletedEvent(id));
   }
-
 }

@@ -1,8 +1,8 @@
-<div class="flex flex-wrap mt-4">
+<div class="flex flex-wrap mt-4" *ngIf="personalTodoLists$ | async let todoLists">
     <div class="w-full xl:w-12/12 mb-12 xl:mb-0 px-4">
       <!-- //begin -->
   
-    <app-todo-list-list (todoListDeletedEvent)="onTodoListDeletedEvent($event)"></app-todo-list-list>
+    <app-todo-list-list [todoLists]="todoLists" (todoListDeletedEvent)="onTodoListDeletedEvent($event)"></app-todo-list-list>
    
 
 

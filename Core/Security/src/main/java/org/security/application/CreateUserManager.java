@@ -11,13 +11,13 @@ import org.shared.spi.UserRepository;
 
 public class CreateUserManager extends UserSecurity implements Signup {
   private final String DEFAULT_ROLE = "MANAGER";
-  public CreateUserManager(UserRepository userRepository, JwtEncoder jwtService, PasswordSecurity passwordEncoder) {
-    super(jwtService, userRepository, passwordEncoder);
+  public CreateUserManager(UserRepository userRepository, JwtEncoder jwtService) {
+    super(jwtService, userRepository);
   }
 
   public JwtAuthenticationResult doSignup(SignupUserRequest signupUserRequest) throws Exception {
     var savedUser = createUser(signupUserRequest);
-    return makeJwtResult(savedUser, savedUser.role());
+    return makeJwtResult(savedUser);
   }
 
   private UserDto createUser(SignupUserRequest signupUserRequest) {
