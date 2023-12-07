@@ -29,8 +29,8 @@ public class SetTeammatePasswordTest {
   @Test
   void NewTeammateChangeHisTemporaryPassword(){
     var request = new ChangePasswordRequest("rahff@gmail.com", "newPassword");
-    when(userRepository.findByEmail("rahff@gmail.com")).thenReturn(Optional.of(new UserDto("userId", "rahff@gmail.com", "rahff", "password", "TEAMMATE", "accountId")));
+    when(userRepository.findByEmail("rahff@gmail.com")).thenReturn(Optional.of(new UserDto("userId", "rahff@gmail.com", "rahff", "password", "TEAMMATE", "accountId", null)));
     command.registerNewPassword(request);
-    verify(userRepository).save(eq(new UserDto("userId", "rahff@gmail.com", "rahff", "NEWPASSWORD", "TEAMMATE", "accountId")));
+    verify(userRepository).save(eq(new UserDto("userId", "rahff@gmail.com", "rahff", "NEWPASSWORD", "TEAMMATE", "accountId", null)));
   }
 }

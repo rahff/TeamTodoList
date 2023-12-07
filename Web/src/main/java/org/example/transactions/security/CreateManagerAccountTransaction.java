@@ -3,8 +3,9 @@ package org.example.transactions.security;
 import jakarta.transaction.Transactional;
 import org.security.ports.api.CreateAccount;
 import org.security.ports.api.Signup;
-import org.security.ports.dto.JwtAuthenticationResult;
+import org.security.ports.dto.CreateAccountResult;
 import org.security.ports.dto.SignupUserRequest;
+import org.shared.dto.SubscriptionDto;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,8 +20,8 @@ public class CreateManagerAccountTransaction {
   }
 
   @Transactional(rollbackOn = Throwable.class)
-  public JwtAuthenticationResult execute(SignupUserRequest request) throws Exception {
-    createAccount.execute(request.accountId());
-    return signup.doSignup(request);
+  public CreateAccountResult execute(SignupUserRequest request) throws Exception {
+    var checkoutSession = createAccount.execute(request.accountId(), request.subscriptionPriceId());
+    return new CreateAccountResult(signup.doSignup(request, new SubscriptionDto("", false)), checkoutSession.checkoutUrl());
   }
 }

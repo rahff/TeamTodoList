@@ -20,8 +20,4 @@ export class EmailPasswordAuthentication implements EmailPasswordGateway {
     return this.http.post<Authentication>(this.baseServerUrl+"/login", credentials);
 
   }
-
-  public signup(request: SignupUserRequest): Observable<Authentication> {
-    return this.http.post<Authentication>(this.baseServerUrl+"/create-account", request)
-  } 
 }

@@ -31,7 +31,6 @@ export class AccountViewComponent implements OnInit, OnDestroy {
   }
 
   private onQueryResult(result: Result<AccountDetailsViewModel>): void {
-    console.log(result.getValue())
     if(result.isOk()) 
       this.storeApi.fireEvent(accountDetailsReceivedEvent(result.getValue()));
   }

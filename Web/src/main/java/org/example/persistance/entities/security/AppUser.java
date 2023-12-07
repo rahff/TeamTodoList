@@ -1,7 +1,10 @@
 package org.example.persistance.entities.security;
 
 import jakarta.persistence.*;
+import org.shared.dto.SubscriptionDto;
 import org.shared.dto.UserDto;
+
+import java.util.Optional;
 
 @Entity
 @Table(name = "user")
@@ -15,17 +18,20 @@ public class AppUser {
   private String name;
   private String accountId;
   @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+  private Subscription subscription;
+  @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   private Authority authority;
 
   public AppUser() {}
 
-  public AppUser(String id, String email, String password, String name, Authority authority, String accountId) {
+  public AppUser(String id, String email, String password, String name, Authority authority, String accountId, Subscription subscription) {
     this.id = id;
     this.email = email;
     this.password = password;
     this.name = name;
     this.accountId = accountId;
     this.authority = authority;
+    this.subscription = subscription;
   }
 
   public String getId() {
@@ -70,7 +76,8 @@ public class AppUser {
   }
 
   public UserDto toDto(){
-    return new UserDto(id, email, name, password, getAuthority().getUserRole(), accountId);
+    Optional<SubscriptionDto> sub = subscription != null ? Optional.of(new SubscriptionDto(subscription.getId(), subscription.paid())) : Optional.empty();
+    return new UserDto(id, email, name, password, getAuthority().getUserRole(), accountId, sub);
   }
 
   public String getAccountId() {

@@ -10,5 +10,4 @@ export interface TokenGateway {
 
 export interface EmailPasswordGateway {
     authenticate(credentials: EmailPasswordCredentials): Observable<Authentication>;
-    signup(request: SignupUserRequest): Observable<Authentication>;
 }

@@ -21,7 +21,7 @@ public class AppEmailServiceTest {
 
   @Test
   void sendJoiningEmail() {
-    var teammate = new UserDto("userId", "rahff@gmail.com", "Rahff", "12345", "TEAMMATE", "123458745");
+    var teammate = new UserDto("userId", "rahff@gmail.com", "Rahff", "12345", "TEAMMATE", "123458745", null);
     var joiningRequest = new JoiningMessageParameters(teammate.email(), "Paul", teammate.name(), "145258");
     assertDoesNotThrow(() -> emailService.sendJoiningEmail(joiningRequest));
   }

@@ -1,8 +1,0 @@
-<form [formGroup]="signupForm">
-    <input formControlName="name">
-    <input formControlName="email">
-    <input formControlName="password">
-    <input formControlName="confirm">
-    <button (click)="onSubmit()">Submit</button>
-    <p *ngIf="errorMessage">{{errorMessage}}</p>
-</form>

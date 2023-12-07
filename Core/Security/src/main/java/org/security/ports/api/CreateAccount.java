@@ -1,5 +1,7 @@
 package org.security.ports.api;
 
+import org.security.ports.dto.CheckoutSession;
+
 public interface CreateAccount {
-  void execute(String accountId);
+  CheckoutSession execute(String accountId, String subscriptionPrice) throws Exception;
 }

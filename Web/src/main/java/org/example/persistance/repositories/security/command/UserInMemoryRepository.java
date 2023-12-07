@@ -1,6 +1,7 @@
 package org.example.persistance.repositories.security.command;
 
 
+import org.shared.dto.SubscriptionDto;
 import org.shared.dto.UserDto;
 import org.shared.spi.UserRepository;
 import org.springframework.context.annotation.Profile;
@@ -45,14 +46,14 @@ class UserProvider {
 
   private static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
   public static UserDto manager(){
-    return new UserDto("userManagerId", "manager@gmail.com", "Rahff", passwordEncoder.encode("12345"), "MANAGER", "accountId");
+    return new UserDto("userManagerId", "manager@gmail.com", "Rahff", passwordEncoder.encode("12345"), "MANAGER", "accountId", Optional.of(new SubscriptionDto("subId", true)));
   }
 
   public static UserDto teammate(){
-    return new UserDto("userId", "teammate@gmail.com", "Mikki", passwordEncoder.encode("12345"), "TEAMMATE", "accountId");
+    return new UserDto("userId", "teammate@gmail.com", "Mikki", passwordEncoder.encode("12345"), "TEAMMATE", "accountId", Optional.empty());
   }
 
   public static UserDto teammate2(){
-    return new UserDto("userId2", "teammate2@gmail.com", "Jacques", passwordEncoder.encode("12345"), "TEAMMATE", "accountId");
+    return new UserDto("userId2", "teammate2@gmail.com", "Jacques", passwordEncoder.encode("12345"), "TEAMMATE", "accountId", Optional.empty());
   }
 }

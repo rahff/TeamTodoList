@@ -14,21 +14,11 @@ export class InMemoryEmailPasswordAuthentication implements EmailPasswordGateway
   constructor() { }
 
   public authenticate(credentials: EmailPasswordCredentials): Observable<Authentication> {
-    if(credentials.email === "validemail@gmail.com" && credentials.password === "correctPassword"){
+    if(credentials.email === "validemail@gmail.com" && credentials.password === "correctPassword") {
       return new Observable((observable) => {
         observable.next(fakeAuthentication);
       })
     }else return throwError(() => new Error("bad credentials"));
   }
-
-  public signup(request: SignupUserRequest): Observable<Authentication> {
-    if(request.email === "validemail@gmail.com"){
-      return new Observable((observable) => {
-        observable.next(fakeAuthentication);
-      })
-    }else return throwError(() => new Error("email already exists"));
-  }
-
- 
 }
 

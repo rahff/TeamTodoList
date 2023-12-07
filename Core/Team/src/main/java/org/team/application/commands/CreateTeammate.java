@@ -9,6 +9,8 @@ import org.team.ports.dto.TeammateJoiningRequest;
 import org.team.ports.spi.CodeGenerator;
 import org.team.ports.spi.TeammateRepository;
 
+import java.util.Optional;
+
 public class CreateTeammate implements AddTeammate {
 
   private final UserRepository userRepository;
@@ -24,7 +26,7 @@ public class CreateTeammate implements AddTeammate {
   public TeammateJoiningRequest execute(CreateTeammateRequest request) {
     String ROLE = "TEAMMATE";
     var generatedCode = codeGenerator.generateCode();
-    var userDto = userRepository.save(new UserDto(request.teammateId(), request.email(), request.name(), generatedCode.encoded(), ROLE, request.accountId()));
+    var userDto = userRepository.save(new UserDto(request.teammateId(), request.email(), request.name(), generatedCode.encoded(), ROLE, request.accountId(), Optional.empty()));
     teammateRepository.saveUserAsTeammate(userDto);
     return new TeammateJoiningRequest(userDto.email(), userDto.name(), generatedCode.rawCode()) ;
   }

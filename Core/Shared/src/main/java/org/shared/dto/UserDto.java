@@ -1,6 +1,8 @@
 package org.shared.dto;
 
-public record UserDto(String id, String email, String name, String password, String role, String accountId) {
+import java.util.Optional;
+
+public record UserDto(String id, String email, String name, String password, String role, String accountId, Optional<SubscriptionDto> subscription) {
 
  public String toString() {
     return "UserDto{" +

@@ -1,21 +1,22 @@
 package org.security.application;
 
 import org.security.ports.api.CreateAccount;
-import org.security.ports.api.Signup;
-import org.security.ports.dto.JwtAuthenticationResult;
-import org.security.ports.dto.SignupUserRequest;
+import org.security.ports.dto.CheckoutSession;
 import org.security.ports.spi.AccountRepository;
+import org.security.ports.spi.PaymentGateway;
 
 public class CreateManagerAccount implements CreateAccount {
-
   private final AccountRepository accountRepository;
 
-  public CreateManagerAccount(AccountRepository accountRepository) {
+  private final PaymentGateway paymentGateway;
+
+  public CreateManagerAccount(AccountRepository accountRepository, PaymentGateway paymentGateway) {
     this.accountRepository = accountRepository;
+    this.paymentGateway = paymentGateway;
   }
 
-  public void execute(String accountId) {
+  public CheckoutSession execute(String accountId, String priceId) throws Exception {
     accountRepository.save(accountId);
+    return paymentGateway.createCheckoutSession(priceId);
   }
-
 }
