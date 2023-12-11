@@ -2,38 +2,68 @@ package commands;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import org.shared.api.Command;
+
+import org.shared.dto.UserDto;
 import org.team.application.commands.AddTeammatesOnTeam;
 import org.team.ports.dto.AddTeammatesOnTeamRequest;
-import org.team.ports.spi.TeamRepository;
-import org.team.ports.spi.TeammateRepository;
-import utils.RequestProvider;
-import utils.TeamProvider;
+import org.team.ports.dto.TeamDto;
 
+import org.team.ports.spi.inMemory.InMemoryTeamRepository;
+import org.team.ports.spi.inMemory.InMemoryTeammateRepository;
+import utils.RequestProvider;
+
+
+import java.util.List;
 import java.util.Optional;
 
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class AddTeammateCommandTest {
 
-  private Command<AddTeammatesOnTeamRequest> command;
-  private TeamRepository teamRepository;
-  private TeammateRepository teammateRepository;
+  private AddTeammatesOnTeam command;
+  private InMemoryTeamRepository teamRepository;
+  private InMemoryTeammateRepository teammateRepository;
 
+  private  AddTeammateDataFixture dataFixture;
   @BeforeEach
   void setup(){
-    teammateRepository = mock(TeammateRepository.class);
-    teamRepository = Mockito.mock(TeamRepository.class);
+    dataFixture = new AddTeammateDataFixture();
+    teammateRepository = new InMemoryTeammateRepository(dataFixture.getInitialTeammateRepository());
+    teamRepository = new InMemoryTeamRepository(dataFixture.getInitialTeamRepository());
     command = new AddTeammatesOnTeam(teamRepository, teammateRepository);
   }
   @Test
   void AManagerAddATeammateOnATeam() {
     var request = RequestProvider.getAddTeammatesRequest();
-    when(teamRepository.getTeamById("teamId")).thenReturn(Optional.of(TeamProvider.emptyTeamDto()));
     command.execute(request);
-    verify(teamRepository).saveTeam(eq(TeamProvider.teamDtoWithTwoTeammates()));
-    verify(teammateRepository).addTeamIdOnTeammate(request.teammateToAdd(), request.teamId());
+    assertTrue(teamRepository.items().contains(dataFixture.getTeamWhichTeammatesAddedIntoIt(request)));
+    assertTrue(teammateRepository.items().contains(dataFixture.teammateWhoAddedOnTeam(request)));
+  }
+}
+
+class AddTeammateDataFixture {
+
+  public List<UserDto> getInitialTeammateRepository() {
+    return List.of(
+            new UserDto(
+                    "teammate1Id",
+                    "teammate@gmail.com",
+                    "Bob",
+                    "$$$$$$$$$$$",
+                    "TEAMMATE",
+                    "accountId",
+                    Optional.empty()));
+  }
+  public List<TeamDto> getInitialTeamRepository() {
+    return List.of(new TeamDto("teamId", "Team1", List.of(), "accountId"));
+  }
+
+  public TeamDto getTeamWhichTeammatesAddedIntoIt(AddTeammatesOnTeamRequest request) {
+    return new TeamDto("teamId", "Team1", request.teammateToAdd(), "accountId");
+  }
+
+  public InMemoryTeammateRepository.TeammateDto teammateWhoAddedOnTeam(AddTeammatesOnTeamRequest request) {
+    return new InMemoryTeammateRepository.TeammateDto(request.teammateToAdd().get(0),"accountId", Optional.of(request.teamId()));
   }
 }

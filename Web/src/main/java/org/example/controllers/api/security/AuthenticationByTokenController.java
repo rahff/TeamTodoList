@@ -4,7 +4,6 @@ package org.example.controllers.api.security;
 import org.example.controllers.api.security.jsonPayload.JwtAuthenticationJson;
 import org.example.controllers.api.security.mapper.UserDtoMapper;
 import org.security.application.RefreshUserAuthentication;
-import org.security.ports.api.RefreshAuthentication;
 import org.shared.dto.UserDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -15,9 +14,9 @@ import org.springframework.web.client.HttpClientErrorException;
 @RestController
 public class AuthenticationByTokenController {
 
-    private final RefreshAuthentication refreshUserAuthentication;
+    private final RefreshUserAuthentication refreshUserAuthentication;
 
-    public AuthenticationByTokenController(RefreshAuthentication refreshUserAuthentication) {
+    public AuthenticationByTokenController(RefreshUserAuthentication refreshUserAuthentication) {
         this.refreshUserAuthentication = refreshUserAuthentication;
     }
 

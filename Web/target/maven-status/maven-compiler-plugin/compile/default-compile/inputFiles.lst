@@ -11,6 +11,7 @@
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/security/JwtAuthenticationProvider.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/persistance/entities/todo/TodoList.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/transactions/team/CreateTeamTransaction.java
+/home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/persistance/mappers/security/SubscriptionMapper.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/config/todo/TodoQueryBeanConfiguration.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/transactions/todo/DeleteUserTodoListsTransaction.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/controllers/api/security/jsonPayload/UserJson.java
@@ -53,6 +54,7 @@
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/persistance/repositories/team/springData/JpaTeammateRepository.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/email/EmailService.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/persistance/repositories/todo/query/QueryTodoInMemoryTodoListDataAccess.java
+/home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/payment/StripeCheckout.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/controllers/api/security/AuthenticationController.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/security/JwtAuthenticationToken.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/persistance/repositories/team/query/QueryTeamInMemoryTodoListDataAccess.java
@@ -62,6 +64,7 @@
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/controllers/api/team/AddTeammatesOnTeamController.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/controllers/api/todo/jsonPayloads/response/TodoListCardJson.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/controllers/api/todo/jsonPayloads/request/DoneTodoRequestBody.java
+/home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/persistance/entities/security/Subscription.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/persistance/repositories/team/query/InMemoryTeamDataAccess.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/persistance/mappers/team/TeamMapper.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/security/JwtFilter.java
@@ -70,6 +73,7 @@
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/controllers/query/todo/ListOfTodoListViewController.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/persistance/repositories/security/query/JpaAccountUserDataAccess.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/persistance/entities/security/AppUser.java
+/home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/payment/FakeCheckout.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/controllers/api/team/DeleteTeamController.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/controllers/api/team/FireTeammateController.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/controllers/api/todo/jsonPayloads/response/TodoJson.java
@@ -105,6 +109,7 @@
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/Main.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/persistance/repositories/team/command/TeamInMemoryRepository.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/controllers/api/security/jsonPayload/JwtAuthenticationJson.java
+/home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/controllers/api/security/jsonPayload/CreateAccountResultJson.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/persistance/repositories/team/query/mappers/TeamMapper.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/controllers/api/todo/DeleteTodoListController.java
 /home/rahff/Bureau/TeamTodoList/Web/src/main/java/org/example/security/RandomCodeGenerator.java

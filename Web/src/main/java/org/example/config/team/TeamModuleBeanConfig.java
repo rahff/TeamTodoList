@@ -1,24 +1,32 @@
 package org.example.config.team;
 
-import org.shared.api.Command;
+import org.example.config.security.SecurityTestConfig;
+import org.example.config.todo.TodoModuleBeanConfiguration;
+import org.example.email.EmailService;
+import org.example.transactions.security.CreateTeammateTransaction;
+import org.example.transactions.team.AddTeammateOnTeamTransaction;
+import org.example.transactions.team.DeleteTeamTransaction;
+import org.example.transactions.team.FireTeammateTransaction;
+import org.example.transactions.team.RemoveTeammateTransaction;
+
 import org.shared.spi.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Profile;
 import org.team.application.commands.*;
-import org.team.ports.api.AddTeammate;
-import org.team.ports.dto.AddTeammatesOnTeamRequest;
-import org.team.ports.dto.CreateTeamRequest;
-import org.team.ports.dto.DeleteTeamRequest;
-import org.team.ports.dto.RemoveTeammateFromTeamRequest;
+
 import org.team.ports.spi.CodeGenerator;
 import org.team.ports.spi.TeamRepository;
 import org.team.ports.spi.TeammateRepository;
+import org.todo.application.commands.DeleteUserTodoLists;
+import org.todo.port.spi.TodoListRepository;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Configuration
+@Profile("prod")
+@Import(TodoModuleBeanConfiguration.class)
 public class TeamModuleBeanConfig {
 
   @Autowired
@@ -26,44 +34,48 @@ public class TeamModuleBeanConfig {
 
   @Autowired
   UserRepository userRepository;
+  @Autowired
+  TodoListRepository todoListRepository;
 
   @Autowired
   CodeGenerator codeGenerator;
   @Autowired
   TeammateRepository teammateRepository;
+  @Autowired
+  EmailService emailService;
 
 
   @Bean
-  public Command<CreateTeamRequest> createTeamCommand(){
+  public CreateTeam createTeamCommand(){
     return new CreateTeam(teamRepository);
   }
 
   @Bean
-  Command<AddTeammatesOnTeamRequest> addTeammatesOnTeamCommand(){
-    return new AddTeammatesOnTeam(teamRepository, teammateRepository);
+  AddTeammateOnTeamTransaction addTeammatesOnTeamCommand(){
+    return new AddTeammateOnTeamTransaction(new AddTeammatesOnTeam(teamRepository, teammateRepository));
   }
 
   @Bean
-  Command<RemoveTeammateFromTeamRequest> removeTeammateFromTeamCommand(){
-    return new RemoveTeammateFromTeam(teamRepository);
+  RemoveTeammateTransaction removeTeammateFromTeamCommand(){
+    return new RemoveTeammateTransaction(new RemoveTeammateFromTeam(teamRepository));
   }
   @Bean
-  Command<DeleteTeamRequest> deleteTeamCommand(){
-    return new DeleteTeam(teamRepository);
-  }
-
-  @Bean
-  AddTeammate addTeammate(){
-    return new CreateTeammate(userRepository, codeGenerator, teammateRepository);
+  DeleteTeamTransaction deleteTeamCommand(){
+    return new DeleteTeamTransaction(new DeleteTeam(teamRepository));
   }
 
   @Bean
-  FireTeammateCommand fireTeammateCommand() {
-    return new FireTeammateCommand(teammateRepository, removeTeammateFromTeamCommand());
+  CreateTeammateTransaction addTeammate(){
+    return new CreateTeammateTransaction(new CreateTeammate(userRepository, codeGenerator, teammateRepository), emailService);
   }
 
   @Bean
-  ExecutorService executorService(){
-    return Executors.newFixedThreadPool(2);
+  FireTeammateTransaction fireTeammateCommand() {
+    return new FireTeammateTransaction(
+            new FireTeammateCommand(
+                    teammateRepository,
+                    new RemoveTeammateFromTeam(teamRepository)
+            ),
+            new DeleteUserTodoLists(todoListRepository));
   }
 }

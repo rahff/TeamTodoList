@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@Profile("prod")
 public class JwtAuthenticationProvider implements AuthenticationProvider {
 
   private final TokenService jwtService;

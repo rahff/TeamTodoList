@@ -1,6 +1,5 @@
 package org.todo.application.commands;
 
-import org.shared.api.Command;
 import org.todo.application.exceptions.TodoListAlreadyExistException;
 import org.todo.application.exceptions.TodoListCreationThresholdLimitReachedException;
 import org.todo.port.dto.CreateTodoListRequest;
@@ -11,7 +10,7 @@ import org.todo.port.spi.TodoListRepository;
 
 import java.util.List;
 
-public class CreateTodoListCommand implements Command<CreateTodoListRequest> {
+public class CreateTodoListCommand {
   private final int TEAMMATE_LIMIT = 5;
   private final TodoListRepository repository;
 

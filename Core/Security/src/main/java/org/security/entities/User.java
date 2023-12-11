@@ -32,6 +32,7 @@ public class User {
   }
 
   public UserDto snapshot(){
-    return new UserDto(id, email, name, password, role, accountId, Optional.of(subscription));
+    Optional<SubscriptionDto> userSubscription = this.subscription != null ? Optional.of(subscription): Optional.empty();
+    return new UserDto(id, email, name, password, role, accountId, userSubscription);
   }
 }

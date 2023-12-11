@@ -1,16 +1,12 @@
 package org.example.transactions.todo;
 
 import jakarta.transaction.Transactional;
-import org.shared.api.Command;
+import org.todo.application.commands.DoneTodoCommand;
 import org.todo.port.dto.DoneTodoRequest;
-import org.springframework.stereotype.Service;
 
-@Service
 public class DoneTodoTransaction {
-
-  private final Command<DoneTodoRequest> command;
-
-  public DoneTodoTransaction(Command<DoneTodoRequest> command) {
+  private final DoneTodoCommand command;
+  public DoneTodoTransaction(DoneTodoCommand command) {
     this.command = command;
   }
 

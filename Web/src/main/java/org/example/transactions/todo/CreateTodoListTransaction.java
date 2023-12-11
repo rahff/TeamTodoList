@@ -1,16 +1,15 @@
 package org.example.transactions.todo;
 
 import jakarta.transaction.Transactional;
-import org.shared.api.Command;
+import org.todo.application.commands.CreateTodoListCommand;
 import org.todo.port.dto.CreateTodoListRequest;
-import org.springframework.stereotype.Service;
 
-@Service
+
 public class CreateTodoListTransaction {
 
-  private final Command<CreateTodoListRequest> command;
+  private final CreateTodoListCommand command;
 
-  public CreateTodoListTransaction(Command<CreateTodoListRequest> command) {
+  public CreateTodoListTransaction(CreateTodoListCommand command) {
     this.command = command;
   }
 

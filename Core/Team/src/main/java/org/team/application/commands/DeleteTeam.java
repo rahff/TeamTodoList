@@ -1,12 +1,11 @@
 package org.team.application.commands;
 
 
-import org.shared.api.Command;
 import org.team.ports.dto.DeleteTeamRequest;
 import org.team.ports.spi.TeamRepository;
 
 
-public class DeleteTeam implements Command<DeleteTeamRequest> {
+public class DeleteTeam {
   private final TeamRepository teamRepository;
 
   public DeleteTeam(TeamRepository teamRepository) {

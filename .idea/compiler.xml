@@ -14,11 +14,6 @@
         <module name="TodoList_Web" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="CommonQuery" target="17" />
-      <module name="QueryTeam" target="17" />
-      <module name="TodoQuery" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

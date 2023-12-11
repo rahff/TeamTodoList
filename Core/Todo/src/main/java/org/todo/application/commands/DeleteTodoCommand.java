@@ -1,11 +1,11 @@
 package org.todo.application.commands;
 
-import org.shared.api.Command;
+
 import org.todo.entities.TodoList;
 import org.todo.port.dto.DeleteTodoRequest;
 import org.todo.port.spi.TodoListRepository;
 
-public class DeleteTodoCommand implements Command<DeleteTodoRequest> {
+public class DeleteTodoCommand {
 
   private final TodoListRepository todoListRepository;
 

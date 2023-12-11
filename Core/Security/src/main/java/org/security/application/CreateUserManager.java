@@ -1,7 +1,6 @@
 package org.security.application;
 
 
-import org.security.ports.api.Signup;
 import org.security.ports.dto.JwtAuthenticationResult;
 import org.security.ports.dto.SignupUserRequest;
 import org.shared.dto.SubscriptionDto;
@@ -11,7 +10,7 @@ import org.shared.spi.UserRepository;
 
 import java.util.Optional;
 
-public class CreateUserManager extends UserSecurity implements Signup {
+public class CreateUserManager extends UserSecurity {
   public CreateUserManager(UserRepository userRepository, JwtEncoder jwtService) {
     super(jwtService, userRepository);
   }

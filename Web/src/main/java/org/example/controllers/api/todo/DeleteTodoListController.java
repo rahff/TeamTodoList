@@ -2,7 +2,7 @@ package org.example.controllers.api.todo;
 
 
 import org.example.controllers.api.todo.jsonPayloads.response.IdJson;
-import org.shared.api.Command;
+import org.example.transactions.todo.DeleteTodoListTransaction;
 import org.todo.port.dto.DeleteTodoListRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,17 +13,17 @@ import org.springframework.web.client.HttpClientErrorException;
 @RestController
 public class DeleteTodoListController {
 
-  private final Command<DeleteTodoListRequest> command;
+  private final DeleteTodoListTransaction transaction;
 
-  public DeleteTodoListController(Command<DeleteTodoListRequest> command) {
-    this.command = command;
+  public DeleteTodoListController(DeleteTodoListTransaction transaction) {
+    this.transaction = transaction;
   }
 
   @DeleteMapping("/delete-todo-list/{todoListId}")
   public IdJson deleteTodoList(@PathVariable("todoListId") String todoListId){
     try{
       var request = new DeleteTodoListRequest(todoListId);
-      command.execute(request);
+      transaction.execute(request);
       return new IdJson(todoListId);
     }catch (Exception e){
       throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, e.getMessage());

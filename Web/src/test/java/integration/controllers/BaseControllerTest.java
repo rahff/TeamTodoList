@@ -14,6 +14,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+import org.todo.port.spi.InMemoryTodoListRepository;
+import org.todo.port.spi.TodoListRepository;
 
 import java.util.List;
 import java.util.Optional;

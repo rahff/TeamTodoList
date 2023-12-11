@@ -2,20 +2,21 @@ package org.example.transactions.team;
 
 
 import jakarta.transaction.Transactional;
-import org.shared.api.Command;
 import org.springframework.stereotype.Service;
+import org.team.application.commands.FireTeammateCommand;
 import org.team.ports.dto.FireTeammateRequest;
+import org.todo.application.commands.DeleteUserTodoLists;
 import org.todo.port.dto.DeleteUserTodoListsRequest;
 
 
 
-@Service
+
 public class FireTeammateTransaction {
 
-    private final Command<FireTeammateRequest> fireTeammateCommand;
-    private final Command<DeleteUserTodoListsRequest> deleteUserTodoListsCommand;
+    private final FireTeammateCommand fireTeammateCommand;
+    private final DeleteUserTodoLists deleteUserTodoListsCommand;
 
-    public FireTeammateTransaction(Command<FireTeammateRequest> fireTeammateCommand, Command<DeleteUserTodoListsRequest> deleteUserTodoListsCommand) {
+    public FireTeammateTransaction(FireTeammateCommand fireTeammateCommand, DeleteUserTodoLists deleteUserTodoListsCommand) {
         this.fireTeammateCommand = fireTeammateCommand;
         this.deleteUserTodoListsCommand = deleteUserTodoListsCommand;
     }

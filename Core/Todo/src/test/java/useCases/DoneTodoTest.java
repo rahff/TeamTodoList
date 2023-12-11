@@ -1,35 +1,67 @@
 package useCases;
 
 import org.todo.application.commands.DoneTodoCommand;
+
 import org.todo.port.dto.DoneTodoRequest;
-import org.todo.port.spi.TodoListRepository;
+import org.todo.port.dto.TodoDto;
+import org.todo.port.dto.TodoListDto;
+import org.todo.port.spi.InMemoryTodoListRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import utils.TodoListProviders;
+import utils.DateProviders;
 
-import java.util.Optional;
+import java.util.List;
+;
 
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DoneTodoTest {
 
   private DoneTodoCommand doneTodoCommand;
-  private TodoListRepository todoListRepository;
+  private InMemoryTodoListRepository todoListRepository;
+  private DoneTodoDataFixture dataFixture;
 
   @BeforeEach
   void setup(){
-    todoListRepository = Mockito.mock(TodoListRepository.class);
+    dataFixture = new DoneTodoDataFixture();
+    todoListRepository = new InMemoryTodoListRepository(dataFixture.initialTodoListRepository());
     doneTodoCommand = new DoneTodoCommand(todoListRepository);
   }
   @Test
   void UserDoneTodo(){
     var request = new DoneTodoRequest("todoListId", "todoID2");
-    when(todoListRepository.getTodoListById("todoListId"))
-      .thenReturn(Optional.of(TodoListProviders.todoListDtoWithSeveralTodo()));
     doneTodoCommand.execute(request);
-    verify(todoListRepository).saveTodoList(eq(TodoListProviders.todoListDtoWithSeveralTodoAndDoneSecondTodo()));
+    assertTrue(todoListRepository.items().contains(dataFixture.todoListAfterDoneTodoFromRequest()));
+  }
+}
+
+class DoneTodoDataFixture {
+  public List<TodoListDto> initialTodoListRepository() {
+    return List.of(
+            new TodoListDto(
+                    "todoListId",
+                    "userId",
+                    "My todo list",
+                    List.of(new TodoDto(
+                            "todoID2",
+                            "try something",
+                            false,
+                            DateProviders.getDateInFuture(),
+                            DateProviders.now())),
+                    DateProviders.now()));
+  }
+
+  public TodoListDto todoListAfterDoneTodoFromRequest() {
+    return new TodoListDto(
+            "todoListId",
+            "userId",
+            "My todo list",
+            List.of(new TodoDto(
+              "todoID2",
+              "try something",
+              true,
+              DateProviders.getDateInFuture(),
+              DateProviders.now())),
+            DateProviders.now());
   }
 }

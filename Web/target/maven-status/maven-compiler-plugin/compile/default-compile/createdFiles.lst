@@ -1,12 +1,15 @@
+org/example/payment/FakeCheckout.class
 org/example/config/todo/TodoQueryBeanConfiguration.class
 org/example/controllers/api/todo/CreateTodoListController.class
 org/example/persistance/repositories/todo/command/TodoListProvider.class
 org/example/persistance/repositories/security/command/JpaUserRepositoryAdapter.class
 org/example/persistance/entities/security/UserRole.class
+org/example/controllers/api/security/jsonPayload/CreateAccountResultJson.class
 org/example/persistance/repositories/security/springData/ManagerAccountRepository.class
 org/example/persistance/repositories/team/command/JpaTeamRepositoryAdapter.class
 org/example/service/FakeDateProvider.class
 org/example/controllers/api/security/jsonPayload/ChangePasswordPayload.class
+org/example/persistance/entities/security/Subscription.class
 org/example/persistance/entities/security/Authority.class
 org/example/controllers/query/team/TeamListViewController.class
 org/example/persistance/repositories/team/query/InMemoryTeamDataAccess.class
@@ -73,6 +76,7 @@ org/example/controllers/api/todo/DoneTodoController.class
 org/example/persistance/repositories/security/springData/AppUserRepository.class
 org/example/persistance/repositories/todo/command/JpaTodoListRepositoryAdapter.class
 org/example/email/FakeEmailService.class
+org/example/payment/StripeCheckout.class
 org/example/security/RandomCodeGenerator.class
 org/example/controllers/api/team/CreateTeammateController.class
 org/example/transactions/team/RemoveTeammateTransaction.class
@@ -94,6 +98,7 @@ org/example/controllers/api/team/jsonPayloads/response/TeammateJson.class
 org/example/persistance/repositories/security/command/UserProvider.class
 org/example/Main.class
 org/example/persistance/repositories/team/query/JpaTeamQueryTodoListDataAccess.class
+org/example/persistance/mappers/security/SubscriptionMapper.class
 org/example/persistance/repositories/team/command/TeamProvider.class
 org/example/controllers/api/team/DeleteTeamController.class
 org/example/persistance/repositories/team/query/QueryTeamInMemoryTodoListDataAccess.class

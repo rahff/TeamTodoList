@@ -1,16 +1,15 @@
 package org.example.transactions.team;
 
 import jakarta.transaction.Transactional;
-import org.shared.api.Command;
-import org.springframework.stereotype.Service;
+import org.team.application.commands.AddTeammatesOnTeam;
 import org.team.ports.dto.AddTeammatesOnTeamRequest;
 
-@Service
+
 public class AddTeammateOnTeamTransaction {
 
-  private final Command<AddTeammatesOnTeamRequest> command;
+  private final AddTeammatesOnTeam command;
 
-  public AddTeammateOnTeamTransaction(Command<AddTeammatesOnTeamRequest> command) {
+  public AddTeammateOnTeamTransaction(AddTeammatesOnTeam command) {
     this.command = command;
   }
 

@@ -4,25 +4,12 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/Web/pom.xml" />
-        <option value="$PROJECT_DIR$/Core/pom.xml" />
-        <option value="$PROJECT_DIR$/Query/pom.xml" />
-        <option value="$PROJECT_DIR$/Core/Shared/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/Query/CommonQuery/pom.xml" />
-        <option value="$PROJECT_DIR$/Query/QueryTeam/pom.xml" />
-        <option value="$PROJECT_DIR$/Query/TodoQuery/pom.xml" />
-      </set>
-    </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$" />
-  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="corretto-17" project-jdk-type="JavaSDK" />
   <component name="ProjectType">
     <option name="id" value="jpab" />
   </component>

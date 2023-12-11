@@ -1,4 +1,6 @@
 package org.query.account.model;
 
-public record AccountDetailsViewModel(User user) {
+import org.query.account.dto.UserDto;
+
+public record AccountDetailsViewModel(UserDto user) {
 }

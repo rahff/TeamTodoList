@@ -1,4 +1,0 @@
---patch-module
-Query=_
---add-reads
-Query=ALL-UNNAMED

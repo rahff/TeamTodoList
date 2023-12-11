@@ -2,16 +2,15 @@ package org.example.transactions.todo;
 
 
 import jakarta.transaction.Transactional;
-import org.shared.api.Command;
-import org.springframework.stereotype.Service;
+import org.todo.application.commands.DeleteUserTodoLists;
 import org.todo.port.dto.DeleteUserTodoListsRequest;
 
-@Service
+
 public class DeleteUserTodoListsTransaction {
 
-    private final Command<DeleteUserTodoListsRequest> deleteUserTodoListsCommand;
+    private final DeleteUserTodoLists deleteUserTodoListsCommand;
 
-    public DeleteUserTodoListsTransaction(Command<DeleteUserTodoListsRequest> deleteUserTodoListsCommand) {
+    public DeleteUserTodoListsTransaction(DeleteUserTodoLists deleteUserTodoListsCommand) {
         this.deleteUserTodoListsCommand = deleteUserTodoListsCommand;
     }
 

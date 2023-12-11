@@ -1,12 +1,12 @@
 package org.team.application.commands;
 
-import org.shared.api.Command;
+
 import org.team.entities.Team;
 import org.team.ports.dto.AddTeammatesOnTeamRequest;
 import org.team.ports.spi.TeamRepository;
 import org.team.ports.spi.TeammateRepository;
 
-public class AddTeammatesOnTeam implements Command<AddTeammatesOnTeamRequest> {
+public class AddTeammatesOnTeam {
 
   private final TeamRepository teamRepository;
   private final TeammateRepository teammateRepository;

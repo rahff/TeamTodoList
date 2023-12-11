@@ -1,5 +1,0 @@
-org/shared/dto/UserDto.class
-org/shared/api/Command.class
-org/shared/spi/DateProvider.class
-module-info.class
-org/shared/spi/UserRepository.class

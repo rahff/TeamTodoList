@@ -1,11 +1,10 @@
 package org.security.application;
 
 import org.security.ports.dto.ChangePasswordRequest;
-import org.security.ports.spi.ChangePassword;
 import org.security.ports.spi.PasswordSecurity;
 import org.shared.spi.UserRepository;
 import org.security.entities.User;
-public class SetTeammatePassword implements ChangePassword {
+public class SetTeammatePassword {
   private final UserRepository userRepository;
   private final PasswordSecurity passwordSecurity;
 

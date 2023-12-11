@@ -1,16 +1,15 @@
 package org.team.application.commands;
 
-import org.shared.api.Command;
 
 import org.team.ports.dto.FireTeammateRequest;
 import org.team.ports.dto.RemoveTeammateFromTeamRequest;
 import org.team.ports.spi.TeammateRepository;
 
-public class FireTeammateCommand implements Command<FireTeammateRequest> {
+public class FireTeammateCommand  {
 
     private final TeammateRepository teammateRepository;
-    private final  Command<RemoveTeammateFromTeamRequest> removeTeammateFromTeamCommand;
-    public FireTeammateCommand(TeammateRepository teammateRepository, Command<RemoveTeammateFromTeamRequest> removeTeammateFromTeamCommand) {
+    private final  RemoveTeammateFromTeam removeTeammateFromTeamCommand;
+    public FireTeammateCommand(TeammateRepository teammateRepository, RemoveTeammateFromTeam removeTeammateFromTeamCommand) {
         this.teammateRepository = teammateRepository;
         this.removeTeammateFromTeamCommand = removeTeammateFromTeamCommand;
     }

@@ -1,6 +1,6 @@
 package org.todo.application.commands;
 
-import org.shared.api.Command;
+
 import org.todo.entities.Todo;
 import org.todo.entities.TodoList;
 import org.todo.port.dto.AddTodoRequest;
@@ -8,7 +8,7 @@ import org.todo.port.spi.TodoListRepository;
 
 
 
-public class AddTodoCommand implements Command<AddTodoRequest> {
+public class AddTodoCommand {
 
   private final TodoListRepository todoListRepository;
 

@@ -2,7 +2,7 @@ package org.example.controllers.api.security;
 
 import org.example.controllers.api.security.jsonPayload.JwtAuthenticationJson;
 import org.example.controllers.api.security.mapper.UserDtoMapper;
-import org.security.ports.api.UsernamePasswordAuthentication;
+import org.security.application.UsernamePasswordAuthenticationProvider;
 import org.security.ports.dto.LoginUserRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
@@ -16,10 +16,10 @@ import org.springframework.web.client.HttpClientErrorException;
 @RestController
 public class AuthenticationController {
 
-  private final UsernamePasswordAuthentication authenticationProvider;
+  private final UsernamePasswordAuthenticationProvider authenticationProvider;
 
 
-  public AuthenticationController(UsernamePasswordAuthentication authenticationProvider) {
+  public AuthenticationController(UsernamePasswordAuthenticationProvider authenticationProvider) {
     this.authenticationProvider = authenticationProvider;
   }
 

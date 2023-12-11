@@ -2,15 +2,14 @@ package org.example.transactions.security;
 
 
 import jakarta.transaction.Transactional;
+import org.security.application.SetTeammatePassword;
 import org.security.ports.dto.ChangePasswordRequest;
-import org.security.ports.spi.ChangePassword;
-import org.springframework.stereotype.Service;
 
-@Service
+
 public class SetPasswordTransaction {
-  private final ChangePassword changePassword;
+  private final SetTeammatePassword changePassword;
 
-  public SetPasswordTransaction(ChangePassword changePassword) {
+  public SetPasswordTransaction(SetTeammatePassword changePassword) {
     this.changePassword = changePassword;
   }
 

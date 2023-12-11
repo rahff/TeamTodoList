@@ -1,11 +1,10 @@
 package org.security.application;
 
-import org.security.ports.api.CreateAccount;
 import org.security.ports.dto.CheckoutSession;
 import org.security.ports.spi.AccountRepository;
 import org.security.ports.spi.PaymentGateway;
 
-public class CreateManagerAccount implements CreateAccount {
+public class CreateManagerAccount {
   private final AccountRepository accountRepository;
 
   private final PaymentGateway paymentGateway;

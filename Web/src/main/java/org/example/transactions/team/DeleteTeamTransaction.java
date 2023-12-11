@@ -2,17 +2,16 @@ package org.example.transactions.team;
 
 
 import jakarta.transaction.Transactional;
-import org.shared.api.Command;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
+import org.team.application.commands.DeleteTeam;
 import org.team.ports.dto.DeleteTeamRequest;
 
-@Service
+
 public class DeleteTeamTransaction {
 
-  private final Command<DeleteTeamRequest> command;
+  private final DeleteTeam command;
 
-  public DeleteTeamTransaction(Command<DeleteTeamRequest> command) {
+  public DeleteTeamTransaction(DeleteTeam command) {
     this.command = command;
   }
 

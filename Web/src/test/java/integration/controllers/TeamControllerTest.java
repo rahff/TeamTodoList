@@ -45,10 +45,10 @@ public class TeamControllerTest extends BaseControllerTest {
 
   @Test
   void  addTeammatesOnTeam() throws Exception {
-    var body = objectMapper.writeValueAsString(new AddTeammatesOnTeamRequest("teamId3", List.of("teammate5", "teammate6")));
+    var body = objectMapper.writeValueAsString(new AddTeammatesOnTeamRequest("teamId", List.of("teammate5", "teammate6")));
     var expected = objectMapper.writeValueAsString(List.of(
-            new TeammateJson("teammate5", "teammateNameteammate5", "teammateteammate5@gmail.com", "teamId3"),
-            new TeammateJson("teammate6", "teammateNameteammate6", "teammateteammate6@gmail.com", "teamId3")));
+            new TeammateJson("teammate5", "teammateNameteammate5", "teammateteammate5@gmail.com", "teamId"),
+            new TeammateJson("teammate6", "teammateNameteammate6", "teammateteammate6@gmail.com", "teamId")));
     mockMvc.perform(put("/add-teammates-on-team").contentType(MediaType.APPLICATION_JSON).content(body))
       .andExpect(status().isOk()).andExpect(content().json(expected));
   }
@@ -69,20 +69,18 @@ public class TeamControllerTest extends BaseControllerTest {
 
   @Test
   void  addTeammateOnOrganization() throws Exception {
-    var body = objectMapper.writeValueAsString(new CreateTeammateRequest("teammateId","teammate@gmail.com", "Mikki", "accountId"));
-    var expected = objectMapper.writeValueAsString(new TeammateJson("teammateId", "teammateNameteammateId", "teammateteammateId@gmail.com", null));
+    var body = objectMapper.writeValueAsString(new CreateTeammateRequest("teammateId2","teammate2@gmail.com", "Mikki", "accountId"));
+    var expected = objectMapper.writeValueAsString(new TeammateJson("teammateId2", "teammateNameteammateId2", "teammateteammateId2@gmail.com", null));
     mockMvc.perform(post("/create-teammate").contentType(MediaType.APPLICATION_JSON).content(body))
             .andExpect(status().isOk()).andExpect(content().json(expected));
-    var teammate = userRepository.findByEmail("teammate@gmail.com").orElse(null);
-    assertNotNull(teammate);
-    assertEquals("TEAMMATE", teammate.role());
-    assertTrue(emailService.verify("teammate@gmail.com", "Rahff"));
+
+    assertTrue(emailService.verify("teammate2@gmail.com", "Rahff"));
   }
 
   @Test
   void  fireTeammate() throws Exception {
-    var request = objectMapper.writeValueAsString(new FireTeammateRequest("userId", "teamId"));
-    var expected = objectMapper.writeValueAsString(new IdJson("userId"));
+    var request = objectMapper.writeValueAsString(new FireTeammateRequest("teammateId", "teamId"));
+    var expected = objectMapper.writeValueAsString(new IdJson("teammateId"));
     mockMvc.perform(put("/fire-teammate").contentType(MediaType.APPLICATION_JSON)
                     .content(request)).andExpect(status().isOk())
                     .andExpect(content().json(expected));

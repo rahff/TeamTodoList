@@ -2,16 +2,16 @@ package org.example.config.security;
 
 
 import org.example.security.*;
+import org.example.transactions.security.SetPasswordTransaction;
 import org.security.application.*;
-import org.security.ports.api.CreateAccount;
-import org.security.ports.api.RefreshAuthentication;
-import org.security.ports.api.Signup;
-import org.security.ports.api.UsernamePasswordAuthentication;
-import org.security.ports.spi.*;
+import org.security.ports.spi.AccountRepository;
+import org.security.ports.spi.PasswordSecurity;
+import org.security.ports.spi.PaymentGateway;
 import org.shared.spi.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -22,6 +22,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @EnableWebSecurity
 @Configuration
+@Profile("prod")
 public class SecurityConfig {
   @Autowired
   private JwtFilter jwtFilter;
@@ -35,6 +36,7 @@ public class SecurityConfig {
   AccountRepository accountRepository;
   @Autowired
   PaymentGateway paymentGateway;
+
 
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -58,26 +60,17 @@ public class SecurityConfig {
   }
 
   @Bean
-  UsernamePasswordAuthentication usernamePasswordAuthentication(){
+  UsernamePasswordAuthenticationProvider usernamePasswordAuthentication(){
     return new UsernamePasswordAuthenticationProvider(userRepository, passwordSecurity(), jwtService);
   }
   @Bean
-  Signup signup(){
-    return new CreateUserManager(userRepository, jwtService);
-  }
-
-  @Bean
-  CreateAccount createAccount(){
-    return new CreateManagerAccount(accountRepository, paymentGateway);
-  }
-
-  @Bean
-  ChangePassword changePassword(){
-    return new SetTeammatePassword(userRepository, passwordSecurity());
-  }
-
-  @Bean
-  RefreshAuthentication refreshAuthentication(){
+  RefreshUserAuthentication refreshAuthentication(){
     return new RefreshUserAuthentication(userRepository, jwtService);
   }
+
+  @Bean
+  SetPasswordTransaction changePassword(){
+    return new SetPasswordTransaction(new SetTeammatePassword(userRepository, passwordSecurity()));
+  }
+
 }

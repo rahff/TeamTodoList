@@ -2,22 +2,25 @@ package commands;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import org.shared.api.Command;
 import org.team.application.commands.DeleteTeam;
 import org.team.ports.dto.DeleteTeamRequest;
-import org.team.ports.spi.TeamRepository;
+import org.team.ports.dto.TeamDto;
+import org.team.ports.spi.inMemory.InMemoryTeamRepository;
 
-import static org.mockito.Mockito.verify;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class DeleteTeamTest {
 
-  private Command<DeleteTeamRequest> command;
-  private TeamRepository teamRepository;
+  private DeleteTeam command;
+  private InMemoryTeamRepository teamRepository;
 
   @BeforeEach
   void setup(){
-    teamRepository = Mockito.mock(TeamRepository.class);
+    DeleteTeamDataFixture dataFixture = new DeleteTeamDataFixture();
+    teamRepository = new InMemoryTeamRepository(dataFixture.initialTeamRepository());
     command = new DeleteTeam(teamRepository);
   }
 
@@ -25,7 +28,13 @@ public class DeleteTeamTest {
   void AManagerDeleteATeam(){
     var request = new DeleteTeamRequest("teamId");
     command.execute(request);
-    verify(teamRepository).deleteTeam("teamId");
+    assertTrue(teamRepository.items().isEmpty());
   }
 
+}
+
+class DeleteTeamDataFixture {
+  public List<TeamDto> initialTeamRepository(){
+    return List.of(new TeamDto("teamId", "Team1", List.of(), "accountId"));
+  }
 }

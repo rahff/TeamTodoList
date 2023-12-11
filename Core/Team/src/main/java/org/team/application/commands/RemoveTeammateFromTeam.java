@@ -1,11 +1,11 @@
 package org.team.application.commands;
 
-import org.shared.api.Command;
+
 import org.team.entities.Team;
 import org.team.ports.dto.RemoveTeammateFromTeamRequest;
 import org.team.ports.spi.TeamRepository;
 
-public class RemoveTeammateFromTeam implements Command<RemoveTeammateFromTeamRequest> {
+public class RemoveTeammateFromTeam  {
   private final TeamRepository teamRepository;
 
   public RemoveTeammateFromTeam(TeamRepository teamRepository) {
