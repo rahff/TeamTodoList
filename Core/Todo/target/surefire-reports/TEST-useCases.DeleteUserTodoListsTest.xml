@@ -2,9 +2,9 @@
 <testsuite tests="0" failures="0" name="useCases.DeleteUserTodoListsTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="java.vm.version" value="17.0.8.1+1-Ubuntu-0ubuntu122.04"/>
+    <property name="java.vm.version" value="17.0.9+9-Ubuntu-122.04"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/rahff/Bureau/TeamTodoList"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/rahff/Bureau/Team_Todo"/>
     <property name="java.vm.vendor" value="Private Build"/>
     <property name="java.vendor.url" value="Unknown"/>
     <property name="path.separator" value=":"/>
@@ -12,10 +12,10 @@
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="user.country" value="FR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="user.dir" value="/home/rahff/Bureau/TeamTodoList"/>
+    <property name="user.dir" value="/home/rahff/Bureau/Team_Todo"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="java.runtime.version" value="17.0.8.1+1-Ubuntu-0ubuntu122.04"/>
+    <property name="java.runtime.version" value="17.0.9+9-Ubuntu-122.04"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
@@ -40,18 +40,18 @@
     <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
     <property name="java.home" value="/usr/lib/jvm/java-17-openjdk-amd64"/>
     <property name="user.language" value="fr"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.version" value="17.0.8.1"/>
+    <property name="java.version" value="17.0.9"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.vendor" value="Private Build"/>
     <property name="sun.stderr.encoding" value="UTF-8"/>
     <property name="maven.home" value="/usr/share/maven"/>
     <property name="file.separator" value="/"/>
-    <property name="java.version.date" value="2023-08-24"/>
+    <property name="java.version.date" value="2023-10-17"/>
     <property name="java.vendor.url.bug" value="Unknown"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>

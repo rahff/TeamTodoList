@@ -1,13 +1,11 @@
 package org.example.config.team;
 
+import org.example.config.security.SecurityConfig;
 import org.example.config.security.SecurityTestConfig;
 import org.example.config.todo.TodoModuleBeanConfiguration;
 import org.example.email.EmailService;
 import org.example.transactions.security.CreateTeammateTransaction;
-import org.example.transactions.team.AddTeammateOnTeamTransaction;
-import org.example.transactions.team.DeleteTeamTransaction;
-import org.example.transactions.team.FireTeammateTransaction;
-import org.example.transactions.team.RemoveTeammateTransaction;
+import org.example.transactions.team.*;
 
 import org.shared.spi.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +24,7 @@ import org.todo.port.spi.TodoListRepository;
 
 @Configuration
 @Profile("prod")
-@Import(TodoModuleBeanConfiguration.class)
+@Import({TodoModuleBeanConfiguration.class, SecurityConfig.class})
 public class TeamModuleBeanConfig {
 
   @Autowired
@@ -44,15 +42,26 @@ public class TeamModuleBeanConfig {
   @Autowired
   EmailService emailService;
 
-
   @Bean
-  public CreateTeam createTeamCommand(){
+  CreateTeammate createTeammate(){
+    return new CreateTeammate(userRepository, codeGenerator, teammateRepository);
+  }
+  @Bean
+  CreateTeam createTeam(){
     return new CreateTeam(teamRepository);
+  }
+  @Bean
+  public CreateTeamTransaction createTeamCommand(){
+    return new CreateTeamTransaction(createTeam());
+  }
+  @Bean
+  AddTeammatesOnTeam addTeammatesOnTeam(){
+    return new AddTeammatesOnTeam(teamRepository, teammateRepository);
   }
 
   @Bean
   AddTeammateOnTeamTransaction addTeammatesOnTeamCommand(){
-    return new AddTeammateOnTeamTransaction(new AddTeammatesOnTeam(teamRepository, teammateRepository));
+    return new AddTeammateOnTeamTransaction(addTeammatesOnTeam());
   }
 
   @Bean
@@ -66,16 +75,18 @@ public class TeamModuleBeanConfig {
 
   @Bean
   CreateTeammateTransaction addTeammate(){
-    return new CreateTeammateTransaction(new CreateTeammate(userRepository, codeGenerator, teammateRepository), emailService);
+    return new CreateTeammateTransaction(createTeammate(), emailService);
   }
 
   @Bean
-  FireTeammateTransaction fireTeammateCommand() {
+  FireTeammateCommand fireTeammateCommand(){
+    return new FireTeammateCommand(teammateRepository,
+            new RemoveTeammateFromTeam(teamRepository));
+  }
+  @Bean
+  FireTeammateTransaction fireTeammateTransaction() {
     return new FireTeammateTransaction(
-            new FireTeammateCommand(
-                    teammateRepository,
-                    new RemoveTeammateFromTeam(teamRepository)
-            ),
+            fireTeammateCommand(),
             new DeleteUserTodoLists(todoListRepository));
   }
 }

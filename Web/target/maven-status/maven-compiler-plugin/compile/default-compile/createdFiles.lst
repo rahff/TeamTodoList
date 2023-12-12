@@ -1,7 +1,5 @@
-org/example/payment/FakeCheckout.class
 org/example/config/todo/TodoQueryBeanConfiguration.class
 org/example/controllers/api/todo/CreateTodoListController.class
-org/example/persistance/repositories/todo/command/TodoListProvider.class
 org/example/persistance/repositories/security/command/JpaUserRepositoryAdapter.class
 org/example/persistance/entities/security/UserRole.class
 org/example/controllers/api/security/jsonPayload/CreateAccountResultJson.class
@@ -27,7 +25,6 @@ org/example/persistance/repositories/todo/query/JpaTodoListDataAccess.class
 org/example/controllers/query/todo/ListOfTodoListViewController.class
 org/example/persistance/repositories/todo/query/QueryTodoInMemoryTodoListDataAccess.class
 org/example/email/AppEmailService.class
-org/example/persistance/repositories/todo/command/TodoListInMemoryRepository.class
 org/example/controllers/api/security/SetPasswordController.class
 org/example/security/JwtFilter.class
 org/example/controllers/api/todo/jsonPayloads/request/AddTodoRequestBody.class
@@ -37,7 +34,6 @@ org/example/transactions/security/CreateTeammateTransaction.class
 org/example/persistance/repositories/team/query/JpaTeamQueryTeamDataAccess.class
 org/example/controllers/query/team/TeammateListViewController.class
 org/example/config/team/TeamModuleBeanConfig.class
-org/example/persistance/repositories/security/command/UserInMemoryRepository.class
 org/example/controllers/query/team/TeamDetailsViewController.class
 org/example/config/todo/TodoModuleBeanConfiguration.class
 org/example/transactions/todo/DeleteTodoTransaction.class
@@ -65,7 +61,6 @@ org/example/controllers/api/todo/jsonPayloads/response/IdJson.class
 org/example/transactions/team/FireTeammateTransaction.class
 org/example/controllers/api/todo/jsonPayloads/response/TodoJson.class
 org/example/controllers/api/todo/jsonPayloads/request/DeleteTodoRequestBody.class
-org/example/persistance/repositories/team/command/InMemoryTeammateRepository.class
 org/example/persistance/mappers/team/TeammateMapper.class
 org/example/security/JwtAuthenticationProvider.class
 org/example/persistance/repositories/security/query/InMemoryAccountUserDataAccess.class
@@ -88,18 +83,15 @@ org/example/controllers/api/todo/jsonPayloads/response/TodoListCardJson.class
 org/example/persistance/entities/team/Team.class
 org/example/controllers/api/todo/jsonPayloads/request/DoneTodoRequestBody.class
 org/example/controllers/api/todo/jsonPayloads/request/CreateTodoRequestBody.class
-org/example/persistance/repositories/team/command/TeamInMemoryRepository.class
 org/example/persistance/mappers/todo/TodoMapper.class
 org/example/controllers/api/security/AuthenticationController.class
 org/example/security/JwtAuthenticationToken.class
 org/example/email/EmailService.class
 org/example/transactions/team/CreateTeamTransaction.class
 org/example/controllers/api/team/jsonPayloads/response/TeammateJson.class
-org/example/persistance/repositories/security/command/UserProvider.class
 org/example/Main.class
 org/example/persistance/repositories/team/query/JpaTeamQueryTodoListDataAccess.class
 org/example/persistance/mappers/security/SubscriptionMapper.class
-org/example/persistance/repositories/team/command/TeamProvider.class
 org/example/controllers/api/team/DeleteTeamController.class
 org/example/persistance/repositories/team/query/QueryTeamInMemoryTodoListDataAccess.class
 org/example/transactions/security/CreateManagerAccountTransaction.class

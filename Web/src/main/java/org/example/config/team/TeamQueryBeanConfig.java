@@ -9,8 +9,10 @@ import org.query.team.spi.UserDataAccess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 @Configuration
+@Profile("prod")
 public class TeamQueryBeanConfig {
 
     @Autowired
