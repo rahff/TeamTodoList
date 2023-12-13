@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79a0513d-e75c-473e-8348-93ff222d5633" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/config/account/AccountModuleConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/account/AccountModuleConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/config/account/AccountQueryTestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/account/AccountQueryTestConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/config/team/TeamModuleBeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/team/TeamModuleBeanConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/config/team/TeamQueryBeanConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/team/TeamQueryBeanConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/java/org/example/config/todo/TodoQueryBeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/java/org/example/config/todo/TodoQueryBeanConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/src/main/resources/dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Web/src/main/resources/dev.properties" afterDir="false" />
-    </list>
+    <list default="true" id="79a0513d-e75c-473e-8348-93ff222d5633" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
