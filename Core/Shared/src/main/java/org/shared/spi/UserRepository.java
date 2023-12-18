@@ -11,4 +11,5 @@ public interface UserRepository {
 
   UserDto save(UserDto newUser);
 
+  Optional<UserDto> findBySubscription(String subscriptionId);
 }

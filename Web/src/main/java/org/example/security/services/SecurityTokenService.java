@@ -1,10 +1,9 @@
-package org.example.security;
+package org.example.security.services;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import org.security.ports.dto.JwtTokenPair;
-import org.security.ports.spi.JwtEncoder;
 import org.shared.spi.DateProvider;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;

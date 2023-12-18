@@ -4,7 +4,7 @@ export class Result<T, E=any> {
 
     private constructor(private error: E | null, private value: T | null ){}
     
-    public static of<T, E>(value: T, error: E) {
+    public static of<T, E>(value: T, error: E): Result<T, E> {
         return new Result(error, value);
     }
 

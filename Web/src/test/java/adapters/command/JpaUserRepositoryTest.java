@@ -51,4 +51,14 @@ public class JpaUserRepositoryTest {
     assertEquals(savedUser.email(), expectedUser.getEmail());
     assertNotNull(savedUser.subscription());
   }
+
+  @Test
+  void findUserBySubscriptionId(){
+    var subscriptionId = StringProvider.unique();
+    var dto = new UserDto(StringProvider.unique(), StringProvider.unique(), "manager", passwordEncoder.encode("12345"), "MANAGER", StringProvider.unique(), Optional.of(new SubscriptionDto(subscriptionId, false)));
+    var savedUser = userRepository.save(dto);
+    var foundBySubscriptionId = userRepository.findBySubscription(subscriptionId).orElse(null);
+    assertNotNull(foundBySubscriptionId);
+    assertEquals(savedUser.id(), foundBySubscriptionId.id());
+  }
 }

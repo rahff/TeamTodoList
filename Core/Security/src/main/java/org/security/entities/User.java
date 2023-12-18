@@ -35,4 +35,8 @@ public class User {
     Optional<SubscriptionDto> userSubscription = this.subscription != null ? Optional.of(subscription): Optional.empty();
     return new UserDto(id, email, name, password, role, accountId, userSubscription);
   }
+
+  public void paidSubscription() {
+      this.subscription = new SubscriptionDto(subscription.id(), true);
+  }
 }

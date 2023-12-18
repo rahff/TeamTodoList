@@ -1,6 +1,10 @@
 package integration.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.google.gson.JsonObject;
+import com.stripe.model.Event;
+import com.stripe.model.EventDataDeserializer;
+import com.stripe.model.EventDataObjectDeserializer;
 import org.example.MainTest;
 import org.example.controllers.api.security.jsonPayload.ChangePasswordPayload;
 import org.example.controllers.api.security.jsonPayload.CreateAccountResultJson;
@@ -42,6 +46,8 @@ public class SecurityControllerTest extends BaseControllerTest {
     var manager = userRepository.findByEmail("mikki@gmail.com").orElse(null);
     assertNotNull(manager);
     assertEquals("MANAGER", manager.role());
+    assertNotNull(manager.subscription().orElse(null));
+    assertFalse(manager.subscription().get().paid());
   }
 
   @Test
@@ -73,3 +79,6 @@ public class SecurityControllerTest extends BaseControllerTest {
     mockMvc.perform(post("/create-teammate").contentType(MediaType.APPLICATION_JSON).content(body));
   }
 }
+
+
+

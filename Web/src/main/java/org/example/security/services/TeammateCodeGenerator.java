@@ -1,4 +1,4 @@
-package org.example.security;
+package org.example.security.services;
 
 import org.team.ports.dto.GeneratedCodePair;
 import org.team.ports.spi.CodeGenerator;

@@ -70,7 +70,7 @@ public class JpaTeamQueryTeamDataAccessTest {
   void JpaTeamQueryTeamDataAccess_getAllTeam() throws Exception {
     var accountId = StringProvider.unique();
     var teamId = StringProvider.unique();
-    createManagerAccount.execute(accountId, "price_1OIj1aGLEzO6wwJZuWBGDqZj");
+    createManagerAccount.execute(accountId, "price_1OOCmjGLEzO6wwJZbeC8rx0j");
     createTeam.execute(new CreateTeamRequest(teamId, "Team fake", List.of(), accountId));
     var result = sutTeamDataAccess.getAllTeam(accountId);
     assertArrayEquals(List.of(new TeamDto(teamId, "Team fake", List.of())).toArray(), result.toArray());

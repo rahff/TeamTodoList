@@ -1,4 +1,4 @@
-package org.example.security;
+package org.example.security.services;
 
 import org.security.ports.spi.PasswordSecurity;
 import org.springframework.security.crypto.password.PasswordEncoder;

@@ -17,6 +17,7 @@ public class AppUser {
   private String password;
   private String name;
   private String accountId;
+
   @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   private Subscription subscription;
   @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -33,7 +34,9 @@ public class AppUser {
     this.authority = authority;
     this.subscription = subscription;
   }
-
+  public Subscription getSubscription() {
+    return subscription;
+  }
   public String getId() {
     return id;
   }

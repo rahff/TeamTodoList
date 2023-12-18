@@ -1,4 +1,4 @@
-package org.example.security;
+package org.example.security.services;
 
 import org.example.persistance.entities.security.AppUser;
 import org.example.persistance.entities.security.Authority;

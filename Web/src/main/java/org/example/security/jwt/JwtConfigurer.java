@@ -1,4 +1,4 @@
-package org.example.security;
+package org.example.security.jwt;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -8,10 +8,10 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 
 public class JwtConfigurer extends AbstractHttpConfigurer<JwtConfigurer, HttpSecurity> {
 
-  private JwtAuthenticationProvider authenticationProvider;
+  private AuthenticationProvider authenticationProvider;
   private JwtFilter jwtFilter;
 
-  public JwtConfigurer withAuthenticationProvider(JwtAuthenticationProvider authenticationProvider){
+  public JwtConfigurer withAuthenticationProvider(AuthenticationProvider authenticationProvider){
     this.authenticationProvider = authenticationProvider;
     return this;
   }

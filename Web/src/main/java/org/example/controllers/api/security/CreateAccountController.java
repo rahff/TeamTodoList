@@ -4,8 +4,6 @@ import org.example.controllers.api.security.jsonPayload.CreateAccountResultJson;
 import org.example.controllers.api.security.jsonPayload.JwtAuthenticationJson;
 import org.example.controllers.api.security.mapper.UserDtoMapper;
 import org.example.transactions.security.CreateManagerAccountTransaction;
-import org.security.ports.dto.CreateAccountResult;
-import org.security.ports.dto.JwtAuthenticationResult;
 import org.security.ports.dto.SignupUserRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;

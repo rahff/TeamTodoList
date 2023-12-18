@@ -1,4 +1,4 @@
-package org.example.security;
+package org.example.security.services;
 
 import java.util.Random;
 

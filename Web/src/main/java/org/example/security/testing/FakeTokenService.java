@@ -1,12 +1,10 @@
-package org.example.security;
+package org.example.security.testing;
 
 import io.jsonwebtoken.*;
+import org.example.security.services.TokenService;
 import org.security.ports.dto.JwtTokenPair;
-import org.security.ports.spi.JwtEncoder;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-
-import java.util.Map;
 
 @Service
 @Profile("test")

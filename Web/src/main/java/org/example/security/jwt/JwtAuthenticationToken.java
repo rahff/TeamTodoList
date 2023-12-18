@@ -1,4 +1,4 @@
-package org.example.security;
+package org.example.security.jwt;
 
 import org.shared.dto.UserDto;
 import org.springframework.security.core.Authentication;

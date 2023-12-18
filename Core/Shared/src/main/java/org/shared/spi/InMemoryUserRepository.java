@@ -42,4 +42,14 @@ public class InMemoryUserRepository implements UserRepository{
     public List<UserDto> items() {
         return data;
     }
+    public Optional<UserDto> findBySubscription(String subscriptionId){
+        return data.stream().filter(userDto -> bySubscriptionId(userDto, subscriptionId)).findFirst();
+    }
+
+    private boolean bySubscriptionId(UserDto userDto, String subscriptionId) {
+        if(userDto.subscription().isPresent()){
+            return userDto.subscription().get().id().equals(subscriptionId);
+        }
+        return false;
+    }
 }

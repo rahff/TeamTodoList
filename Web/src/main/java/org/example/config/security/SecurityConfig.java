@@ -1,12 +1,17 @@
 package org.example.config.security;
 
 
-import org.example.security.*;
+import org.example.security.jwt.JwtAuthenticationProvider;
+import org.example.security.jwt.JwtConfigurer;
+import org.example.security.jwt.JwtFilter;
+import org.example.security.services.SecurityPasswordService;
+import org.example.security.services.TokenService;
+import org.example.security.webhook.WebhookAuthenticationProvider;
+import org.example.security.webhook.WebhookConfigurer;
+import org.example.security.webhook.WebhookFilter;
 import org.example.transactions.security.SetPasswordTransaction;
 import org.security.application.*;
-import org.security.ports.spi.AccountRepository;
 import org.security.ports.spi.PasswordSecurity;
-import org.security.ports.spi.PaymentGateway;
 import org.shared.spi.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -33,9 +38,9 @@ public class SecurityConfig {
   @Autowired
   TokenService jwtService;
   @Autowired
-  AccountRepository accountRepository;
+  WebhookFilter webhookFilter;
   @Autowired
-  PaymentGateway paymentGateway;
+  WebhookAuthenticationProvider webhookAuthenticationProvider;
 
 
   @Bean
@@ -43,6 +48,9 @@ public class SecurityConfig {
     http.csrf(AbstractHttpConfigurer::disable);
     http.authorizeHttpRequests(authorize -> authorize.requestMatchers( "/login", "/create-account").permitAll()
       .anyRequest().authenticated());
+    http.apply(new WebhookConfigurer()
+            .withJwtFilter(webhookFilter)
+            .withAuthenticationProvider(webhookAuthenticationProvider));
     http.apply(new JwtConfigurer()
       .withJwtFilter(jwtFilter)
       .withAuthenticationProvider(jwtAuthenticationProvider));

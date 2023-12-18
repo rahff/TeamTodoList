@@ -1,4 +1,4 @@
-package org.example.security;
+package org.example.security.testing;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.password.PasswordEncoder;

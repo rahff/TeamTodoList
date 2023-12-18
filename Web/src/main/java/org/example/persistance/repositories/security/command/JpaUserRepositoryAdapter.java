@@ -27,4 +27,8 @@ public class JpaUserRepositoryAdapter implements UserRepository {
   public UserDto save(UserDto newUser) {
     return userRepository.save(UserMapper.fromDto(newUser)).toDto();
   }
+
+  public Optional<UserDto> findBySubscription(String subscriptionId) {
+    return userRepository.findBySubscriptionId(subscriptionId).map(AppUser::toDto);
+  }
 }

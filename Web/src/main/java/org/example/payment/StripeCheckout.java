@@ -20,14 +20,14 @@ import java.util.List;
 @Profile("prod")
 public class StripeCheckout implements PaymentGateway {
 
-    @Value("${hostname.appDomain}")
-    private String appDomain;
-    @Value("${hostname.orgDomain}")
-    private String orgDomain;
+    private StripeConfig config;
+   public StripeCheckout(StripeConfig config){
+       this.config = config;
+   }
     public CheckoutSession createCheckoutSession(String priceId) throws StripeException {
                 SessionCreateParams params = new SessionCreateParams.Builder()
-                .setSuccessUrl(appDomain)
-                .setCancelUrl(orgDomain)
+                .setSuccessUrl(config.getSuccessUrl())
+                .setCancelUrl(config.getCancelUrl())
                 .setMode(SessionCreateParams.Mode.SUBSCRIPTION)
                 .addLineItem(new SessionCreateParams.LineItem.Builder()
                         .setQuantity(1L)
@@ -36,6 +36,7 @@ public class StripeCheckout implements PaymentGateway {
                 )
                 .build();
         Session session = Session.create(params);
+        System.out.println("stripe session: "+session.toJson());
         return new CheckoutSession(session.getId(), session.getUrl());
     }
 

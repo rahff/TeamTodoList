@@ -1,8 +1,8 @@
-package org.example.security;
+package org.example.security.jwt;
 
 
 
-import org.example.persistance.repositories.security.springData.AppUserRepository;
+import org.example.security.services.TokenService;
 import org.shared.spi.UserRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -28,12 +28,17 @@ public class JwtAuthenticationProvider implements AuthenticationProvider {
 
   @Override
   public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-    var token = authentication.getCredentials();
-    var jwtClaims = jwtService.decode(token.toString());
-    var userEmail = jwtClaims.get("username");
-    var userPlan = jwtClaims.get("userRole");
-    var principal = userDetailsService.findByEmail(userEmail.toString()).orElseThrow(() -> new BadCredentialsException("bad credentials"));
-    return new JwtAuthenticationToken(principal, null, List.of(new SimpleGrantedAuthority(userPlan.toString())));
+    try{
+      var token = authentication.getCredentials();
+      var jwtClaims = jwtService.decode(token.toString());
+      var userEmail = jwtClaims.get("username");
+      var userPlan = jwtClaims.get("userRole");
+      var principal = userDetailsService.findByEmail(userEmail.toString()).orElseThrow(() -> new BadCredentialsException("bad credentials"));
+      return new JwtAuthenticationToken(principal, null, List.of(new SimpleGrantedAuthority(userPlan.toString())));
+    }catch (Exception e){
+      throw new BadCredentialsException("invalid token");
+    }
+
   }
 
   @Override
