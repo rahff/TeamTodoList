@@ -33,6 +33,7 @@ public class UpdateManagerSubscriptionTest {
                 "12345",
                 "MANAGER",
                 "accountId",
+                Optional.empty(),
                 Optional.of(
                         new SubscriptionDto(
                                 "subscriptionId",
@@ -55,6 +56,7 @@ class UpdateSubscriptionDataFixture {
                         "12345",
                         "MANAGER",
                         "accountId",
+                        Optional.empty(),
                         Optional.of(new SubscriptionDto("subscriptionId", false)))
         );
     }

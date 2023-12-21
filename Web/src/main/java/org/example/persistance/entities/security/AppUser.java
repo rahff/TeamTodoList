@@ -17,6 +17,7 @@ public class AppUser {
   private String password;
   private String name;
   private String accountId;
+  private String teamId;
 
   @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   private Subscription subscription;
@@ -25,13 +26,14 @@ public class AppUser {
 
   public AppUser() {}
 
-  public AppUser(String id, String email, String password, String name, Authority authority, String accountId, Subscription subscription) {
+  public AppUser(String id, String email, String password, String name, Authority authority, String accountId, String teamId, Subscription subscription) {
     this.id = id;
     this.email = email;
     this.password = password;
     this.name = name;
     this.accountId = accountId;
     this.authority = authority;
+    this.teamId = teamId;
     this.subscription = subscription;
   }
   public Subscription getSubscription() {
@@ -80,10 +82,15 @@ public class AppUser {
 
   public UserDto toDto(){
     Optional<SubscriptionDto> sub = subscription != null ? Optional.of(new SubscriptionDto(subscription.getId(), subscription.paid())) : Optional.empty();
-    return new UserDto(id, email, name, password, getAuthority().getUserRole(), accountId, sub);
+    Optional<String> _teamId = teamId != null ? Optional.of(teamId) : Optional.empty();
+    return new UserDto(id, email, name, password, getAuthority().getUserRole(), accountId, _teamId, sub);
   }
 
   public String getAccountId() {
     return accountId;
+  }
+
+  public void setTeamId(String teamId) {
+    this.teamId = teamId;
   }
 }

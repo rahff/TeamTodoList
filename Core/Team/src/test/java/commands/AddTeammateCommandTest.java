@@ -4,12 +4,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import org.shared.dto.UserDto;
+import org.shared.spi.InMemoryUserRepository;
 import org.team.application.commands.AddTeammatesOnTeam;
 import org.team.ports.dto.AddTeammatesOnTeamRequest;
 import org.team.ports.dto.TeamDto;
 
 import org.team.ports.spi.inMemory.InMemoryTeamRepository;
-import org.team.ports.spi.inMemory.InMemoryTeammateRepository;
 import utils.RequestProvider;
 
 
@@ -23,13 +23,13 @@ public class AddTeammateCommandTest {
 
   private AddTeammatesOnTeam command;
   private InMemoryTeamRepository teamRepository;
-  private InMemoryTeammateRepository teammateRepository;
+  private InMemoryUserRepository teammateRepository;
 
   private  AddTeammateDataFixture dataFixture;
   @BeforeEach
   void setup(){
     dataFixture = new AddTeammateDataFixture();
-    teammateRepository = new InMemoryTeammateRepository(dataFixture.getInitialTeammateRepository());
+    teammateRepository = new InMemoryUserRepository(dataFixture.getInitialTeammateRepository());
     teamRepository = new InMemoryTeamRepository(dataFixture.getInitialTeamRepository());
     command = new AddTeammatesOnTeam(teamRepository, teammateRepository);
   }
@@ -53,6 +53,16 @@ class AddTeammateDataFixture {
                     "$$$$$$$$$$$",
                     "TEAMMATE",
                     "accountId",
+                    Optional.empty(),
+                    Optional.empty()),
+            new UserDto(
+                    "teammate2Id",
+                    "teammate2@gmail.com",
+                    "Alice",
+                    "$$$$$$$$$$$",
+                    "TEAMMATE",
+                    "accountId",
+                    Optional.empty(),
                     Optional.empty()));
   }
   public List<TeamDto> getInitialTeamRepository() {
@@ -63,7 +73,15 @@ class AddTeammateDataFixture {
     return new TeamDto("teamId", "Team1", request.teammateToAdd(), "accountId");
   }
 
-  public InMemoryTeammateRepository.TeammateDto teammateWhoAddedOnTeam(AddTeammatesOnTeamRequest request) {
-    return new InMemoryTeammateRepository.TeammateDto(request.teammateToAdd().get(0),"accountId", Optional.of(request.teamId()));
+  public UserDto teammateWhoAddedOnTeam(AddTeammatesOnTeamRequest request) {
+    return new UserDto(
+            "teammate1Id",
+            "teammate@gmail.com",
+            "Bob",
+            "$$$$$$$$$$$",
+            "TEAMMATE",
+            "accountId",
+            Optional.of("teamId"),
+            Optional.empty());
   }
 }

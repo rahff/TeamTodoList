@@ -1,13 +1,13 @@
 package org.query.team.api;
 
 
+import org.query.shared.spi.UserDataAccess;
 import org.query.team.dto.TeamDto;
 import org.query.team.model.TeamCard;
 import org.query.team.model.TeamListViewModel;
 import org.query.team.model.Teammate;
 import org.query.team.spi.TeamDataAccess;
 import org.query.team.spi.TodoListDataAccess;
-import org.query.team.spi.UserDataAccess;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;

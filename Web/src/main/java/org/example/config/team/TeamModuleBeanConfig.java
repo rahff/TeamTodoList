@@ -1,7 +1,6 @@
 package org.example.config.team;
 
 import org.example.config.security.SecurityConfig;
-import org.example.config.security.SecurityTestConfig;
 import org.example.config.todo.TodoModuleBeanConfiguration;
 import org.example.email.EmailService;
 import org.example.transactions.security.CreateTeammateTransaction;
@@ -17,7 +16,6 @@ import org.team.application.commands.*;
 
 import org.team.ports.spi.CodeGenerator;
 import org.team.ports.spi.TeamRepository;
-import org.team.ports.spi.TeammateRepository;
 import org.todo.application.commands.DeleteUserTodoLists;
 import org.todo.port.spi.TodoListRepository;
 
@@ -38,13 +36,11 @@ public class TeamModuleBeanConfig {
   @Autowired
   CodeGenerator codeGenerator;
   @Autowired
-  TeammateRepository teammateRepository;
-  @Autowired
   EmailService emailService;
 
   @Bean
   CreateTeammate createTeammate(){
-    return new CreateTeammate(userRepository, codeGenerator, teammateRepository);
+    return new CreateTeammate(userRepository, codeGenerator);
   }
   @Bean
   CreateTeam createTeam(){
@@ -56,7 +52,7 @@ public class TeamModuleBeanConfig {
   }
   @Bean
   AddTeammatesOnTeam addTeammatesOnTeam(){
-    return new AddTeammatesOnTeam(teamRepository, teammateRepository);
+    return new AddTeammatesOnTeam(teamRepository, userRepository);
   }
 
   @Bean
@@ -80,7 +76,7 @@ public class TeamModuleBeanConfig {
 
   @Bean
   FireTeammateCommand fireTeammateCommand(){
-    return new FireTeammateCommand(teammateRepository,
+    return new FireTeammateCommand(userRepository,
             new RemoveTeammateFromTeam(teamRepository));
   }
   @Bean

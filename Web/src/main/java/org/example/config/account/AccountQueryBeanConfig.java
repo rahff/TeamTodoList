@@ -3,10 +3,10 @@ package org.example.config.account;
 
 import com.stripe.Stripe;
 import org.query.account.api.AccountDetailsViewQuery;
-import org.query.account.spi.UserDataAccess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.query.shared.spi.UserDataAccess;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 

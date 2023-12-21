@@ -1,6 +1,7 @@
 package org.query.team.api;
 
 
+import org.query.shared.spi.UserDataAccess;
 import org.query.team.dto.TeamDto;
 import org.query.team.dto.TodoListDto;
 import org.query.team.model.TeamDetails;
@@ -9,10 +10,8 @@ import org.query.team.model.Teammate;
 import org.query.team.model.TodoList;
 import org.query.team.spi.TeamDataAccess;
 import org.query.team.spi.TodoListDataAccess;
-import org.query.team.spi.UserDataAccess;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

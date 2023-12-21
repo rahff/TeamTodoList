@@ -1,7 +1,7 @@
 package org.query.account.api;
 
 import org.query.account.model.AccountDetailsViewModel;
-import org.query.account.spi.UserDataAccess;
+import org.query.shared.spi.UserDataAccess;
 
 public class AccountDetailsViewQuery {
 

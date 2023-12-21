@@ -2,10 +2,10 @@ package org.example.config.team;
 
 
 
+import org.query.shared.spi.UserDataAccess;
 import org.query.team.api.*;
 import org.query.team.spi.TeamDataAccess;
 import org.query.team.spi.TodoListDataAccess;
-import org.query.team.spi.UserDataAccess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

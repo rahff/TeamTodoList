@@ -1,10 +1,9 @@
 package org.query.team.api;
 
+import org.query.shared.spi.UserDataAccess;
 import org.query.team.model.Teammate;
-import org.query.team.spi.UserDataAccess;
 
 import java.util.List;
-import java.util.Optional;
 
 public class TeammatesAddedQuery {
 

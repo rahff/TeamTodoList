@@ -1,17 +1,17 @@
 package org.team.application.commands;
 
 
+import org.shared.spi.UserRepository;
 import org.team.entities.Team;
 import org.team.ports.dto.AddTeammatesOnTeamRequest;
 import org.team.ports.spi.TeamRepository;
-import org.team.ports.spi.TeammateRepository;
 
 public class AddTeammatesOnTeam {
 
   private final TeamRepository teamRepository;
-  private final TeammateRepository teammateRepository;
+  private final UserRepository teammateRepository;
 
-  public AddTeammatesOnTeam(TeamRepository teamRepository, TeammateRepository teammateRepository) {
+  public AddTeammatesOnTeam(TeamRepository teamRepository, UserRepository teammateRepository) {
     this.teamRepository = teamRepository;
     this.teammateRepository = teammateRepository;
   }

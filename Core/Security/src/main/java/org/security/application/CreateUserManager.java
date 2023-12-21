@@ -33,6 +33,8 @@ public class CreateUserManager extends UserSecurity {
       signupUserRequest.name(),
       signupUserRequest.password(),
       ROLE,
-      signupUserRequest.accountId(), Optional.of(subscription));
+      signupUserRequest.accountId(),
+            Optional.empty(),
+            Optional.of(subscription));
   }
 }

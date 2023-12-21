@@ -12,7 +12,6 @@ import org.team.ports.dto.CreateTeammateRequest;
 import org.team.ports.spi.CodeGenerator;
 
 import org.team.ports.spi.inMemory.FakeCodeGenerator;
-import org.team.ports.spi.inMemory.InMemoryTeammateRepository;
 
 
 import java.util.List;
@@ -26,23 +25,20 @@ public class CreateTeammateTest {
 
   private CreateTeammate command;
   private InMemoryUserRepository userRepository;
-  private InMemoryTeammateRepository teammateRepository;
   private CreateTeammateDataFixture dataFixture;
 
   @BeforeEach
   void setup(){
     dataFixture = new CreateTeammateDataFixture();
     CodeGenerator codeGenerator = new FakeCodeGenerator();
-    teammateRepository = new InMemoryTeammateRepository(dataFixture.getInitialUserRepository());
     userRepository = new InMemoryUserRepository(dataFixture.getInitialUserRepository());
-    command = new CreateTeammate(userRepository, codeGenerator, teammateRepository);
+    command = new CreateTeammate(userRepository, codeGenerator);
   }
   @Test
   void AManagerCreateATeammate(){
     var request = new CreateTeammateRequest("teammateId", "teammate@gmail.com", "Bob", "accountId");
     var joining = command.execute(request);
     assertTrue(userRepository.items().contains(dataFixture.theNewTeammateFromRequest(request)));
-    assertTrue(teammateRepository.items().contains(dataFixture.theNewTeammateInTeammateContext(request)));
     assertEquals("generatedPassword", joining.code());
   }
 }
@@ -57,6 +53,7 @@ class CreateTeammateDataFixture {
                     "$$$$$$$$$$$",
                     "TEAMMATE",
                     "accountId",
+                    Optional.empty(),
                     Optional.empty()));
   }
   public UserDto theNewTeammateFromRequest(CreateTeammateRequest request) {
@@ -67,11 +64,20 @@ class CreateTeammateDataFixture {
             "generatedPassword",
             "TEAMMATE",
             request.accountId(),
+            Optional.empty(),
             Optional.empty());
   }
 
-  public InMemoryTeammateRepository.TeammateDto theNewTeammateInTeammateContext(CreateTeammateRequest request) {
-    return new InMemoryTeammateRepository.TeammateDto(request.teammateId(), request.accountId(), Optional.empty());
+  public UserDto theNewTeammateInTeammateContext(CreateTeammateRequest request) {
+    return new UserDto(
+            request.teammateId(),
+            request.email(),
+            request.name(),
+            "generatedPassword",
+            "TEAMMATE",
+            request.accountId(),
+            Optional.empty(),
+            Optional.empty());
   }
 
 }

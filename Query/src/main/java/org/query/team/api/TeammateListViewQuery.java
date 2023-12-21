@@ -2,10 +2,10 @@ package org.query.team.api;
 
 
 
+import org.query.shared.spi.UserDataAccess;
 import org.query.team.model.Teammate;
 import org.query.team.model.TeammateListViewModel;
 import org.query.team.spi.TeamDataAccess;
-import org.query.team.spi.UserDataAccess;
 
 import java.util.stream.Collectors;
 

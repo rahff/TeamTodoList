@@ -8,6 +8,7 @@ import org.shared.spi.UserRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -30,5 +31,25 @@ public class JpaUserRepositoryAdapter implements UserRepository {
 
   public Optional<UserDto> findBySubscription(String subscriptionId) {
     return userRepository.findBySubscriptionId(subscriptionId).map(AppUser::toDto);
+  }
+
+  public Optional<UserDto> findByAccountIdAndTeamIdIsNull(String accountId) {
+    return userRepository.findByAccountIdAndTeamIdIsNull(accountId).stream().findFirst().map(AppUser::toDto);
+  }
+
+  public Optional<UserDto> findById(String teammateId) {
+    return userRepository.findById(teammateId).map(AppUser::toDto);
+  }
+  public void addTeamIdOnTeammate(List<String> ids, final String teamId) {
+    var entities = ids.parallelStream().map(id -> userRepository.findById(id).stream().findFirst().orElseThrow()).toList();
+    entities.parallelStream().forEach((entity) -> {
+      entity.setTeamId(teamId);
+      userRepository.save(entity);
+    });
+  }
+
+  @Override
+  public void removeTeammateUser(String teammateId) {
+
   }
 }

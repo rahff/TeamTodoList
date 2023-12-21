@@ -10,13 +10,15 @@ public class User {
   private String email;
   private String name;
   private String password;
+  private String teamId;
   private final String role;
   private final String accountId;
   private SubscriptionDto subscription;
-  private User(String id, String email, String name, String password, String role, String accountId, SubscriptionDto subscription){
+  private User(String id, String email, String name, String password, String teamId, String role, String accountId, SubscriptionDto subscription){
     this.id = id;
     this.email = email;
     this.password = password;
+    this.teamId = teamId;
     this.role = role;
     this.name = name;
     this.accountId = accountId;
@@ -24,7 +26,7 @@ public class User {
   }
 
   public static User fromDto(UserDto dto) {
-    return new User(dto.id(), dto.email(), dto.name(), dto.password(), dto.role(), dto.accountId(), dto.subscription().orElse(null));
+    return new User(dto.id(), dto.email(), dto.name(), dto.password(), dto.teamId().orElse(null), dto.role(), dto.accountId(), dto.subscription().orElse(null));
   }
 
   public void setPassword(String password){
@@ -33,7 +35,8 @@ public class User {
 
   public UserDto snapshot(){
     Optional<SubscriptionDto> userSubscription = this.subscription != null ? Optional.of(subscription): Optional.empty();
-    return new UserDto(id, email, name, password, role, accountId, userSubscription);
+    Optional<String> _teamId = teamId != null ? Optional.of(teamId) : Optional.empty();
+    return new UserDto(id, email, name, password, role, accountId, _teamId, userSubscription);
   }
 
   public void paidSubscription() {

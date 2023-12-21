@@ -9,7 +9,7 @@ public class TeamMapper {
     var team = new Team();
     team.setId(dto.id());
     team.setName(dto.name());
-    team.setTeammates(TeammateMapper.fromDto(dto));
+    team.setTeammates(dto.teammates());
     team.setAccountId(dto.accountId());
     return team;
   }

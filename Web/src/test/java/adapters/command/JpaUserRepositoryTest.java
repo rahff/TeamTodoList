@@ -33,7 +33,7 @@ public class JpaUserRepositoryTest {
 
   @Test
   void saverUserTeammate(){
-    var dto = new UserDto(StringProvider.unique(), StringProvider.unique(), "userName1", passwordEncoder.encode("12345"), "TEAMMATE", StringProvider.unique(), Optional.empty());
+    var dto = new UserDto(StringProvider.unique(), StringProvider.unique(), "userName1", passwordEncoder.encode("12345"), "TEAMMATE", StringProvider.unique(), Optional.empty(),Optional.empty());
     var savedUser = userRepository.save(dto);
     var expectedUser = springUserRepository.findByEmail(dto.email()).orElse(null);
     assertNotNull(expectedUser);
@@ -43,7 +43,7 @@ public class JpaUserRepositoryTest {
 
   @Test
   void saverUserManager(){
-    var dto = new UserDto(StringProvider.unique(), StringProvider.unique(), "manager", passwordEncoder.encode("12345"), "MANAGER", StringProvider.unique(), Optional.of(new SubscriptionDto(StringProvider.unique(), false)));
+    var dto = new UserDto(StringProvider.unique(), StringProvider.unique(), "manager", passwordEncoder.encode("12345"), "MANAGER", StringProvider.unique(), Optional.empty(), Optional.of(new SubscriptionDto(StringProvider.unique(), false)));
     var savedUser = userRepository.save(dto);
     var expectedUser = springUserRepository.findByEmail(dto.email()).orElse(null);
     assertNotNull(expectedUser);
@@ -55,7 +55,7 @@ public class JpaUserRepositoryTest {
   @Test
   void findUserBySubscriptionId(){
     var subscriptionId = StringProvider.unique();
-    var dto = new UserDto(StringProvider.unique(), StringProvider.unique(), "manager", passwordEncoder.encode("12345"), "MANAGER", StringProvider.unique(), Optional.of(new SubscriptionDto(subscriptionId, false)));
+    var dto = new UserDto(StringProvider.unique(), StringProvider.unique(), "manager", passwordEncoder.encode("12345"), "MANAGER", StringProvider.unique(),Optional.empty(), Optional.of(new SubscriptionDto(subscriptionId, false)));
     var savedUser = userRepository.save(dto);
     var foundBySubscriptionId = userRepository.findBySubscription(subscriptionId).orElse(null);
     assertNotNull(foundBySubscriptionId);

@@ -1,6 +1,7 @@
 package org.example.persistance.entities.team;
 
 import jakarta.persistence.*;
+import org.example.persistance.entities.security.AppUser;
 import org.team.ports.dto.TeamDto;
 
 
@@ -16,8 +17,7 @@ public class Team {
   private String name;
   private String accountId;
 
-  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-  private List<Teammate> teammates;
+  private List<String> teammates;
 
   public String getId() {
     return id;
@@ -35,11 +35,11 @@ public class Team {
     this.name = name;
   }
 
-  public List<Teammate> getTeammates() {
+  public List<String> getTeammates() {
     return teammates;
   }
 
-  public void setTeammates(List<Teammate> teammates) {
+  public void setTeammates(List<String> teammates) {
     this.teammates = teammates;
   }
   public String getAccountId() {
@@ -50,8 +50,7 @@ public class Team {
   }
 
   public TeamDto toDto(){
-    var teammateList = teammates.stream()
-      .map(Teammate::getRef).collect(Collectors.toList());
-    return new TeamDto(id, name, teammateList, accountId);
+
+    return new TeamDto(id, name, teammates, accountId);
   }
 }

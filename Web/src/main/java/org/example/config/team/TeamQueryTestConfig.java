@@ -3,12 +3,12 @@ package org.example.config.team;
 
 
 import org.example.config.account.AccountQueryTestConfig;
-import org.example.persistance.repositories.team.query.InMemoryTeamDataAccess;
+import org.query.shared.spi.UserDataAccess;
 import org.query.team.api.*;
 import org.query.team.spi.TeamDataAccess;
 import org.query.team.spi.TodoListDataAccess;
-import org.query.team.spi.UserDataAccess;
 
+import org.query.team.spi.fakes.InMemoryTeamDataAccess;
 import org.query.team.spi.fakes.InMemoryTodoListDataAccess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 @Profile("test")
-@Import(AccountQueryTestConfig.class)
+@Import({AccountQueryTestConfig.class})
 public class TeamQueryTestConfig {
 
     @Autowired

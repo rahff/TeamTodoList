@@ -1,12 +1,12 @@
 package org.example.persistance.repositories.team.query;
 
 
-import org.example.persistance.entities.team.Teammate;
+import org.example.persistance.repositories.security.command.JpaUserRepositoryAdapter;
 import org.example.persistance.repositories.team.springData.JpaTeamRepository;
 import org.example.persistance.repositories.team.query.mappers.TeamMapper;
-import org.example.persistance.repositories.team.springData.JpaTeammateRepository;
 import org.query.team.dto.TeamDto;
 import org.query.team.spi.TeamDataAccess;
+import org.shared.dto.UserDto;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
@@ -18,9 +18,9 @@ import java.util.Optional;
 public class JpaTeamQueryTeamDataAccess implements TeamDataAccess {
 
     private final JpaTeamRepository teamRepository;
-    private final JpaTeammateRepository teammateRepository;
+    private final JpaUserRepositoryAdapter teammateRepository;
 
-  public JpaTeamQueryTeamDataAccess(JpaTeamRepository teamRepository, JpaTeammateRepository teammateRepository) {
+  public JpaTeamQueryTeamDataAccess(JpaTeamRepository teamRepository, JpaUserRepositoryAdapter teammateRepository) {
     this.teamRepository = teamRepository;
     this.teammateRepository = teammateRepository;
   }
@@ -31,7 +31,7 @@ public class JpaTeamQueryTeamDataAccess implements TeamDataAccess {
 
     public List<String> getAvailableTeammatesRef(String accountId) {
       return teammateRepository.findByAccountIdAndTeamIdIsNull(accountId)
-        .stream().map(Teammate::getRef).toList();
+        .stream().map(UserDto::id).toList();
     }
 
     public List<TeamDto> getAllTeam(String accountId) {
@@ -40,7 +40,7 @@ public class JpaTeamQueryTeamDataAccess implements TeamDataAccess {
     }
 
     public Optional<String> getTeamIdOfTeammate(String teammateId) {
-        var result = teammateRepository.findByRef(teammateId);
-        return result.stream().findFirst().map(Teammate::getTeamId);
+        var result = teammateRepository.findById(teammateId);
+        return result.stream().findFirst().flatMap(UserDto::teamId);
     }
 }

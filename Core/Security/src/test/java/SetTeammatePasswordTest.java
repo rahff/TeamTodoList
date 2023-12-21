@@ -50,6 +50,7 @@ class SetTeammatePasswordDataFixture {
                      "12345",
                      "TEAMMATE",
                      "accountId",
+                     Optional.of("teamId"),
                      Optional.empty())
      );
   }
@@ -62,6 +63,7 @@ class SetTeammatePasswordDataFixture {
             "NEWPASSWORD",
             "TEAMMATE",
             "accountId",
+            Optional.of("teamId"),
             Optional.empty());
   }
 }

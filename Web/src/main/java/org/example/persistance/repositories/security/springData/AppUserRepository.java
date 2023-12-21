@@ -14,4 +14,5 @@ public interface AppUserRepository extends JpaRepository<AppUser, String> {
 
   List<AppUser> findByAccountId(String accountId);
   Optional<AppUser> findBySubscriptionId(String subscriptionId);
+  List<AppUser> findByAccountIdAndTeamIdIsNull(String accountId);
 }

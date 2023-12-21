@@ -6,7 +6,6 @@ import org.example.email.EmailService;
 import org.example.email.FakeEmailService;
 import org.example.transactions.security.CreateTeammateTransaction;
 import org.example.transactions.team.*;
-import org.shared.spi.InMemoryUserRepository;
 import org.shared.spi.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -16,10 +15,8 @@ import org.springframework.context.annotation.Profile;
 import org.team.application.commands.*;
 import org.team.ports.spi.CodeGenerator;
 import org.team.ports.spi.TeamRepository;
-import org.team.ports.spi.TeammateRepository;
 import org.team.ports.spi.inMemory.FakeCodeGenerator;
 import org.team.ports.spi.inMemory.InMemoryTeamRepository;
-import org.team.ports.spi.inMemory.InMemoryTeammateRepository;
 import org.todo.application.commands.DeleteUserTodoLists;
 import org.todo.port.spi.InMemoryTodoListRepository;
 import org.todo.port.spi.TodoListRepository;
@@ -35,10 +32,7 @@ public class TeamTestConfig {
     TeamRepository teamRepository() {
         return new InMemoryTeamRepository();
     }
-    @Bean
-    TeammateRepository teammateRepository(){
-        return new InMemoryTeammateRepository();
-    }
+
     @Bean
     CodeGenerator codeGenerator(){
         return new FakeCodeGenerator();
@@ -54,7 +48,7 @@ public class TeamTestConfig {
     }
     @Bean
     AddTeammateOnTeamTransaction addTeammatesOnTeamCommand(){
-        return new AddTeammateOnTeamTransaction(new AddTeammatesOnTeam(teamRepository(), teammateRepository()));
+        return new AddTeammateOnTeamTransaction(new AddTeammatesOnTeam(teamRepository(), userRepository));
     }
 
     @Bean
@@ -72,14 +66,14 @@ public class TeamTestConfig {
     }
     @Bean
     CreateTeammateTransaction addTeammate(){
-        return new CreateTeammateTransaction(new CreateTeammate(userRepository, codeGenerator(), teammateRepository()), emailService());
+        return new CreateTeammateTransaction(new CreateTeammate(userRepository, codeGenerator()), emailService());
     }
 
     @Bean
     FireTeammateTransaction fireTeammateCommand() {
         return new FireTeammateTransaction(
                 new FireTeammateCommand(
-                        teammateRepository(),
+                        userRepository,
                         new RemoveTeammateFromTeam(teamRepository()
                         )
                 ),

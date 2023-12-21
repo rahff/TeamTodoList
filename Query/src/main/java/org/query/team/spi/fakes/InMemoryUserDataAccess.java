@@ -2,8 +2,9 @@ package org.query.team.spi.fakes;
 
 
 
+import org.query.account.dto.UserDto;
+import org.query.shared.spi.UserDataAccess;
 import org.query.team.dto.TeammateDto;
-import org.query.team.spi.UserDataAccess;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,5 +22,10 @@ public class InMemoryUserDataAccess implements UserDataAccess {
                 new TeammateDto("teammateId3", "teammateName3", "teammateName3@gmail.com"),
                 new TeammateDto("teammateId4", "teammateName4", "teammateName4@gmail.com")
         );
+    }
+
+
+    public Optional<UserDto> getUserById(String userId) {
+        return Optional.of(new UserDto("userId", "User1", "useremail@gmail.com", "TEAMMATE", "accountId1"));
     }
 }

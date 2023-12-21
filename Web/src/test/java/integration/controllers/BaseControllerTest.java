@@ -27,8 +27,8 @@ public class BaseControllerTest {
   @Autowired
   protected WebApplicationContext context;
 
-  protected final Authentication fakeManagerAuthentication = new JwtAuthenticationToken(new UserDto("userId", "rahff@gmail.com", "Rahff", null, "MANAGER", "accountId", Optional.of(new SubscriptionDto("id", true))), "123Token", List.of(new SimpleGrantedAuthority("MANAGER")));
-  protected final Authentication fakeTeammateAuthentication = new JwtAuthenticationToken(new UserDto("teammateId", "teammate@gmail.com", "Mikki", null, "TEAMMATE", "accountId", Optional.empty()), "123Token", List.of(new SimpleGrantedAuthority("TEAMMATE")));
+  protected final Authentication fakeManagerAuthentication = new JwtAuthenticationToken(new UserDto("userId", "rahff@gmail.com", "Rahff", null, "MANAGER", "accountId", Optional.empty(), Optional.of(new SubscriptionDto("id", true))), "123Token", List.of(new SimpleGrantedAuthority("MANAGER")));
+  protected final Authentication fakeTeammateAuthentication = new JwtAuthenticationToken(new UserDto("teammateId", "teammate@gmail.com", "Mikki", null, "TEAMMATE", "accountId", Optional.of("teamId"),Optional.empty()), "123Token", List.of(new SimpleGrantedAuthority("TEAMMATE")));
 
   @BeforeEach
   void setUp(){

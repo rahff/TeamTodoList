@@ -19,6 +19,7 @@ public class InMemoryUserRepository implements UserRepository{
                         "12345",
                         "TEAMMATE",
                         "accountId",
+                        Optional.empty(),
                         Optional.empty())
         ));
     }
@@ -44,6 +45,38 @@ public class InMemoryUserRepository implements UserRepository{
     }
     public Optional<UserDto> findBySubscription(String subscriptionId){
         return data.stream().filter(userDto -> bySubscriptionId(userDto, subscriptionId)).findFirst();
+    }
+
+    public Optional<UserDto> findByAccountIdAndTeamIdIsNull(String accountId) {
+        return data.stream().filter(userDto -> userDto.accountId().equals(accountId) && userDto.teamId().isEmpty()).findFirst();
+    }
+
+    public Optional<UserDto> findById(String teammateId) {
+        return  data.stream().filter(userDto -> userDto.id().equals(teammateId)).findFirst();
+    }
+
+    public void addTeamIdOnTeammate(List<String> theirIds, String teamId) {
+
+        theirIds.forEach(id -> {
+
+            var user = findById(id).orElse(null);
+            if(data.removeIf(userDto -> userDto.id().equals(id))){
+                data.add(new UserDto(
+                        user.id(),
+                        user.email(),
+                        user.name(),
+                        user.password(),
+                        user.role(),
+                        user.accountId(),
+                        Optional.of(teamId),
+                        user.subscription()));
+            }
+        });
+    }
+
+
+    public void removeTeammateUser(String teammateId) {
+        data.removeIf(userDto -> userDto.id().equals(teammateId));
     }
 
     private boolean bySubscriptionId(UserDto userDto, String subscriptionId) {
